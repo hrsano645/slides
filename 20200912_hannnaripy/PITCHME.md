@@ -24,16 +24,25 @@
 
 ## pathlib
 
----
-
-- os.pathの置き換えが出来そうなもの
+[pathlib --- オブジェクト指向のファイルシステムパス — Python 3.8.6rc1 ドキュメント](https://docs.python.org/ja/3/library/pathlib.html#methods-and-properties)
 
 ---
 
-- os.pathは昔から（2系？）からあるライブラリだけど、
+### os.pathの置き換えが出来そうなもの
 
 ---
-- OSごとに扱いを変える必要がある
+
+#### os.pathは昔からある（1系から）
+
+[os.path --- 共通のパス名操作 — Python 3.8.6rc1 ドキュメント](https://docs.python.org/ja/3/library/os.path.html)
+
+---
+
+昔からお世話になっていたけど、不満点
+
+---
+
+OSごとに扱いを変える必要がある
 
 ---
 
@@ -41,23 +50,60 @@
 
 ---
 
-- そこでpathlib。3.4から使える
+### そこでpathlib
+
+- 3.4から使える
+- Pathオブジェクトとして操作する
+- os.path, globといったパスを扱うライブラリをこれ1つで対応できる
 
 ---
 
-- pathlibのいいところ
+### pathlibのいいところ
 
 ---
 
-- オブジェクトとして管理
+### オブジェクトとして管理
+
+```python
+# Windowdでやってる
+>>> form pathlib import path
+>>> p = Path("~/Documents/hellopathlib.txt")
+>>> p
+WindowsPath('~/Documents/hellopathlib.txt')
+```
 
 ---
 
-- パス区切り文字をどちらでもいい
+### パス区切り文字をどちらでもいい
+
+```python
+# winの区切り文字も対応
+>>> win_kugiri =  Path("~\\Documents\\hellopathlib.txt")
+>>> win_kugiri
+WindowsPath('~/Documents/hellopathlib.txt')
+
+>>> posix_kugiri =  Path("~/Documents/hellopathlib.txt")
+>>> posix_kugiri
+WindowsPath('~/Documents/hellopathlib.txt')
+
+```
+---
+
+### str関数に通すと文字列としてとれる
+
+```python
+>>> str(win_kugiri)
+'~\\Documents\\hellopathlib.txt'
+>>> str(posix_kugiri)
+'~\\Documents\\hellopathlib.txt'
+```
 
 ---
 
-- API的に統一感がある
+### API的に統一感がある
+
+- UnixとWinとほぼ同じ用につかえる
+- os.pathだと
 
 ---
 
