@@ -1,8 +1,8 @@
 ### pathlibを推してみようと思う
 
-### はんなりPython #32 標準ライブラリなLT会
+#### はんなりPython #32 標準ライブラリなLT会
 
-### 2020/09/13 Hiroshi Sano
+#### 2020/09/13 Hiroshi Sano
 
 ---
 
