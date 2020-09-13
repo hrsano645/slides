@@ -24,7 +24,7 @@
 
 ## pathlib
 
-[pathlib --- オブジェクト指向のファイルシステムパス — Python 3.8.6rc1 ドキュメント](https://docs.python.org/ja/3/library/pathlib.html#methods-and-properties)
+https://docs.python.org/ja/3/library/pathlib.html
 
 ---
 
@@ -34,7 +34,7 @@
 
 #### os.pathは昔からある（1系から）
 
-[os.path --- 共通のパス名操作 — Python 3.8.6rc1 ドキュメント](https://docs.python.org/ja/3/library/os.path.html)
+https://docs.python.org/ja/3/library/os.path.html
 
 ---
 
