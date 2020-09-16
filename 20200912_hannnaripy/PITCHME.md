@@ -200,6 +200,6 @@ https://docs.python.org/ja/3/library/os.html#os.PathLike
 
 ---
 
-pathlibは操作も統一性があるので悩むことがないです
+pathlibは操作も統一性があるので悩み減ります
 
-Python3.4以降でパス操作するならpathlibを使いましょう💪
+Python3.4以降はpathlibを使いましょう💪
