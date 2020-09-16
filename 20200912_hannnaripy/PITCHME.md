@@ -188,7 +188,7 @@ str関数に通すと文字列にできる
 
 os.PathLikeオブジェクトへ対応させる
 
-（3.6から追加されたオブジェクト）
+（3.6から追加された特殊メソッドへの対応）
 
 https://docs.python.org/ja/3/library/os.html#os.PathLike
 
