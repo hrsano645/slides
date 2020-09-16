@@ -90,7 +90,7 @@ os.pathと書いて操作するとコードが汚い
 
 ```python
 # Windowdでやってる
->>> form pathlib import path
+>>> form pathlib import Path
 >>> p = Path("~/Documents/hellopathlib.txt")
 >>> p
 WindowsPath('~/Documents/hellopathlib.txt')
@@ -176,7 +176,7 @@ True
 
 （文字列としてパスをとる場合）
 
-str関数に通すとパスを文字列で生成してくれる
+str関数に通すと文字列にできる
 
 ```python
 # os.pathは文字列を生成する
