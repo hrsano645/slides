@@ -114,15 +114,6 @@ WindowsPath('~/Documents/hellopathlib.txt')
 
 ---
 
-### str関数に通すと文字列としてとれる
-
-```python
->>> str(win_kugiri)
-'~\\Documents\\hellopathlib.txt'
-```
-
----
-
 ### API的に統一感がある
 
 os.pathはパスを扱う。ファイルへのアクセスは別モジュール
