@@ -22,6 +22,14 @@
 
 ---
 
+🎊PyCon JP 2020 チュートリアルお疲れ様でした🎉
+
+- はんなりPython
+- Py.Data Osaka
+- PyCon mini hiroshima
+
+---
+
 ### 推しライブラリ
 
 ## pathlib
