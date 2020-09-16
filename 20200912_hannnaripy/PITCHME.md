@@ -47,7 +47,7 @@ OSごとに扱いを変える必要がある
 
 - 特に区切り文字！
   - Winだと `\\` , Unixだと `/`
-  - ハードコードすると結構トラブル。特にUnixにWinの区切り文字は無理
+  - ハードコードすると結構トラブル起こしがち
 - osモジュールはOSの操作でその一部
   - ファイル操作をするときに
 - os.pathと書いて操作するとコードが汚い
@@ -60,7 +60,7 @@ OSごとに扱いを変える必要がある
 # Ubuntu 18.4
 >>> import os.path
 >>> os.path.abspath("\\Documents\\test")
-'/home/hiroshi/workspace/sites/hr-sano.net/\\Documents\\test'
+'/home/hiroshi/Documents/\\Documents\\test'
 ```
 
 ---
@@ -69,7 +69,7 @@ OSごとに扱いを変える必要がある
 
 ```python
 >>> os.path.join(os.path.abspath("\\Document"), "test")
-'/home/hiroshi/workspace/sites/hr-sano.net/\\Document/test'
+'/home/hiroshi/Documents/\\Document/test'
 ```
 
 ---
