@@ -1,14 +1,19 @@
-theme            : template
 
-theme-background : [ "#000" ]
-theme-headline   : [ "Roboto", "#eee", "none", "eee", "120"]
-theme-byline     : [ "Roboto", "#eee", "none", "eee", "120"]
-theme-text       : [ "Lato", "#fefefe", "none", "#fefefe", "120"]
+theme : night
+
+# theme-background : [ "#000" ]
+# theme-headline   : [ "Roboto", "#eee", "none", "eee", "120"]
+# theme-byline     : [ "Roboto", "#eee", "none", "eee", "120"]
+# theme-text       : [ "Lato", "#fefefe", "none", "#fefefe", "120"]
 theme-links      : [ "#5289F7", "#5254F7" ]
 theme-code       : [ "Source Code Pro", "150" ]
-theme-controls   : [ "#484848" ]
-theme-margins    : [ "0", "15px" ]
+# theme-controls   : [ "#484848" ]
+# theme-margins    : [ "0", "15px" ]
 
-highlight : tomorrow
+layout: center-left
 
-controls-layout : edges
+highlight: ir-black
+
+transition : fade
+
+controls-layout: edges
