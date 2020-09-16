@@ -114,7 +114,7 @@ WindowsPath('~/Documents/hellopathlib.txt')
 
 ---
 
-### API的に統一感がある
+### APIに統一感がある
 
 os.pathはパスを扱う。ファイルへのアクセスは別モジュール
 
