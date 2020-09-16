@@ -64,7 +64,7 @@ OSごとに扱いを変える必要がある
 
 ---
 
-パス操作をするときにjoinするとキモイ
+パス操作をするときにjoinすると面倒だよね
 
 ```python
 >>> os.path.join(os.path.abspath("\\Document"), "test")
