@@ -45,7 +45,7 @@ https://docs.python.org/ja/3/library/os.path.html
 
 OSごとに扱いを変える必要がある
 
-- 特に区切り文字！
+- とくに区切り文字！
   - Winだと `\\` , Unixだと `/`
   - ハードコードすると結構トラブル起こしがち
 - osモジュールはOSの操作でその一部
@@ -78,7 +78,7 @@ OSごとに扱いを変える必要がある
 
 - Python3.4から使える
 - Pathオブジェクトとして操作 -> 統一性がある
-- os.path, globといったパスを扱うライブラリをこれ1つで対応できる
+- os, os.path, globといったパスを扱うライブラリをこれ1つで対応できる
 
 ---
 
@@ -153,13 +153,12 @@ pathlibはファイル操作もできる
 
 ```python
 >>> from pathlib import Path
->>> p = Path.home()
->>> p
+>>> Path.home()
 WindowsPath('C:/Users/hiroshi')
->>> p / "Documents"
+>>> Path.home() / "Documents"
 WindowsPath('C:/Users/hiroshi/Documents')
->>> home_docs = p / "Documents"
->>> home_docs.is_dir()
+>>> home_docsdir = Path.home() / "Documents"
+>>> home_docsdir.is_dir()
 True
 ```
 
@@ -178,9 +177,12 @@ True
 str関数に通すとパスを文字列で生成してくれる
 
 ```python
+# os.pathは文字列を生成する
+>>> type(os.path.abspath("\\Documents"))
+<class 'str'>
 >>> type(home_docs)
 <class 'pathlib.WindowsPath'>
->>> str(home_docs)       
+>>> str(home_docs)
 'C:\\Users\\hiroshi\\Documents'
 >>> type(str(home_docs))
 <class 'str'>
