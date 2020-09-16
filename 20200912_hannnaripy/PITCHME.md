@@ -119,22 +119,25 @@ WindowsPath('~/Documents/hellopathlib.txt')
 ```python
 >>> str(win_kugiri)
 '~\\Documents\\hellopathlib.txt'
->>> str(posix_kugiri)
-'~\\Documents\\hellopathlib.txt'
 ```
 
 ---
 
 ### API的に統一感がある
 
-- os.pathはパスを扱うことがメインだけどファイルへのアクセスは別
-  - os.mkdirとかありますよね -> osモジュール
-  - 検索のときにglobモジュール使いますよね
-  - 組み込みのopen関数
-- pathlibはファイル操作もできる
-  - globもできる -> Path.glob, Path.rglob（再帰検索専用）
-  - Path.mkdirができる
-  - Path.openメソッドが使える（openとほぼ変わりはないですが）
+os.pathはパスを扱うことがメインだけどファイルへのアクセスは別
+
+- os.mkdirとかありますよね -> osモジュール
+- 検索のときにglobモジュール使いますよね
+- 組み込みのopen関数
+
+---
+
+pathlibはファイル操作もできる
+
+- Path.mkdirができる
+- globもできる -> Path.glob, Path.rglob（再帰検索専用）
+- Path.openメソッドが使える（openとほぼ変わりはないですが）
 
 ---
 
@@ -144,7 +147,9 @@ WindowsPath('~/Documents/hellopathlib.txt')
 
 ---
 
-スラッシュの演算子をパスのジョインにつかえる。これがとてもいい
+スラッシュの演算子をパスのジョインにつかえる
+
+これがとてもいい
 
 ```python
 >>> from pathlib import Path
