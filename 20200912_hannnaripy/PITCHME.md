@@ -38,6 +38,12 @@ https://docs.python.org/ja/3/library/pathlib.html
 
 ---
 
+### pathlib知ってる？
+
+- 知ってる人、カメラorZoomの機能で挙手してください✋
+
+---
+
 ### os.pathの置き換え
 
 ---
