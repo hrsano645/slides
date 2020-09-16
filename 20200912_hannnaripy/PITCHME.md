@@ -57,7 +57,7 @@ OSごとに扱いを変える必要がある
 区切り文字混ぜるな危険
 
 ```python
-# Ubuntu 18.4
+# Ubuntu 18.04です
 >>> import os.path
 >>> os.path.abspath("\\Documents\\test")
 '/home/hiroshi/Documents/\\Documents\\test'
