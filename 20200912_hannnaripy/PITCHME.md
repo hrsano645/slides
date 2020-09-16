@@ -29,7 +29,7 @@ https://docs.python.org/ja/3/library/pathlib.html
 
 ---
 
-### os.pathの置き換えが出来そうなもの
+### os.pathの置き換え
 
 ---
 

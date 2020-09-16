@@ -10,7 +10,7 @@ theme-code       : [ "Source Code Pro", "150" ]
 # theme-controls   : [ "#484848" ]
 # theme-margins    : [ "0", "15px" ]
 
-layout: center-left
+# layout: center-left
 
 highlight: ir-black
 
