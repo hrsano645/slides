@@ -60,18 +60,20 @@ os.pathと書いて操作するとコードが汚い
 ```python
 # Ubuntu 18.04です
 >>> import os.path
->>> os.path.abspath("\\Documents\\test")
-'/home/hiroshi/Documents/\\Documents\\test'
+>>> os.path.abspath("Documents\\test")
+'/home/hiroshi/Documents/Documents\\test'
 ```
 
 ---
 
-パス操作をするときにjoinすると面倒だよね
+os.pathと毎回書くと面倒
 
 ```python
->>> os.path.join(os.path.abspath("\\Document"), "test")
-'/home/hiroshi/Documents/\\Document/test'
+>>> os.path.join(os.path.abspath("Document"), "test")
+'/home/hiroshi/Documents/Document/test'
 ```
+
+エイリアスでしのぐしか...
 
 ---
 
