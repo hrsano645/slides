@@ -7,10 +7,10 @@
     - [佐野設計事務所🚗](https://sano-design.info) IT何でも屋
     - 米農家🌾
 
-- コミュニティ
+- Community🧑‍💻
     - shizuoka.py, unagi.py, Python駿河
     - PyCon mini Shizuokaスタッフ
-
+    - PyCon JP 2020 チュートリアル講師
 ---
 +++
 
