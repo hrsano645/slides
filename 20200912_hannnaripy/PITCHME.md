@@ -24,9 +24,9 @@
 
 🎊PyCon JP 2020 チュートリアルお疲れ様でした🎉
 
-- はんなりPython
-- Py.Data Osaka
-- PyCon mini hiroshima
+- はんなりPythonの会
+- PyData Osaka
+- PyCon mini Hiroshima
 
 ---
 
@@ -87,7 +87,7 @@ os.pathと毎回書くと面倒
 '/home/hiroshi/Documents/Document/test'
 ```
 
-エイリアスでしのぐしか...
+エイリアスでしのぐしか…
 
 ---
 
@@ -95,7 +95,7 @@ os.pathと毎回書くと面倒
 
 - Python3.4から使える
 - Pathオブジェクトとして操作 -> 統一性がある
-- os, os.path, globといったパスを扱うライブラリをこれ1つで対応できる
+- os, os.path, globといったパスを扱うモジュールをこれ1つで対応できる
 
 ---
 
@@ -133,7 +133,7 @@ WindowsPath('~/Documents/hellopathlib.txt')
 
 ### APIに統一感がある
 
-os.pathはパスを扱う。ファイルへのアクセスは別モジュール
+os.pathはパスを扱う。ファイルアクセスは別モジュール
 
 - os.mkdirとかありますよね -> osモジュール
 - 検索のときにglobモジュール使いますよね
