@@ -182,7 +182,7 @@ True
 
 古めのライブラリだとPathオブジェクトを扱えない
 
-（文字列としてパスをとる場合）
+（文字列としてパスをとる場合が大体）
 
 str関数に通すと文字列にできる
 
@@ -190,8 +190,10 @@ str関数に通すと文字列にできる
 # os.pathは文字列を生成する
 >>> type(os.path.abspath("\\Documents"))
 <class 'str'>
+# pathlibはPathオブジェクト
 >>> type(home_docs)
 <class 'pathlib.WindowsPath'>
+# str関数に渡すと文字列
 >>> str(home_docs)
 'C:\\Users\\hiroshi\\Documents'
 >>> type(str(home_docs))
