@@ -106,7 +106,7 @@ os.pathと毎回書くと面倒
 ### オブジェクトとして管理
 
 ```python
-# Windowdでやってる
+# Windowsでやってる
 >>> form pathlib import Path
 >>> p = Path("~/Documents/hellopathlib.txt")
 >>> p
@@ -211,7 +211,7 @@ os.PathLikeオブジェクトへ対応させる
 
 https://docs.python.org/ja/3/library/os.html#os.PathLike
 
-もしく3.6以降の互換を捨てて内部でpathlibのオブジェクトを使ってしまう
+もしく3.6以下の互換を捨てて内部でpathlibのオブジェクトを使ってしまう
 
 ---
 
