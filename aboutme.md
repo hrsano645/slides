@@ -9,7 +9,7 @@
 
 - Community🧑‍💻
     - 🗻🐍: shizuoka.py, unagi.py, Python駿河
-    - 🐍: PyCon mini Shizuokaスタッフ
+    - 🗻🐍: PyCon mini Shizuokaスタッフ
     - 🐍: PyCon JP 2020 チュートリアル講師
 +++
 
