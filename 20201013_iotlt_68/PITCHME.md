@@ -32,7 +32,7 @@ IoTLT 久しぶりにきました！
 
 ---
 
-![(おふろIoT Mk2の発表)](img/iotlt_51_ohuroiot_01.png)
+![(おふろIoT Mk2の発表)](20201013_iotlt_68/img/iotlt_51_ohuroiot_01.png)
 
 懐かしい...
 
@@ -45,7 +45,7 @@ IoTLT 久しぶりにきました！
 - 温度と水位を測る
 - 蛇口を止める
 
-![おふろIoTシステム図](img/ohutoiot_system_image.png)
+![おふろIoTシステム図](20201013_iotlt_68/img/ohutoiot_system_image.png)
 
 ---
 
@@ -53,7 +53,7 @@ IoTLT 久しぶりにきました！
 
 ---
 
-![(蛇口IoTの裏側)](img/FJIMG_20190429_174617.jpg)
+![(蛇口IoTの裏側)](20201013_iotlt_68/img/FJIMG_20190429_174617.jpg)
 
 基板ごと持っていくのは…
 
@@ -71,8 +71,8 @@ ESP32の開発キットだと大きい（縦長5cm程度）
 
 最近こちらを教わる
 
-![width=256px alt=AtomMatrix](https://camo.githubusercontent.com/b79dc8ac6f64f859f6972860bb836fa8884358f3/68747470733a2f2f6d35737461636b2e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f696d6167652f6d352d646f63735f686f6d65706167652f636f72652f61746f6d5f6d61747269785f30312e77656270)
-![width=256px alt=AtomLite](https://camo.githubusercontent.com/cf43e2305efcefc96778b4e34e519dc00980366a/68747470733a2f2f6d35737461636b2e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f696d6167652f6d352d646f63735f686f6d65706167652f636f72652f61746f6d5f6c6974655f30312e77656270)
+![heigth=256px, alt=AtomMatrix](https://camo.githubusercontent.com/b79dc8ac6f64f859f6972860bb836fa8884358f3/68747470733a2f2f6d35737461636b2e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f696d6167652f6d352d646f63735f686f6d65706167652f636f72652f61746f6d5f6d61747269785f30312e77656270)
+![heigth=256px, alt=AtomLite](https://camo.githubusercontent.com/cf43e2305efcefc96778b4e34e519dc00980366a/68747470733a2f2f6d35737461636b2e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f696d6167652f6d352d646f63735f686f6d65706167652f636f72652f61746f6d5f6c6974655f30312e77656270)
 
 ---
 
@@ -86,7 +86,7 @@ ESP32の開発キットだと大きい（縦長5cm程度）
 
 とっても小さい
 
-![M5Atomの写真](img/PXL_20201010_060716412.jpg)
+![M5Atomの写真](20201013_iotlt_68/img/PXL_20201010_060716412.jpg)
 
 ---
 
@@ -100,9 +100,9 @@ ESP32の開発キットだと大きい（縦長5cm程度）
 
 ## UiFlow
 
-![インストールの様子](img/ss_2020-10-07_21.49.04.png)
+![インストールの様子](20201013_iotlt_68/img/ss_2020-10-07_21.49.04.png)
 
-![Blocklyの様子](img/ss_2020-10-08_15.08.14.png)
+![Blocklyの様子](20201013_iotlt_68/img/ss_2020-10-08_15.08.14.png)
 
 ---
 
@@ -132,7 +132,7 @@ YouTubeで公開されてる！のですぐ使えます！
 
 (インストールしたときの様子)
 
-![micropython](img/ss_2020-10-08_15.20.04.png)
+![micropython](20201013_iotlt_68/img/ss_2020-10-08_15.20.04.png)
 
 ---
 
