@@ -45,7 +45,7 @@ IoTLT 久しぶりにきました！
 - 温度と水位を測る
 - 蛇口を止める
 
-![おふろIoTシステム図](20201013_iotlt_68/img/ohutoiot_system_image.png)
+![height=256,alt=おふろIoTシステム図](20201013_iotlt_68/img/ohutoiot_system_image.png)
 
 ---
 
@@ -53,7 +53,7 @@ IoTLT 久しぶりにきました！
 
 ---
 
-![(蛇口IoTの裏側)](20201013_iotlt_68/img/FJIMG_20190429_174617.jpg)
+![height=256,alt=(蛇口IoTの裏側)](20201013_iotlt_68/img/FJIMG_20190429_174617.jpg)
 
 基板ごと持っていくのは…
 
@@ -71,8 +71,8 @@ ESP32の開発キットだと大きい（縦長5cm程度）
 
 最近こちらを教わる
 
-![heigth=256px, alt=AtomMatrix](https://camo.githubusercontent.com/b79dc8ac6f64f859f6972860bb836fa8884358f3/68747470733a2f2f6d35737461636b2e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f696d6167652f6d352d646f63735f686f6d65706167652f636f72652f61746f6d5f6d61747269785f30312e77656270)
-![heigth=256px, alt=AtomLite](https://camo.githubusercontent.com/cf43e2305efcefc96778b4e34e519dc00980366a/68747470733a2f2f6d35737461636b2e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f696d6167652f6d352d646f63735f686f6d65706167652f636f72652f61746f6d5f6c6974655f30312e77656270)
+![height=256, alt=AtomMatrix](https://camo.githubusercontent.com/b79dc8ac6f64f859f6972860bb836fa8884358f3/68747470733a2f2f6d35737461636b2e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f696d6167652f6d352d646f63735f686f6d65706167652f636f72652f61746f6d5f6d61747269785f30312e77656270)
+![height=256, alt=AtomLite](https://camo.githubusercontent.com/cf43e2305efcefc96778b4e34e519dc00980366a/68747470733a2f2f6d35737461636b2e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f696d6167652f6d352d646f63735f686f6d65706167652f636f72652f61746f6d5f6c6974655f30312e77656270)
 
 ---
 
@@ -86,7 +86,7 @@ ESP32の開発キットだと大きい（縦長5cm程度）
 
 とっても小さい
 
-![M5Atomの写真](20201013_iotlt_68/img/PXL_20201010_060716412.jpg)
+![height=256,alt=M5Atomの写真](20201013_iotlt_68/img/L_20201010_060716412.jpg)
 
 ---
 
@@ -100,9 +100,14 @@ ESP32の開発キットだと大きい（縦長5cm程度）
 
 ## UiFlow
 
-![インストールの様子](20201013_iotlt_68/img/ss_2020-10-07_21.49.04.png)
+![height=256,alt=インストールの様子](20201013_iotlt_68/img/ss_2020-10-07_21.49.04.png)
 
-![Blocklyの様子](20201013_iotlt_68/img/ss_2020-10-08_15.08.14.png)
+---
+
+## UiFlow
+
+
+![height=256,alt=Blocklyの様子](20201013_iotlt_68/img/ss_2020-10-08_15.08.14.png)
 
 ---
 
@@ -126,13 +131,13 @@ https://photos.app.goo.gl/JeUyZb1m2JNx6JYG7
 
 YouTubeで公開されてる！のですぐ使えます！
 
-[M5Stack Micropython programming for M5Atom - YouTube](https://www.youtube.com/watch?v=m3Pxpynuxs0)
+[M5Stack Micropython programming for M5Atom - YouTube](https://www.youtube.com/watch?v=m3pynuxs0)
 
 ---
 
 (インストールしたときの様子)
 
-![micropython](20201013_iotlt_68/img/ss_2020-10-08_15.20.04.png)
+![height=256](20201013_iotlt_68/img/ss_2020-10-08_15.20.04.png)
 
 ---
 
