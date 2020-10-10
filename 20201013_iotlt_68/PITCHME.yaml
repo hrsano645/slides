@@ -1,0 +1,16 @@
+
+theme : night
+
+theme-headline   : [ "Roboto", "#eee", "none", "eee", "120"]
+theme-links      : [ "#5289F7", "#5254F7" ]
+theme-code       : [ "Source Code Pro", "150" ]
+
+# layout: center-left
+
+highlight: ir-black
+
+transition: fade
+
+controls-layout: edges
+
+title: "pathlibを推してみようと思う - はんなりPython #32 標準ライブラリなLT会 2020/09/13"
