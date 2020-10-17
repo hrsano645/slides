@@ -127,7 +127,7 @@ YouTubeで公開されてる！のでインストールもかんたん！
 >>> from time import sleep_ms
 >>> btnpin = Pin(39, Pin.IN)
 >>> while True:
-...     if btnpin.value() == 1:
+...     if btnpin.value() == 0:
 ...         npx[0] = (255, 0, 0)
 ...     else:
 ...         npx[0] = (0, 0, 0)
