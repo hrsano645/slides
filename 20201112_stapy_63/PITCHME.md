@@ -1,4 +1,5 @@
-### 家環境ダッシュボードを作ってみた話
+### 家環境ダッシュボード🏠🌡️📉
+を作ってみた話
 
 #### みんなのＰyhtonb円協会 #63 懇親会LT
 
@@ -77,7 +78,7 @@ google.com ナレッジパネル ダッシュボード
 
 - 実家の祖母が98歳なんだけど、見守り的な意味でほしい
 
-![granma_irasutoya](https://4.bp.blogspot.com/-E5SFXjWPayU/WR6ns-9naMI/AAAAAAABEVw/d2cE-VM_B_AnQp3PHoFIG8esHWmBB6YXgCLcB/s800/keirou_obaachan_smile2.png)
+![height=320,alt=granma_irasutoya](https://4.bp.blogspot.com/-E5SFXjWPayU/WR6ns-9naMI/AAAAAAABEVw/d2cE-VM_B_AnQp3PHoFIG8esHWmBB6YXgCLcB/s800/keirou_obaachan_smile2.png)
 
 ---
 
@@ -87,49 +88,52 @@ google.com ナレッジパネル ダッシュボード
 
 ---
 
-#### センサーノード:
+#### センサーノード🌡️
 
-ラズパイ + センサー:BME280
+ラズパイ + センサー:BME280 温度と湿度と気圧
 
 - センサーはシリアル通信規格を使うけど、中のデータを取り出すのにちょっと苦労する
   - AdafruitのCircitPythonをラズパイで動かすことができる
-  - Adafruitが提供するライブラリを使える
+  - Adafruitが提供するライブラリが使える
 
 ref: [Python & CircuitPython Test | Adafruit BME280 Humidity + Barometric Pressure + Temperature Sensor Breakout | Adafruit Learning System](https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/python-circuitpython-test)
 
 ---
 
-### センサー情報記録
+### センサー情報記録📝
 
 Google Sheetにため込んでます
 
 サービスアカウントで認証周りをしている。IoTなので鍵配布だけで連携できるのは楽でいい
 
-
+< 画像入れる: じっさいのシートのSS>
 
 ---
 
-### ダッシュボード
+### ダッシュボード📉
 
-Plotly Dashで作る。データ入力はGoogle Sheet -> Pandas
+[Plotly Dash](https://dash.plotly.com/)で作る。
 
 - htmlを直接書かなくてもPythonのオブジェクトで操作、グラフもPlotlyをそのまま使う
 - コールバック機能で自動更新やドロップダウンリストからの変更もリアルタイム
 
----
-
-いま動かしているものを紹介
+データ入力はGoogle Sheet -> Pandas
 
 ---
 
-### まとめ
+いま動かしているものを紹介🧐
+
+---
+
+### まとめ🔚
 
 - 家の環境が見れるようになって、体調管理しやすくなったと思う
-- ほかのセンサー（CO2）とか、防犯カメラ（Atom cam）を入れても面白そう
+- **ほかのセンサー（CO2）**とか、**防犯カメラ** が見れると面白そう
+- アラート系に対応: Dashだと有料になる💸
 
 ---
 
-### まとめ
+### まとめ🔚
 
 - 今は複数ノード対応してないので、複数ノード対応するのが次の目標
 - IoTとGoogleAPIの連携を楽するならサービスアカウントおすすめ
