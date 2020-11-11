@@ -14,7 +14,7 @@
 
 ---
 
-google.com ナレッジパネル ダッシュボード 
+google.com ナレッジパネル ダッシュボード
 
 
 ![自動車とかではなく](20201112_stapy_63/img/car_dashborad_by_googlesearch.png)
@@ -27,11 +27,6 @@ google.com ナレッジパネル ダッシュボード
 ![デジタルのほう](20201112_stapy_63/img/degital_dashborad.png)
 
 こういうもの
-
----
-
-こんなものとか
-
 
 ---
 
@@ -51,16 +46,16 @@ google.com ナレッジパネル ダッシュボード
 ## お前誰よ
 
 - 佐野浩士（Hiroshi Sano）[@hrs_sano645](https://twitter.com/hrs_sano645)
-- 静岡県の富士市🗻
+- 🏠:静岡県の富士市🗻
 
 - Job💼
-    - [佐野設計事務所🚗⚙️📏](https://sano-design.info) 設計以外何でも屋
-    - 米農家🌾
+  - [佐野設計事務所🚗⚙️📏🖊️](https://sano-design.info) 設計以外何でも屋
+  - 米農家🌾
 
 - Community🧑‍💻
-    - 🗻🐍: shizuoka.py, unagi.py, Python駿河
-    - 🗻🐍: PyCon mini Shizuokaスタッフ
-    - 🐍: PyCon JP 2020 チュートリアル講師
+  - 🗻🐍: shizuoka.py, unagi.py, Python駿河
+  - 🗻🐍: PyCon mini Shizuokaスタッフ
+  - 🐍: PyCon JP 2020 チュートリアル講師
 
 ---
 
@@ -92,40 +87,55 @@ google.com ナレッジパネル ダッシュボード
 
 ---
 
-#### センサーノード: ラズパイ + センサー
+#### センサーノード:
 
-センサーはシリアル通信規格を使うけど、中のデータを取り出すのにちょっと苦労する
--> 既存のライブラリを使うと楽
+ラズパイ + センサー:BME280
 
-- 
-- CircitPythonをラズパイで動かすことができる
+- センサーはシリアル通信規格を使うけど、中のデータを取り出すのにちょっと苦労する
+  - AdafruitのCircitPythonをラズパイで動かすことができる
+  - Adafruitが提供するライブラリを使える
+
+ref: [Python & CircuitPython Test | Adafruit BME280 Humidity + Barometric Pressure + Temperature Sensor Breakout | Adafruit Learning System](https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/python-circuitpython-test)
+
+---
+
+### センサー情報記録
+
+Google Sheetにため込んでます
+
+サービスアカウントで認証周りをしている。IoTなので鍵配布だけで連携できるのは楽でいい
+
 
 
 ---
 
-- センサー情報記録: G Sheet。サービスアカウントで認証周りをしている。IoTなので鍵配布だけで連携できるのは楽でいい
+### ダッシュボード
+
+Plotly Dashで作る。データ入力はGoogle Sheet -> Pandas
+
+- htmlを直接書かなくてもPythonのオブジェクトで操作、グラフもPlotlyをそのまま使う
+- コールバック機能で自動更新やドロップダウンリストからの変更もリアルタイム
 
 ---
 
-- ダッシュボード: Plotly Dashで作る。データ入力はG Sheet -> Pandas
-  - htmlを直接書かなくてもPythonのオブジェクトで操作、グラフもPlotlyをそのまま使うことになる
-  - コールバック機能で動的に更新できる。自動更新やドロップダウンリストからの変更もリアルタイムに動く
+いま動かしているものを紹介
 
 ---
 
 ### まとめ
 
 - 家の環境が見れるようになって、体調管理しやすくなったと思う
-  - 改善はまた別の話だけどｗ
-- 今は複数ノード対応してないので、複数ノード対応するのが次の目標
-- ほかのセンサーとか、防犯カメラ（Atom cam）とかでつかえる
+- ほかのセンサー（CO2）とか、防犯カメラ（Atom cam）を入れても面白そう
 
 ---
 
 ### まとめ
 
-- 認証周りを楽するならサービスアカウントおすすめ
-- Dashはアプリ作成にも使えると思う。
+- 今は複数ノード対応してないので、複数ノード対応するのが次の目標
+- IoTとGoogleAPIの連携を楽するならサービスアカウントおすすめ
+- Plotly Dashはアプリ作成にも使える気がする
 
+---
 
 ### ダッシュボードはいいぞー
+
