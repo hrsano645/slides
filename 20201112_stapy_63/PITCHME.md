@@ -83,7 +83,7 @@ google.com ナレッジパネル ダッシュボード
 
 ### システム紹介
 
-<img src="https://docs.google.com/drawings/d/e/2PACX-1vQfSWRWP7uD7ffXyjrEStTYVhyFakLvQ0pREvuE8n5v0iceLlHyska3toXvUdRfhh7v_se6CTvm6DBO/pub?w=960&amp;h=720">
+![home env dashboard system image](https://docs.google.com/drawings/d/e/2PACX-1vQfSWRWP7uD7ffXyjrEStTYVhyFakLvQ0pREvuE8n5v0iceLlHyska3toXvUdRfhh7v_se6CTvm6DBO/pub?w=960&amp;h=720)
 
 ---
 
