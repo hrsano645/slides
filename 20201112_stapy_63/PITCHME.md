@@ -99,7 +99,9 @@ google.com ナレッジパネル ダッシュボード
 - センサーはシリアル通信規格でデータ取得: I2C, SPI
   - データを取り出すのにちょっと苦労する
   - AdafruitのCircitPythonが提供するライブラリが使える
-  
+
+@size[0.5em]
+
 ref: [Adafruit BME280 Humidity + Barometric Pressure + Temperature Sensor Breakout](https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/python-circuitpython-test)
 
 ---
