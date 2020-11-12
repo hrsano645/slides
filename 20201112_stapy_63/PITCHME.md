@@ -92,7 +92,6 @@ google.com ナレッジパネル ダッシュボード
 
 ### センサーノード🌡️
 
-[drag=50%, drop=left]
 
 ラズパイ + センサー:BME280 温度と湿度と気圧
 
@@ -100,8 +99,6 @@ google.com ナレッジパネル ダッシュボード
   - AdafruitのCircitPythonが提供するライブラリが使える
   
 ref: [Python & CircuitPython Test | Adafruit BME280 Humidity + Barometric Pressure + Temperature Sensor Breakout | Adafruit Learning System](https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/python-circuitpython-test)
-
-[drag=50%, drop=rigth]
 
 
 ![sensor node](https://docs.google.com/drawings/d/e/2PACX-1vTYhZg5yz9pLjrt0OJQ87xG396d-8jKKyUwIAPZ2MMy9Nv3SgaTOINHsHpFXwocK1gXgcgxRkSwHP9Q/pub?w=960&amp;h=720)
@@ -115,13 +112,11 @@ Google Sheetにため込んでます
 
 サービスアカウントで認証周りをしている。IoTなので鍵配布だけで連携できるのは楽でいい
 
-[drag=50%, drop=rigth]
 
 ![sensor_recode](./20201112_stapy_63/img/sensor_recode_gsheet.JPG)
 ---
 
 ### ダッシュボード📉
-[drag=50%, drop=left]
 
 [Plotly Dash](https://dash.plotly.com/)で作る。
 
@@ -130,7 +125,6 @@ Google Sheetにため込んでます
 
 データ入力はGoogle Sheet -> Pandas
 
-[drag=50%, drop=rigth]
 
 ![dashboard](https://docs.google.com/drawings/d/e/2PACX-1vThEcyEPO9SzCVYEpL0WCAZ4Ceou004nnlmlYci07FiQKklRLvgLDLilj0ipzY30cdp_NcBYhY0Jde7/pub?w=960&amp;h=720)
 
