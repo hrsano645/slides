@@ -88,7 +88,7 @@ google.com ナレッジパネル ダッシュボード
 
 ### システムの全体像
 
-![height=640, alt=home env dashboard system image](https://docs.google.com/drawings/d/e/2PACX-1vQfSWRWP7uD7ffXyjrEStTYVhyFakLvQ0pREvuE8n5v0iceLlHyska3toXvUdRfhh7v_se6CTvm6DBO/pub?w=960&amp;h=720)
+![height=480, alt=home env dashboard system image](https://docs.google.com/drawings/d/e/2PACX-1vQfSWRWP7uD7ffXyjrEStTYVhyFakLvQ0pREvuE8n5v0iceLlHyska3toXvUdRfhh7v_se6CTvm6DBO/pub?w=960&amp;h=720)
 
 ---
 
@@ -104,7 +104,7 @@ ref: [Adafruit BME280 Humidity + Barometric Pressure + Temperature Sensor Breako
 
 ---
 
-![height=640, sensor node](https://docs.google.com/drawings/d/e/2PACX-1vTYhZg5yz9pLjrt0OJQ87xG396d-8jKKyUwIAPZ2MMy9Nv3SgaTOINHsHpFXwocK1gXgcgxRkSwHP9Q/pub?w=960&amp;h=720)
+![height=480, sensor node](https://docs.google.com/drawings/d/e/2PACX-1vTYhZg5yz9pLjrt0OJQ87xG396d-8jKKyUwIAPZ2MMy9Nv3SgaTOINHsHpFXwocK1gXgcgxRkSwHP9Q/pub?w=960&amp;h=720)
 
 ---
 
@@ -117,7 +117,7 @@ Google Sheetにため込んでます
   
 ---
 
-![height=640, sensor_recode](./20201112_stapy_63/img/sensor_recode_gsheet.JPG)
+![height=480, sensor_recode](./20201112_stapy_63/img/sensor_recode_gsheet.JPG)
 
 ---
 
@@ -132,7 +132,7 @@ Google Sheetにため込んでます
 
 ---
 
-![height=640, dashboard](https://docs.google.com/drawings/d/e/2PACX-1vThEcyEPO9SzCVYEpL0WCAZ4Ceou004nnlmlYci07FiQKklRLvgLDLilj0ipzY30cdp_NcBYhY0Jde7/pub?w=960&amp;h=720)
+![height=480, dashboard](https://docs.google.com/drawings/d/e/2PACX-1vThEcyEPO9SzCVYEpL0WCAZ4Ceou004nnlmlYci07FiQKklRLvgLDLilj0ipzY30cdp_NcBYhY0Jde7/pub?w=960&amp;h=720)
 
 ---
 
