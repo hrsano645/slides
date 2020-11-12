@@ -92,6 +92,7 @@ google.com ナレッジパネル ダッシュボード
 
 ### センサーノード🌡️
 
+[drag=25 80, drop=-2 10]
 
 ラズパイ + センサー:BME280 温度と湿度と気圧
 
@@ -100,6 +101,8 @@ google.com ナレッジパネル ダッシュボード
   
 ref: [Python & CircuitPython Test | Adafruit BME280 Humidity + Barometric Pressure + Temperature Sensor Breakout | Adafruit Learning System](https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/python-circuitpython-test)
 
+
+[drag=65 80, drop=5 10]
 
 ![sensor node](https://docs.google.com/drawings/d/e/2PACX-1vTYhZg5yz9pLjrt0OJQ87xG396d-8jKKyUwIAPZ2MMy9Nv3SgaTOINHsHpFXwocK1gXgcgxRkSwHP9Q/pub?w=960&amp;h=720)
 
