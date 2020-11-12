@@ -74,6 +74,8 @@ google.com ナレッジパネル ダッシュボード
 - 家の環境を数値で見れるとストレス減るのでは？
 - COVID19で家にいること多い=家の環境が気になる
 
+![height=320, alt=work_from_home_irasutoya](https://1.bp.blogspot.com/-jlHonWZdPp0/Xq5vQuVPQrI/AAAAAAABYtI/S0mjN1WK-wEJBBSS2M6xTEhEmVjM5mUwwCEwYBhgL/s1600/shigoto_zaitaku_cat_man.png)
+
 ---
 
 ### Why build Home Env Dashboard?
@@ -84,9 +86,9 @@ google.com ナレッジパネル ダッシュボード
 
 ---
 
-### システム紹介
+### システムの全体像
 
-![home env dashboard system image](https://docs.google.com/drawings/d/e/2PACX-1vQfSWRWP7uD7ffXyjrEStTYVhyFakLvQ0pREvuE8n5v0iceLlHyska3toXvUdRfhh7v_se6CTvm6DBO/pub?w=960&amp;h=720)
+![heigth=640, alt=home env dashboard system image](https://docs.google.com/drawings/d/e/2PACX-1vQfSWRWP7uD7ffXyjrEStTYVhyFakLvQ0pREvuE8n5v0iceLlHyska3toXvUdRfhh7v_se6CTvm6DBO/pub?w=960&amp;h=720)
 
 ---
 
@@ -94,14 +96,15 @@ google.com ナレッジパネル ダッシュボード
 
 ラズパイ + センサー:BME280 温度と湿度と気圧
 
-- センサーはシリアル通信規格を使うけど、中のデータを取り出すのにちょっと苦労する
+- センサーはシリアル通信規格でデータ取得: I2C, SPI
+  - データを取り出すのにちょっと苦労する
   - AdafruitのCircitPythonが提供するライブラリが使える
   
-ref: [Python & CircuitPython Test | Adafruit BME280 Humidity + Barometric Pressure + Temperature Sensor Breakout | Adafruit Learning System](https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/python-circuitpython-test)
+ref: [Adafruit BME280 Humidity + Barometric Pressure + Temperature Sensor Breakout](https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/python-circuitpython-test)
 
 ---
 
-![sensor node](https://docs.google.com/drawings/d/e/2PACX-1vTYhZg5yz9pLjrt0OJQ87xG396d-8jKKyUwIAPZ2MMy9Nv3SgaTOINHsHpFXwocK1gXgcgxRkSwHP9Q/pub?w=960&amp;h=720)
+![heigth=640, sensor node](https://docs.google.com/drawings/d/e/2PACX-1vTYhZg5yz9pLjrt0OJQ87xG396d-8jKKyUwIAPZ2MMy9Nv3SgaTOINHsHpFXwocK1gXgcgxRkSwHP9Q/pub?w=960&amp;h=720)
 
 ---
 
@@ -109,16 +112,18 @@ ref: [Python & CircuitPython Test | Adafruit BME280 Humidity + Barometric Pressu
 
 Google Sheetにため込んでます
 
-サービスアカウントで認証周りをしている。IoTなので鍵配布だけで連携できるのは楽でいい
+- 認証にはサービスアカウントを利用
+  - IoTなので鍵配布だけで連携できるのは楽でいい
+  
 ---
 
-![sensor_recode](./20201112_stapy_63/img/sensor_recode_gsheet.JPG)
+![heigth=640, sensor_recode](./20201112_stapy_63/img/sensor_recode_gsheet.JPG)
 
 ---
 
 ### ダッシュボード📉
 
-[Plotly Dash](https://dash.plotly.com/)で作る。
+[Plotly Dash](https://dash.plotly.com/)で作る
 
 - htmlを直接書かなくてもPythonのオブジェクトで操作、グラフもPlotlyをそのまま使う
 - コールバック機能で自動更新やドロップダウンリストからの変更もリアルタイム
@@ -127,7 +132,7 @@ Google Sheetにため込んでます
 
 ---
 
-![dashboard](https://docs.google.com/drawings/d/e/2PACX-1vThEcyEPO9SzCVYEpL0WCAZ4Ceou004nnlmlYci07FiQKklRLvgLDLilj0ipzY30cdp_NcBYhY0Jde7/pub?w=960&amp;h=720)
+![heigth=640, dashboard](https://docs.google.com/drawings/d/e/2PACX-1vThEcyEPO9SzCVYEpL0WCAZ4Ceou004nnlmlYci07FiQKklRLvgLDLilj0ipzY30cdp_NcBYhY0Jde7/pub?w=960&amp;h=720)
 
 ---
 
