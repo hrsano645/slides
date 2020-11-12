@@ -38,6 +38,11 @@ google.com ナレッジパネル ダッシュボード
 
 家環境ダッシュボードの紹介をします
 
+---
+
+百聞は一見にしかず
+
+いま動かしているものを紹介🧐
 
 ---
 
@@ -133,10 +138,6 @@ Google Sheetにため込んでます
 ---
 
 ![height=480, dashboard](https://docs.google.com/drawings/d/e/2PACX-1vThEcyEPO9SzCVYEpL0WCAZ4Ceou004nnlmlYci07FiQKklRLvgLDLilj0ipzY30cdp_NcBYhY0Jde7/pub?w=960&amp;h=720)
-
----
-
-いま動かしているものを紹介🧐
 
 ---
 
