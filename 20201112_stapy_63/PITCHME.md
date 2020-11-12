@@ -106,7 +106,6 @@ ref: [Python & CircuitPython Test | Adafruit BME280 Humidity + Barometric Pressu
 ---
 
 ### センサー情報記録📝
-[drag=50%, drop=left]
 
 Google Sheetにため込んでます
 
