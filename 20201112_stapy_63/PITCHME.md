@@ -69,13 +69,16 @@ google.com ナレッジパネル ダッシュボード
 
 ---
 
-### Why build Dashboard?
+### Why build Home Env Dashboard?
 
-- 家の環境ってもっと厳密に見れるとストレス減るのでは？
-- COVID19で家にいることが多すぎるのもあって、家の環境が気になってしょうがない
+- 家の環境を数値で見れるとストレス減るのでは？
+- COVID19で家にいること多い=家の環境が気になる
 
+---
 
-- 実家の祖母が98歳なんだけど、見守り的な意味でほしい
+### Why build Home Env Dashboard?
+
+- 実家の祖母が98歳で見守り的な意味も
 
 ![height=320,alt=granma_irasutoya](https://4.bp.blogspot.com/-E5SFXjWPayU/WR6ns-9naMI/AAAAAAABEVw/d2cE-VM_B_AnQp3PHoFIG8esHWmBB6YXgCLcB/s800/keirou_obaachan_smile2.png)
 
@@ -89,27 +92,35 @@ google.com ナレッジパネル ダッシュボード
 
 ### センサーノード🌡️
 
+[drop=left]
 ラズパイ + センサー:BME280 温度と湿度と気圧
 
 - センサーはシリアル通信規格を使うけど、中のデータを取り出すのにちょっと苦労する
-  - AdafruitのCircitPythonをラズパイで動かすことができる
-  - Adafruitが提供するライブラリが使える
-
+  - AdafruitのCircitPythonが提供するライブラリが使える
+  
 ref: [Python & CircuitPython Test | Adafruit BME280 Humidity + Barometric Pressure + Temperature Sensor Breakout | Adafruit Learning System](https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/python-circuitpython-test)
+
+[drop=rigth]
+
+
+![sensor node](https://docs.google.com/drawings/d/e/2PACX-1vTYhZg5yz9pLjrt0OJQ87xG396d-8jKKyUwIAPZ2MMy9Nv3SgaTOINHsHpFXwocK1gXgcgxRkSwHP9Q/pub?w=960&amp;h=720)
 
 ---
 
 ### センサー情報記録📝
+[drop=left]
 
 Google Sheetにため込んでます
 
 サービスアカウントで認証周りをしている。IoTなので鍵配布だけで連携できるのは楽でいい
 
-< 画像入れる: じっさいのシートのSS>
+[drop=rigth]
 
+![sensor_recode](./20201112_stapy_63/img/sensor_recode_gsheet.JPG)
 ---
 
 ### ダッシュボード📉
+[drop=left]
 
 [Plotly Dash](https://dash.plotly.com/)で作る。
 
@@ -117,6 +128,10 @@ Google Sheetにため込んでます
 - コールバック機能で自動更新やドロップダウンリストからの変更もリアルタイム
 
 データ入力はGoogle Sheet -> Pandas
+
+[drop=rigth]
+
+![dashboard](https://docs.google.com/drawings/d/e/2PACX-1vThEcyEPO9SzCVYEpL0WCAZ4Ceou004nnlmlYci07FiQKklRLvgLDLilj0ipzY30cdp_NcBYhY0Jde7/pub?w=960&amp;h=720)
 
 ---
 
