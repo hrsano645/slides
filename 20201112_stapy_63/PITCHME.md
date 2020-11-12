@@ -6,19 +6,11 @@
 
 ---
 
-### 唐突ですが
+### 唐突ですが皆さん
 
 ---
 
 ### ダッシュボードはお好きですか？
-
----
-
-google.com ナレッジパネル ダッシュボード
-
-![height=480, alt=自動車とかではなく](20201112_stapy_63/img/car_dashborad_by_googlesearch.png)
-
-これではなく
 
 ---
 
@@ -30,15 +22,11 @@ google.com ナレッジパネル ダッシュボード
 
 ダッシュボードかっこいい！😎
 
----
-
-作りたくなってきたので作りました！🔧🔨
+憧れていたので、作りました！🔧🔨
 
 ---
 
-家環境ダッシュボードの紹介をします
-
----
+家環境ダッシュボードの紹介です
 
 百聞は一見にしかず
 
@@ -52,7 +40,7 @@ google.com ナレッジパネル ダッシュボード
 - 🏠:静岡県の富士市🗻
 
 - Job💼
-  - [佐野設計事務所🚗⚙️📏🖊️](https://sano-design.info) 設計以外何でも屋
+  - [佐野設計事務所🚗⚙️📏🖊️](https://sano-design.info) IT/雑務何でも屋
   - 米農家🌾
 
 - Community🧑‍💻
@@ -74,8 +62,9 @@ google.com ナレッジパネル ダッシュボード
 
 ### Why build Home Env Dashboard?
 
-- 家の環境を数値で見れるとストレス減るのでは？
+
 - COVID19で家にいること多い=家の環境が気になる
+- 家の環境を数値で見れるとストレス減るのでは？
 
 ![height=320, alt=work_from_home_irasutoya](https://1.bp.blogspot.com/-jlHonWZdPp0/Xq5vQuVPQrI/AAAAAAABYtI/S0mjN1WK-wEJBBSS2M6xTEhEmVjM5mUwwCEwYBhgL/s1600/shigoto_zaitaku_cat_man.png)
 
