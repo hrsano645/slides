@@ -16,14 +16,14 @@
 
 google.com ナレッジパネル ダッシュボード
 
-![自動車とかではなく](20201112_stapy_63/img/car_dashborad_by_googlesearch.png)
+![height=480, alt=自動車とかではなく](20201112_stapy_63/img/car_dashborad_by_googlesearch.png)
 
 これではなく
 
 
 ---
 
-![デジタルのほう](20201112_stapy_63/img/degital_dashborad.png)
+![height=480, alt=デジタルのほう](20201112_stapy_63/img/degital_dashborad.png)
 
 こういうものとか
 
