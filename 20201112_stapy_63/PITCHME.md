@@ -16,7 +16,6 @@
 
 google.com ナレッジパネル ダッシュボード
 
-
 ![自動車とかではなく](20201112_stapy_63/img/car_dashborad_by_googlesearch.png)
 
 これではなく
@@ -25,6 +24,12 @@ google.com ナレッジパネル ダッシュボード
 ---
 
 ![デジタルのほう](20201112_stapy_63/img/degital_dashborad.png)
+
+こういうものとか
+
+---
+
+![height=480, alt=degital_dashboard](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Opsview_Monitor_6.0_Dashboard.jpg/800px-Opsview_Monitor_6.0_Dashboard.jpg)
 
 こういうもの
 
@@ -36,10 +41,10 @@ google.com ナレッジパネル ダッシュボード
 
 作りたくなってきたので作りました！🔧🔨
 
+---
 
 家環境ダッシュボードの紹介をします
 
-（名前がアレなのは気にしない）
 
 ---
 
@@ -97,12 +102,10 @@ google.com ナレッジパネル ダッシュボード
 ラズパイ + センサー:BME280 温度と湿度と気圧
 
 - センサーはシリアル通信規格でデータ取得: I2C, SPI
-  - データを取り出すのにちょっと苦労する
+  - データを取り出すのにちょっと苦労する🥺
   - AdafruitのCircitPythonが提供するライブラリが使える
 
-@size[0.5em]
-
-ref: [Adafruit BME280 Humidity + Barometric Pressure + Temperature Sensor Breakout](https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/python-circuitpython-test)
+@size[0.5em]ref: [Adafruit BME280 Humidity + Barometric Pressure + Temperature Sensor Breakout](https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/python-circuitpython-test)
 
 ---
 
@@ -144,9 +147,9 @@ Google Sheetにため込んでます
 
 ### まとめ🔚
 
-- 家の環境が見れるようになって、体調管理しやすくなったと思う
-- **ほかのセンサー（CO2）**とか、**防犯カメラ** が見れると面白そう
-- アラート系に対応: Dashだと有料になる💸
+- 家の環境が見れるようになって、体調管理しやすくなったと思う💪
+- **ほかのセンサー（CO2）**とか、**防犯カメラ📹** が見れると面白そう
+- アラート🚨に対応: Dashだと有料になる💸
 
 ---
 
@@ -158,5 +161,5 @@ Google Sheetにため込んでます
 
 ---
 
-### ダッシュボードはいいぞー
+## ダッシュボードはいいぞー🥳
 
