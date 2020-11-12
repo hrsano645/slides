@@ -20,13 +20,6 @@ google.com ナレッジパネル ダッシュボード
 
 これではなく
 
-
----
-
-![height=480, alt=デジタルのほう](20201112_stapy_63/img/degital_dashborad.png)
-
-こういうものとか
-
 ---
 
 ![height=480, alt=degital_dashboard](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Opsview_Monitor_6.0_Dashboard.jpg/800px-Opsview_Monitor_6.0_Dashboard.jpg)
@@ -35,7 +28,7 @@ google.com ナレッジパネル ダッシュボード
 
 ---
 
-ダッシュボードかっこいいよね！😎
+ダッシュボードかっこいい！😎
 
 ---
 
