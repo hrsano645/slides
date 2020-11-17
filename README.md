@@ -13,4 +13,4 @@
 - [みんなのPython勉強会#63 - connpass](https://startpython.connpass.com/event/192677/)
   - https://gitpitch.com/hrsano645/slides?p=20201112_stapy_63#/
 - [【オンライン】はんなりPython #34 python3.9を語る LT会 - connpass](https://hannari-python.connpass.com/event/191566/)
-  - https://gitpitch.com/hrsano645/slides?p=20201121_hannaripy#/
+  - https://gitpitch.com/hrsano645/slides?p=20201120_hannaripy#/
