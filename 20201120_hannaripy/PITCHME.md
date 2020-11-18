@@ -15,7 +15,7 @@
 ---
 
 
-<timezoneの画像>
+![timezone image by wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/World_Time_Zones_Map.png/640px-World_Time_Zones_Map.png)
 
 by wikipedia
 
