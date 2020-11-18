@@ -26,10 +26,11 @@ by wikipedia
 Python3.9でタイムゾーンを扱うなら`zoneinfo`便利
 
 ```python
->>> import zoneinfo
->>>
-
-
+>>> import datetime, zoneinfo
+>>> jst_tz_zoneinfo = zoneinfo.ZoneInfo("Asia/Tokyo")
+>>> datetime.datetime.now(tz=jst_tz_zoneinfo)
+datetime.datetime(2020, 11, 19, 7, 13, 21, 542591, 
+    tzinfo=zoneinfo.ZoneInfo(key='Asia/Tokyo'))
 ```
 
 
@@ -59,13 +60,13 @@ Python3.9でタイムゾーンを扱うなら`zoneinfo`便利
   
 ---
 
-Pythonのdatetimeとタイムゾーン
+Pythonのdatetimeモジュールとタイムゾーンの話
 
 nativeとawareの二つが肝
 
 ---
 
-例えば datetimeモジュールの`datetime.now()`
+例えば datetimeの`datetime.now()`
 
 ```python
 >>> import datetime
@@ -92,14 +93,15 @@ tzinfo属性というものがあって
 >>> jst_tz = datetime.timezone(datetime.timedelta(hours=9))
 >>> now_dt_tz = datetime.datetime.now(tz=jst_tz)
 >>> now_dt_tz
-datetime.datetime(2020, 11, 17, 20, 6, 25, 384788, tzinfo=datetime.timezone(datetime.timedelta(seconds=32400)))
+datetime.datetime(2020, 11, 17, 20, 6, 25, 384788, 
+    tzinfo=datetime.timezone(datetime.timedelta(seconds=32400)))
 >>> now_dt_tz.tzinfo
 datetime.timezone(datetime.timedelta(seconds=32400))
 ```
 
 ---
 
-ところで、nowすると、ちゃんとその時間になってない？
+ところでnow()すると、「ちゃんとした」時間になってますよね？
 
 ```python
 >>> import datetime
@@ -120,7 +122,7 @@ datetime.datetime(2020, 11, 17, 21, 6, 14, 227581)
 Tue Nov 17 21:06:29 UTC 2020
 ```
 
-結構紛らわしい¥
+結構紛らわしい
 
 ---
 
@@ -135,20 +137,27 @@ Tue Nov 17 21:06:29 UTC 2020
 ただ、外部から取り込んだ時刻情報を扱う時には気をつける
 
 - API経由で受け取ったり
-- ファイルにあるiso時間とか
+- ファイルに書かれている
 
 ---
 
 例えばiso時間
 
-フォーマット -> ``
+フォーマットはこれ
+
+`YYYY-MM-DD[*HH[:MM[:SS[.fff[fff]]]][+HH:MM[:SS[.ffffff]]]]`
+
+例: `2020-11-20 21:00:00.534500+09:00`
 
 ---
 
 pythonのdatetimeオブジェクトにしようとする
 
 ```python
-isoformat
+>>> iso_dt_str = '2020-11-20 21:00:00.534500+09:00'
+>>> datetime.datetime.fromisoformat(iso_dt_str)
+datetime.datetime(2020, 11, 20, 21, 0, 0, 534500, 
+    tzinfo=datetime.timezone(datetime.timedelta(seconds=32400)))
 ```
 
 timezone入ってる！
@@ -163,7 +172,8 @@ awareとnativeが混ざると比較演算するときに困る
 >>> dt_1
 datetime.datetime(2020, 11, 20, 21, 0)
 >>> dt_2
-datetime.datetime(2020, 11, 20, 21, 0, tzinfo=datetime.timezone(datetime.timedelta(seconds=32400)))
+datetime.datetime(2020, 11, 20, 21, 0, 
+    tzinfo=datetime.timezone(datetime.timedelta(seconds=32400)))
 >>> dt_1 == dt_2
 False
 ```
@@ -179,7 +189,7 @@ False
 
 ---
 
-ごせいちょうあ...
+ごせいちょうあ...👏
 
 ---
 
@@ -196,13 +206,13 @@ False
 
 ---
 
-よく見る"Asia/Tokyo"とか"JST" で指定したくなる
+よく見る「**Asia/Tokyo**」で指定したくなる
 
 ---
 
-3.8まではpytz, dateutil
+3.8まではpytz, dateutilを使う
 
-最近はdateutilがいいらしい
+最近はdateutilがいいらしいです
 
 ```bash
 pip install python-dateutil
@@ -210,10 +220,14 @@ pip install python-dateutil
 
 ---
 
-（dateutil）
+dateutilの例
 
 ```python
->>> 
+>>> import dateutil.tz
+>>> jst_tz_dateutil = dateutil.tz.gettz("Asia/Tokyo")
+>>> datetime.datetime.now(tz=jst_tz_dateutil)
+datetime.datetime(2020, 11, 19, 7, 10, 54, 935598, 
+    tzinfo=tzfile('/usr/share/zoneinfo/Asia/Tokyo'))
 ```
 
 ---
@@ -225,12 +239,18 @@ Winの場合はtzinfo（タイムゾーン名のデータベース）必須
 ```bash
 pip install tzinfo
 ```
+
 ---
 
-(zoneinfoの例)
+zoneinfoの例
 
 ```python
->>> 
+>>> import zoneinfo
+>>> jst_tz_zoneinfo = zoneinfo.ZoneInfo("Asia/Tokyo")
+>>> datetime.datetime.now(tz=jst_tz_zoneinfo)
+datetime.datetime(2020, 11, 19, 7, 13, 21, 542591, 
+    tzinfo=zoneinfo.ZoneInfo(key='Asia/Tokyo'))
+>>>
 ```
 
 ---
@@ -240,13 +260,13 @@ pip install tzinfo
 - タイムゾーン意識したdatetimeを使おう
 - Python3.9でタイムゾーンを扱うならzoneinfo便利
   - Winはtzinfoが必要
-- 3.8以下ならdateutilを使うといいです（日本）
+- 3.8以下ならdateutilを使うといいです
 
 ---
 
 ---
 
-おまけ
+### おまけ🍬
 
 ---
 
@@ -254,3 +274,35 @@ pip install tzinfo
 
 time.tznameで見れる
 
+---
+
+#### おまけ2: datetimeでタイムゾーン設定できるオブジェクトは？
+
+- datetime
+- time
+
+時刻の操作になるので、dateオブジェクトはしません
+
+---
+
+#### おまけ3: dateutilとzoneinfoのタイムゾーンのオブジェクト
+
+Q: dateutil.tzのtzfileとzoneinfoのZoneInfoはどんなオブジェクト？
+
+A: どちらもdatetime.tzinfoクラスのサブクラスで、
+設定できるtz属性はtzinfoを基底のクラスにしないといけない
+
+```
+>>> issubclass(dateutil.tz.tzfile, datetime.tzinfo)
+True
+>>> issubclass(zoneinfo.ZoneInfo, datetime.tzinfo)
+True
+```
+
+---
+
+#### See olso
+
+- [datetime — Basic date and time types &#8212; Python 3.9.0 documentation](https://docs.python.org/3/library/datetime.html)
+- [Python 3.9の新機能 - python.jp](https://www.python.jp/pages/python3.9.html#zoneinfo%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB)
+- [tz &mdash; dateutil 2.8.1 documentation](https://dateutil.readthedocs.io/en/stable/tz.html)
