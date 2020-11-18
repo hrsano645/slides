@@ -200,21 +200,38 @@ False
 
 ---
 
-3.8までは、たいていはpytz, dateutil
+3.8まではpytz, dateutil
 
 最近はdateutilがいいらしい
 
+```bash
+pip install python-dateutil
+```
+
 ---
 
-（dateutils）
+（dateutil）
+
+```python
+>>> 
+```
 
 ---
 
 python3.9ならzoneinfoでやりましょう
 
+Winの場合はtzinfo（タイムゾーン名のデータベース）必須
+
+```bash
+pip install tzinfo
+```
 ---
 
 (zoneinfoの例)
+
+```python
+>>> 
+```
 
 ---
 
@@ -224,3 +241,16 @@ python3.9ならzoneinfoでやりましょう
 - Python3.9でタイムゾーンを扱うならzoneinfo便利
   - Winはtzinfoが必要
 - 3.8以下ならdateutilを使うといいです（日本）
+
+---
+
+---
+
+おまけ
+
+---
+
+#### おまけ1: システムのタイムゾーンを見る
+
+time.tznameで見れる
+
