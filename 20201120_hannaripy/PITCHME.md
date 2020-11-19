@@ -14,12 +14,9 @@
 
 ---
 
-
 ![timezone image by wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/World_Time_Zones_Map.png/640px-World_Time_Zones_Map.png)
 
 by wikipedia
-
-
 
 ---
 
@@ -33,10 +30,13 @@ datetime.datetime(2020, 11, 19, 7, 13, 21, 542591,
     tzinfo=zoneinfo.ZoneInfo(key='Asia/Tokyo'))
 ```
 
+---
+
+ご静聴ありが…🙇‍♂️
 
 ---
 
-ご静聴ありがとうご…🙇‍♂️
+（これで終わりでもいいけど、30秒だとさすがにまずい）
 
 ---
 
@@ -60,13 +60,15 @@ datetime.datetime(2020, 11, 19, 7, 13, 21, 542591,
   
 ---
 
-Pythonのdatetimeモジュールとタイムゾーンの話
+zoneinfoの前にPythonとタイムゾーンの話
+
+---
 
 nativeとawareの二つが肝
 
 ---
 
-例えば datetimeの`datetime.now()`
++datetimeの`datetime.now()`
 
 ```python
 >>> import datetime
@@ -81,14 +83,14 @@ Q:これにはタイムゾーンがあるのかないのか
 
 A:`datetime.datetime.now()`「では」タイムゾーン入らない。
 
-tzinfo属性というものがあって
+生成されたオブジェクトにはtzinfo属性があって
 
 - tzinfoがない場合->native
 - tzinfoがある場合->aware
 
 ---
 
-正確にはtz属性でタイムゾーンを指定する必要がある
+正確にはtz引数でタイムゾーンを指定する必要がある
 ```python
 >>> jst_tz = datetime.timezone(datetime.timedelta(hours=9))
 >>> now_dt_tz = datetime.datetime.now(tz=jst_tz)
@@ -190,6 +192,10 @@ False
 ---
 
 ごせいちょうあ...👏
+
+---
+
+まだzoneinfo説明してない
 
 ---
 
