@@ -64,11 +64,13 @@ zoneinfoの前にPythonとタイムゾーンの話
 
 ---
 
-nativeとawareの二つが肝
+nativeとawareの2つが肝心
+
+（公式ドキュメントによく出る）
 
 ---
 
-+datetimeの`datetime.now()`
+datetimeモジュールの`datetime.now()`
 
 ```python
 >>> import datetime
@@ -77,26 +79,32 @@ nativeとawareの二つが肝
 
 ---
 
-Q:これにはタイムゾーンがあるのかないのか
+Q: これにはタイムゾーンがある？ない？
 
 ---
 
-A:`datetime.datetime.now()`「では」タイムゾーン入らない。
-
-生成されたオブジェクトにはtzinfo属性があって
-
-- tzinfoがない場合->native
-- tzinfoがある場合->aware
+A: `datetime.datetime.now()`「では」タイムゾーン入らない。
 
 ---
 
-正確にはtz引数でタイムゾーンを指定する必要がある
+tz引数でタイムゾーンを指定する必要がある
+
 ```python
 >>> jst_tz = datetime.timezone(datetime.timedelta(hours=9))
 >>> now_dt_tz = datetime.datetime.now(tz=jst_tz)
 >>> now_dt_tz
 datetime.datetime(2020, 11, 17, 20, 6, 25, 384788, 
     tzinfo=datetime.timezone(datetime.timedelta(seconds=32400)))
+```
+
+---
+
+生成されたdatetimeオブジェクトにはtzinfo属性があって
+
+- tzinfoがない場合->native
+- tzinfoがある場合->aware
+
+```python
 >>> now_dt_tz.tzinfo
 datetime.timezone(datetime.timedelta(seconds=32400))
 ```
@@ -153,7 +161,7 @@ Tue Nov 17 21:06:29 UTC 2020
 
 ---
 
-pythonのdatetimeオブジェクトにしようとする
+pythonのdatetimeオブジェクトすると
 
 ```python
 >>> iso_dt_str = '2020-11-20 21:00:00.534500+09:00'
@@ -185,7 +193,7 @@ False
 ### まとめ
 
 - タイムゾーンを意識したdatetime
-- 特に外部からの日付情報はtimezoneがあることを前提に
+- とくに外部からの日付情報はtimezoneがあることを前提に
 
 時刻を扱う場合はタイムゾーン前提の設計にしよう
 
@@ -199,12 +207,15 @@ False
 
 ---
 
-タイムゾーン設定はtimedeltaを使わないといけない
+タイムゾーン設定はtimezoneとtimedeltaを使わないといけない
+
+時間の指定も覚えていないといけない
 
 ```python
 >>> jst_tz = datetime.timezone(datetime.timedelta(hours=9))
 >>> now_dt_tz = datetime.datetime.now(tz=jst_tz)
 ```
+
 
 ---
 
