@@ -306,8 +306,16 @@ time.tznameで見れる
 
 Q: dateutil.tzのtzfileとzoneinfoのZoneInfoはどんなオブジェクト？
 
-A: どちらもdatetime.tzinfoクラスのサブクラスで、
-設定できるtz属性はtzinfoを基底のクラスにしないといけない
+- `tzfile('/usr/share/zoneinfo/Asia/Tokyo')`とか
+- `zoneinfo.ZoneInfo(key='Asia/Tokyo')` とか
+
+---
+
+#### おまけ3: dateutilとzoneinfoのタイムゾーンのオブジェクト
+
+A: どちらもdatetime.tzinfoの基底にしたクラス
+
+tz属性にはdatetime.tzinfoを基底にしたクラスが必須
 
 ```
 >>> issubclass(dateutil.tz.tzfile, datetime.tzinfo)
