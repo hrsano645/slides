@@ -302,7 +302,7 @@ time.tznameで見れる
 
 ---
 
-#### おまけ3: dateutilとzoneinfoのタイムゾーンのオブジェクト
+#### おまけ3: dateutilとzoneinfoのオブジェクト
 
 Q: dateutil.tzのtzfileとzoneinfoのZoneInfoはどんなオブジェクト？
 
@@ -311,7 +311,7 @@ Q: dateutil.tzのtzfileとzoneinfoのZoneInfoはどんなオブジェクト？
 
 ---
 
-#### おまけ3: dateutilとzoneinfoのタイムゾーンのオブジェクト
+#### おまけ3: dateutilとzoneinfoのオブジェクト
 
 A: どちらもdatetime.tzinfoの基底にしたクラス
 
