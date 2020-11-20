@@ -332,7 +332,7 @@ True
 
 ---
 
-#### See olso
+#### 参考
 
 - [datetime — Basic date and time types &#8212; Python 3.9.0 documentation](https://docs.python.org/3/library/datetime.html)
 - [Python 3.9の新機能 - python.jp](https://www.python.jp/pages/python3.9.html#zoneinfo%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB)
