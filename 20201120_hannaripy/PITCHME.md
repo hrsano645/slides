@@ -56,11 +56,17 @@ datetime.datetime(2020, 11, 19, 7, 13, 21, 542591,
 
 ---
 
-<pysurugaの宣伝>
+11/28にPython駿河勉強会やります
+
+[[オン/オフライン同時]Python駿河 勉強会 #19 ～イベント振り返り会/OSCライブビュー～ - connpass](https://py-suruga.connpass.com/event/192889/)
   
 ---
 
-zoneinfoの前にPythonとタイムゾーンの話
+本題のzoneinfo
+
+---
+
+の前にPythonとタイムゾーンの話
 
 ---
 
