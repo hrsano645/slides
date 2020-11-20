@@ -70,7 +70,7 @@ datetime.datetime(2020, 11, 19, 7, 13, 21, 542591,
 
 ---
 
-nativeとawareの2つが肝心
+naiveとawareの2つが肝心
 
 （公式ドキュメントによく出る）
 
@@ -107,7 +107,7 @@ datetime.datetime(2020, 11, 17, 20, 6, 25, 384788,
 
 生成されたdatetimeオブジェクトにはtzinfo属性があって
 
-- tzinfoがない場合->native
+- tzinfoがない場合->naive
 - tzinfoがある場合->aware
 
 ```python
@@ -127,7 +127,7 @@ datetime.datetime(2020, 11, 17, 21, 6, 14, 227581)
 
 ---
 
-現在のローカル時間（PCの時間）がnativeで出てくる
+現在のローカル時間（PCの時間）がnaiveで出てくる
 
 ```python
 >>> import datetime
@@ -180,7 +180,7 @@ timezone入ってる！
 
 ---
 
-awareとnativeが混ざると比較演算するときに困る
+awareとnaiveが混ざると比較演算するときに困る
 
 ```python
 >>> dt_1 = datetime.datetime(2020,11,20,21,00,0,0)
