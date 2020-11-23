@@ -4,9 +4,9 @@
 - 🏠:静岡県の富士市🗻
 
 - Job💼
-  - [佐野設計事務所🚗⚙️📏🖊️](https://sano-design.info) 設計以外何でも屋
+  - [佐野設計事務所🚗⚙️📏🖊️](https://sano-design.info) 
+    - 自動車系機械の3D設計事務所 IT/雑務何でも屋
   - 米農家🌾
-
 - Community🧑‍💻
   - 🗻🐍: shizuoka.py, unagi.py, Python駿河
   - 🗻🐍: PyCon mini Shizuokaスタッフ
