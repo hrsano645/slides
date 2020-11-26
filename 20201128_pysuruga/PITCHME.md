@@ -184,7 +184,7 @@ CfP募集で使ったツール
 ### チケット販売
 
 - Connpassで有料チケットを販売することに
-- 色々とおそわる👀
+- 色々と教わる👀
   - PyCon JP 2019の地域コミュニティの集まり
   - PyCon JP Slackの#event-community
 
