@@ -580,6 +580,7 @@ PyCon JPスタッフより一報
   - 公開しながら作業
 - 実装環境とかはチュートリアルドキュメント見てね
 
+[github: py-suruga/pycon-jp-2020-tutorial](https://github.com/py-suruga/pycon-jp-2020-tutorial)
 +++
 
 ### コンテンツの内容
