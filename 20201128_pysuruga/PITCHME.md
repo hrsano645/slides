@@ -113,7 +113,7 @@
 
 +++
 
-### Call of Paper
+### Call for Paper
 
 CfP募集で使ったツール
 
