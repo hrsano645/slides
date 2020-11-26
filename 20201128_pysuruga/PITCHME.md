@@ -80,7 +80,7 @@
 
 +++
 
-![online meething](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27 060604.png)
+![online meething](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_060604.png)
 
 +++
 
@@ -95,7 +95,7 @@
 
 ### サイト作成
 
-![サイトイメージ](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27 054315.png)
+![サイトイメージ](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_054315.png)
 
 +++
 
@@ -160,7 +160,7 @@ CfP募集で使ったツール
 
 +++
 
-![レビュー様子](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27 055152.png)
+![レビュー様子](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_055152.png)
 
 レビューの様子
 
@@ -221,7 +221,7 @@ COVID19の話の前から一応検討 -> 契約
 
 +++
 
-![写真イメージを乗せる:契約書の一部](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27 055752.png)
+![写真イメージを乗せる:契約書の一部](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_055752.png)
 
 今回は感染症の影響のため結局は使うことがなかったけど、プロセスを学べたのはよかった
 
@@ -239,7 +239,7 @@ COVID19の話の前から一応検討 -> 契約
 
 +++
 
-![予算管理の様子](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27 060043.png)
+![予算管理の様子](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_060043.png)
 
 ---
 
@@ -261,14 +261,14 @@ COVID19の話の前から一応検討 -> 契約
 
 ### Twitterでの様子
 
-![進捗1](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27 062758.png)
+![進捗1](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_062758.png)
 
 +++
 
 ### Twitterでの様子
 
 
-![進捗2](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27 062826.png)
+![進捗2](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_062826.png)
 
 イベントの進捗様子も伝える
 
@@ -276,7 +276,7 @@ COVID19の話の前から一応検討 -> 契約
 
 ### Twitterでの様子
 
-![b7さんによる](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27 062651.png)
+![b7さんによる](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_062651.png)
 
 +++
 
@@ -290,13 +290,13 @@ PyCon JP方面や参加者皆さんでハッシュタグ使ってもらえてる
 
 ### 勉強会で広報
 
-![stapy](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27 062627.png)
+![stapy](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_062627.png)
 
 stapyで広報
 
 +++
 
-![shizuokajsで](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27 062717.png)
+![shizuokajsで](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_062717.png)
 
 静岡の勉強会でも
 
