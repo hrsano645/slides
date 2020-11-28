@@ -661,15 +661,18 @@ mini Shizuokaの反省を元に~~沼に落ちる~~機材を買う
 
 ![ブログの画像](./20201128_pysuruga/img/pysuruga/pycon_jp_tutorial_2020-11-28_114704.png)
 
-[PyCon JP Blog: PyCon JP 2020 チュートリアル振り返りインタビュー【Slack Bot編】](https://pyconjp.blogspot.com/2020/09/pycon-jp-2020-slack-bot.html)
++++
+
+アンケート
+
+![アンケート結果の画像](./20201128_pysuruga/img/pysuruga/pycon_jp_tutorial_2020-11-28_115002.png)
 
 +++
 
-アンケートも
+
+[PyCon JP Blog: PyCon JP 2020 チュートリアル振り返りインタビュー【Slack Bot編】](https://pyconjp.blogspot.com/2020/09/pycon-jp-2020-slack-bot.html)
 
 [PyCon JP Blog: PyCon JP 2020 チュートリアルアンケート結果](https://pyconjp.blogspot.com/2020/10/pycon-jp-2020_16.html)
-
-![アンケート結果の画像](./20201128_pysuruga/img/pysuruga/pycon_jp_tutorial_2020-11-28_115002.png)
 
 - アンケートの印象は概ね良かったらしい。
 - pytest微妙だったって話は作った本人も同意
@@ -690,7 +693,7 @@ mini Shizuokaの反省を元に~~沼に落ちる~~機材を買う
 
 ![瀬良さんからのメンション](./20201128_pysuruga/img/pysuruga/pycon_jp_tutorial_2020-11-28_120236.png)
 
-Slackの中の人にこういってもらえた。書籍化かあ🤔
+Slackの中の人にこういってもらえた。書籍化…😳
 
 ---
 
