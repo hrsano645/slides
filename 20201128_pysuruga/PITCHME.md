@@ -548,7 +548,7 @@ PyCon JPスタッフより一報
 
 マサカリ投げられてしまう…
 
-![マサカリ金太郎 by いらすとや](./20201128_pysurugaimg/pysuruga/monogatari_kintarou_kuma.png)
+![マサカリ金太郎 by いらすとや](./20201128_pysuruga/img/pysuruga/monogatari_kintarou_kuma.png)
 
 
 +++
@@ -635,7 +635,7 @@ mini Shizuokaの反省を元に~~沼に落ちる~~機材を買う
 
 +++
 
-![文字起こし](./20201128_pysurugaimg/pysuruga/IMG_20200908_195007.jpg)
+![文字起こし](./20201128_pysuruga/img/pysuruga/IMG_20200908_195007.jpg)
 
 自動文字起こしで画面を見る方向けに喋りの不明瞭を解決できる？
 
@@ -645,7 +645,7 @@ mini Shizuokaの反省を元に~~沼に落ちる~~機材を買う
 
 +++
 
-![静岡銘菓](./20201128_pysuruga\img\pysuruga\pycon_jp_tutorial_2020-11-28_115500.png)
+![静岡銘菓](./20201128_pysuruga/img/pysuruga/pycon_jp_tutorial_2020-11-28_115500.png)
 
 静岡銘菓を紹介。
 
@@ -659,7 +659,7 @@ mini Shizuokaの反省を元に~~沼に落ちる~~機材を買う
 
 インタビュー受けたり
 
-![ブログの画像](./20201128_pysurugaimg/pysuruga/pycon_jp_tutorial_2020-11-28_114704.png)
+![ブログの画像](./20201128_pysuruga/img/pysuruga/pycon_jp_tutorial_2020-11-28_114704.png)
 
 [PyCon JP Blog: PyCon JP 2020 チュートリアル振り返りインタビュー【Slack Bot編】](https://pyconjp.blogspot.com/2020/09/pycon-jp-2020-slack-bot.html)
 
@@ -669,7 +669,7 @@ mini Shizuokaの反省を元に~~沼に落ちる~~機材を買う
 
 [PyCon JP Blog: PyCon JP 2020 チュートリアルアンケート結果](https://pyconjp.blogspot.com/2020/10/pycon-jp-2020_16.html)
 
-![アンケート結果の画像](./20201128_pysurugaimg/pysuruga/pycon_jp_tutorial_2020-11-28_115002.png)
+![アンケート結果の画像](./20201128_pysuruga/img/pysuruga/pycon_jp_tutorial_2020-11-28_115002.png)
 
 - アンケートの印象は概ね良かったらしい。
 - pytest微妙だったって話は作った本人も同意
