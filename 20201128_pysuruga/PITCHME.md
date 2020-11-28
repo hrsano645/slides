@@ -613,7 +613,7 @@ mini Shizuokaの反省を元に~~沼に落ちる~~機材を買う
 - Webカメラ
 - グリーンスクリーン
 
----
++++
 
 ![機材沼](/20201128_pysuruga/img/pysuruga/pycon_jp_tutorial_2020-11-28_115850.png)
 
