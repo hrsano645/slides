@@ -29,7 +29,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 (.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_x86_numpy % 
 ```
 
-## python3.8.2/ rosseta / numpy 1.15.9
+## python3.8.2/ rosseta / numpy 1.19.5
 
 ```
 hiroshi@hrsano645noMacBook-Air(x86_64) test_x86_py38_numpy % /usr/bin/python3 --version
@@ -150,4 +150,28 @@ drwxr-xr-x   7 hiroshi  staff  224  1 14 14:23 .env
 (.env) hiroshi@hrsano645noMacBook-Air(arm64) tf-mac % python ./numpy_speed.py
 20.638553142547607
 (.env) hiroshi@hrsano645noMacBook-Air(arm64) tf-mac % 
+```
+
+## python3.9.0 / Ryzen7 5800X / 
+
+``` 
+(.env) PS C:\Users\hiroshi\Documents\workspace\personal\test_ryzen_x86> python --version
+Python 3.9.0
+Package    Version
+numpy      1.19.5
+setuptools 49.2.1
+(.env) PS C:\Users\hiroshi\Documents\workspace\personal\test_ryzen_x86> python .\numpy_speed.py
+Traceback (most recent call last):
+  File "C:\Users\hiroshi\Documents\workspace\personal\test_ryzen_x86\numpy_speed.py", line 16, in <module>
+    np.dot(arr[k], arr[j])
+  File "<__array_function__ internals>", line 5, in dot
+KeyboardInterrupt
+(.env) PS C:\Users\hiroshi\Documents\workspace\personal\test_ryzen_x86> python --version
+Python 3.9.0
+(.env) PS C:\Users\hiroshi\Documents\workspace\personal\test_ryzen_x86> python .\numpy_speed.py
+308.8210823535919
+(.env) PS C:\Users\hiroshi\Documents\workspace\personal\test_ryzen_x86> python .\numpy_speed.py
+
+# TODO:2021-01-14 遅すぎたので中断した。
+# winのnumpy遅すぎる問題があったかもしれないので追試必要かも。
 ```
