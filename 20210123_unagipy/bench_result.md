@@ -4,29 +4,29 @@
 ## python3.9.1 / rosseta / numpy 1.19.5
 
 ```
-(.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_x84_numpy % pip list
+(.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_x86_numpy % pip list
 Package    Version
 ---------- -------
 numpy      1.19.5
 pip        20.3.3
 setuptools 49.2.1
-(.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_x84_numpy % python                 
+(.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_x86_numpy % python                 
 Python 3.9.1 (v3.9.1:1e5d33e9b9, Dec  7 2020, 12:44:01) 
 [Clang 12.0.0 (clang-1200.0.32.27)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import numpy
 >>> exit()
-(.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_x84_numpy % python ./numpy_speed.py 
+(.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_x86_numpy % python ./numpy_speed.py 
 53.73243689537048
-(.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_x84_numpy % python ./numpy_speed.py
+(.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_x86_numpy % python ./numpy_speed.py
 50.61187505722046
-(.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_x84_numpy % python ./numpy_speed.py
+(.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_x86_numpy % python ./numpy_speed.py
 48.99569892883301
-(.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_x84_numpy % python ./numpy_speed.py
+(.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_x86_numpy % python ./numpy_speed.py
 43.72466516494751
-(.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_x84_numpy % python ./numpy_speed.py
+(.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_x86_numpy % python ./numpy_speed.py
 40.71826505661011
-(.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_x84_numpy % 
+(.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_x86_numpy % 
 ```
 
 ## python3.8.2/ rosseta / numpy 1.15.9
