@@ -171,6 +171,8 @@ Python 3.9.0
 (.env) PS C:\Users\hiroshi\Documents\workspace\personal\test_ryzen_x86> python .\numpy_speed.py
 308.8210823535919
 (.env) PS C:\Users\hiroshi\Documents\workspace\personal\test_ryzen_x86> python .\numpy_speed.py
+306.63446831703186
+(.env) PS C:\Users\hiroshi\Documents\workspace\personal\test_ryzen_x86>
 
 # TODO:2021-01-14 遅すぎたので中断した。
 # winのnumpy遅すぎる問題があったかもしれないので追試必要かも。
