@@ -283,21 +283,37 @@ Successfully installed numpy-1.19.5
 
 ## Rossetaモードでnumpyベンチマークしてみる
 
-提供: o-ishiさん
+提供: [オーイシさん (@oec014)](https://twitter.com/oec014)さん
 
 比較対象は
 
 - Ryzen 5800X / メモリ32GB
-- M1 Mac:python3.8.2 Rossetaモード
+- M1 Mac:python3.9.1 Rossetaモード
+- M1 Mac:Python3.8.2 armネイティブ
+  - tensorflow-macosのnumpy利用
   
 ---
 
 ## Rossetaモードでnumpyベンチマーク 結果
 
 
+
+---
+
+# 所感
+
+- arm nativeやばい（震え
+- rossetaが振るわないのがCPUのトランスコードの問題なのか、メモリなのかは不明
+  - CPUはベンチ回している間、各コアは90%は超えていたがずっと
+  100%ではなかった。その辺なる
+
+armネイティブ環境は夢がある
+
 ---
 
 気になったら今すぐ買おう！💸
+
+（いやMac Pro待ったほうがいいかもだけど）
 
 ---
 
