@@ -66,11 +66,50 @@ footer: "by [@hrs_sano645](https://twitter.com/hrs_sano645)"
 
 ---
 
+## おすすめ理由: 処理早い
 
+- OS自体の挙動も早い
+- Intelバイナリの変換（Rosseta）をしてもほとんど遅いと感じない
+  - アプリの初回起動のバイナリ変換にもたつくけどそれ以降は至って普通
+  - ほとんど多くのアプリをRossetaモードで使ってるけど不具合らしい喪に当たってない
+- 4K動画回しながら普通に作業していても気にならない
+- しかも不安定さも感じない
+  - Apple初物感が全くない
 
 ---
 
-気になったら今すぐ買おう！💸
+## おすすめ理由: バッテリー持ち
+
+ブラウザたくさん開いて作業していても二日ぐらいバッテリーが持ってしまう
+
+- Chrome系ブラウザのタブを多数開いても
+- Yotuube垂れ流ししていても
+
+Web系の開発の方は
+
+---
+
+## おすすめ理由: ファンレス / ファンがほぼ回らない
+
+- Macbook Airはファンレス。よほどのことをしない限り熱を持たない
+- Mac mini , Macbook Proはファン搭載だけど、いろんなレビューでもファンがほぼ回らないらしい
+
+そのほか、Macbook Airだとキーボードもシザーに戻って~~Touchbarもないので~~非常に快適
+
+---
+
+## まだこれから部分
+
+- armネイティブのアプリが出揃うのはこれから
+- 夏場はよくわからない（冬場だから熱くないのかも？
+
+---
+
+## 正直悪い要素がないので、気になったら買いです
+
+---
+
+# 気になったら今すぐ買おう！💸
 
 (mac miniはもっと安いので、そっちもおすすめ)
 
@@ -78,7 +117,7 @@ footer: "by [@hrs_sano645](https://twitter.com/hrs_sano645)"
 
 ## M1 Macめちゃくちゃ快t...
 
-冬場は冷えたアルミの板
+冬場は冷えたアルミの板…🥶
 
 ---
 
@@ -93,7 +132,7 @@ macOS BugSurにはPythonは標準で入ってない
 - XCode or Command line tools 必須
   - -> Command line toolsを入れることでPython3.8のUniversal Binaryが入ります
 - 3.9は最新版でUniversal Binary対応（3.9.1）
-- それ意外のバージョン(2.7はCommand Line toolsに入ってる)はx86バイナリが使えるはず（そもそも使わない）
+- それ意外のバージョン(2.7はCommand Line toolsに入ってる)はx86バイナリが使えるはず（そもそも使わない🤔）
 
 ---
 
@@ -285,18 +324,24 @@ Successfully installed numpy-1.19.5
 
 提供: [オーイシさん (@oec014)](https://twitter.com/oec014)さん
 
+ベンチ内容: numpyの内積計算のループ
+
 比較対象は
 
-- Ryzen 5800X / メモリ32GB
-- M1 Mac:python3.9.1 Rossetaモード
-- M1 Mac:Python3.8.2 armネイティブ
+- Python3.8.2 / rosseta / numpy 1.19.5
+- Python3.8.2 / arm native / tfmac numpy
   - tensorflow-macosのnumpy利用
+- Python3.9.0 / Ryzen7 5800X / numpy 1.19.5
   
 ---
 
 ## Rossetaモードでnumpyベンチマーク 結果
 
-
+|環境|ベンチ結果: ５回測定/最小値 (s)|
+|---|---|
+|Python3.8.2 / rosseta / numpy 1.19.5|38.50|
+|Python3.8.2 / arm native / tfmac include numpy 1.18.5|20.62|
+|Python3.9.0 / Ryzen7 5800X / numpy 1.19.5|306.63|
 
 ---
 
@@ -309,9 +354,11 @@ Successfully installed numpy-1.19.5
 
 armネイティブ環境は夢がある
 
+Ryzenが振るわない理由は最適化されていないかも（pypiのnumpyだから？）
+
 ---
 
-気になったら今すぐ買おう！💸
+# 気になったら今すぐ買おう！💸
 
 （いやMac Pro待ったほうがいいかもだけど）
 
@@ -324,14 +371,18 @@ armネイティブ環境は夢がある
 ## tensorflow-macosがある
 
 - Appleが専用のビルドをしたものを公開
-  - 
-- numpyもビルドずみ: armネイティブでビルドさせようとしてもできなかった
-- pandasは入ってないらしい。
+  - [apple/tensorflow_macos: TensorFlow for macOS 11.0+ accelerated using Apple's ML Compute framework.](https://github.com/apple/tensorflow_macos)
+- numpyもビルド済み
+  - PyPI側からarmネイティブでビルドしてみたけど動かず
+- pandasは入ってないらしい
+
+---
+
 
 
 ---
 
-からあげ先生のAI本のコードを試す
+## からあげ先生のAI本のコードを試す
 
 ---
 
@@ -347,7 +398,7 @@ armネイティブ環境は夢がある
 
 ---
 
-気になったら今すぐ買おう！💸
+# 気になったら今すぐ買おう！💸
 
 ただ冬場は冷たいです
 

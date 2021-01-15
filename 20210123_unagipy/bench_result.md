@@ -1,6 +1,7 @@
 
 # unagipy m1 mac bench
 
+<!-- 
 ## python3.9.1 / rosseta / numpy 1.19.5
 
 ```
@@ -27,7 +28,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 (.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_x86_numpy % python ./numpy_speed.py
 40.71826505661011
 (.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_x86_numpy % 
-```
+``` -->
 
 ## python3.8.2/ rosseta / numpy 1.19.5
 
@@ -152,7 +153,7 @@ drwxr-xr-x   7 hiroshi  staff  224  1 14 14:23 .env
 (.env) hiroshi@hrsano645noMacBook-Air(arm64) tf-mac % 
 ```
 
-## python3.9.0 / Ryzen7 5800X / 
+## python3.9.0 / Ryzen7 5800X / numpy 1.19.5
 
 ``` 
 (.env) PS C:\Users\hiroshi\Documents\workspace\personal\test_ryzen_x86> python --version
