@@ -127,7 +127,7 @@ Web系の開発の方は
 
 ## Pythonのインストール
 
-macOS BugSurにはPythonは標準で入ってない
+macOS Bug SurにはPythonは標準で入ってない
 
 - XCode or Command line tools 必須
   - -> Command line toolsを入れることでPython3.8のUniversal Binaryが入ります
@@ -174,19 +174,19 @@ x86_64 arm64
 
 ---
 
-## ターミナル(zsh)でどう動くか
+## ターミナルでは(zsh)でどう動くか
 
-- Bug Sur標準のzsh（デフォルトターミナル）はユニバーサルバイナリ
-  - ターミナルアプリでRossetaモードを起動させるか設定で変更可能
+- Bug Sur標準のzsh（デフォルトのシェル）はユニバーサルバイナリ
 - ターミナル上で起動するコマンドはターミナルのアーキテクチャに従う（らしい
-- サードパーティのターミナルアプリでは利用しているバイナリの種類で決定するらしい
+  - ユニバーサルバイナリのアプリはアプリの右クリックから見れる `情報を見る` からRossetaモードを起動させるか設定で変更可能
+- サードパーティのターミナルアプリでも利用しているバイナリの種類で起動する
   - 例: x86のVS Codeからターミナル起動 -> x86のzshが起動
 
 ---
 
-## ターミナル(zsh)でどう動くか
+## ターミナルでは(zsh)でどう動くか
 
-ターミナルがどのアーキテクチャで動いているかを確認するには`uname-m` or `arch`コマンドが良い。
+ターミナルのシェルがどのアーキテクチャで動いているかを確認するには`uname　-m` or `arch`コマンドが良い。
 
 ```
 % arch
@@ -195,9 +195,17 @@ i386
 x86_64
 ```
 
+```
+# armのzsh
+(arm64) % arch
+arm64
+(arm64) % uname -m
+arm64
+```
+
 ---
 
-## ターミナル(zsh)でどう動くか
+## ターミナルでは(zsh)でどう動くか
 
 archコマンドを使ってzshのプロンプトカスタマイズするとさらにわかりやすい
 
@@ -208,6 +216,17 @@ export PROMPT="%n@%m(`uname -m`) %1~ %## "
 ## sourceコマンドで読み込む
 hiroshi@hrsano645noMacBook-Air slides % source ~/zshrc
 hiroshi@hrsano645noMacBook-Air(x86_64) slides % 
+```
+
+---
+
+## ターミナルでは(zsh)でどう動くか
+
+ターミナルで別のアーキテクチャのzshを動かしたい時は、archコマンドを使う
+
+```
+(x86_64) % arch -arm64e zsh # ここまでx86
+(arm64) %  # <- ここからarmのzshで動く
 ```
 
 ---
@@ -300,7 +319,6 @@ Web開発ぐらいなら問題なく使えると思います。
 
 ## Rossetaモードだとどうなの？
 
-
 ```
 (.env) hiroshi@hrsano645noMacBook-Air(x86_64) test_86_venv % pip install numpy
 Collecting numpy
@@ -377,6 +395,20 @@ Ryzenが振るわない理由は最適化されていないかも（pypiのnumpy
 - pandasは入ってないらしい
 
 ---
+
+インストールしてみたものの、吾輩はDLやっていないのである（やりたい
+
+---
+
+なんかネタはないものか...
+
+---
+
+**そこに救世主が！（ババーン**
+
+---
+
+![w:480](./image/karaagesensei_ai_syoei.jpg)
 
 
 
