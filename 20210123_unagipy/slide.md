@@ -439,20 +439,33 @@ Ryzenが振るわない理由は最適化されていないかも（pypiのnumpy
 
 ---
 
-## tensorflowで動くものを試す
+## tensorflow-macosで動かしてみる
 
-その中から冒頭にある＊＊を試しました。
+２章の画像分類(tensorflowバージョン）を試しました。
+
+元のノートブック: [karaage-ai-book/02_karaage_ai_book_image_classification_tf2_x.ipynb at master · karaage0703/karaage-ai-book](https://github.com/karaage0703/karaage-ai-book/blob/master/ch02/02_karaage_ai_book_image_classification_tf2_x.ipynb)
+
+---
+
+## tensorflow-macosで動かしてみる
+
+元のノートブックのカスタマイズ方法
 
 - armバイナリのPython3.8でjupyterlabは動く
 - notebookをコピーして、動かせられるように改造
+  - 必要なパッケージをインストール
+  - Google CoLab向けのパッケージやコマンド実行を省く
 
-改造したjpnbファイルはこちら ->
+改造したjpnbファイル -> [tfmac_ver__02_karaage_ai_book_image_classification_tf2_x.ipynb](./tfmac_ver__02_karaage_ai_book_image_classification_tf2_x.ipynb)
 
 ---
 
 ## 試した様子
 
-試した結果 -> 
+- いとも簡単に動いてしまった…（ネタとして
+- モデルの構築時の時間はTensorflow-macosの方が早かった
+  - Google Colabの無料環境: 約17.5s
+  - Tensorflow-macos: 約9.5s
 
 ---
 
