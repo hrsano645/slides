@@ -456,7 +456,7 @@ Ryzenが振るわない理由は最適化されていないかも（pypiのnumpy
   - 必要なパッケージをインストール
   - Google CoLab向けのパッケージやコマンド実行を省く
 
-改造したjpnbファイル -> [tfmac_ver__02_karaage_ai_book_image_classification_tf2_x.ipynb](./tfmac_ver__02_karaage_ai_book_image_classification_tf2_x.ipynb)
+改造したjpnbファイル -> [tfmac_ver__02_karaage_ai_book_image_classification_tf2_x.ipynb](https://github.com/hrsano645/slides/blob/master/20210123_unagipy/tfmac_ver__02_karaage_ai_book_image_classification_tf2_x.ipynb)
 
 ---
 
