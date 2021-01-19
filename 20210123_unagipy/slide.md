@@ -2,6 +2,7 @@
 marp: true
 header: "**M1 MacでPythonと機械学習をやろう** "
 footer: "by [@hrs_sano645](https://twitter.com/hrs_sano645)"
+paginate: true
 ---
 
 # M1 MacでPythonと機械学習をやろう
@@ -54,7 +55,7 @@ footer: "by [@hrs_sano645](https://twitter.com/hrs_sano645)"
 - CPU 8core / GPU 7 Core
 - 256GB: そんなに入れるものがなければ十分
   - 必要なら外付けSSD: 1TB1万円ぐらいで買える
-- メモリ 16GB: 8GB
+- メモリ 16GB
 
 ---
 
@@ -71,7 +72,7 @@ footer: "by [@hrs_sano645](https://twitter.com/hrs_sano645)"
 - OS自体の挙動も早い
 - Intelバイナリの変換（Rosseta）をしてもほとんど遅いと感じない
   - アプリの初回起動のバイナリ変換にもたつくけどそれ以降は至って普通
-  - ほとんど多くのアプリをRossetaモードで使ってるけど不具合らしい喪に当たってない
+  - ほとんど多くのアプリをRossetaモードで使ってるけど不具合らしいものに当たってない
 - 4K動画回しながら普通に作業していても気にならない
 - しかも不安定さも感じない
   - Apple初物感が全くない
@@ -85,7 +86,7 @@ footer: "by [@hrs_sano645](https://twitter.com/hrs_sano645)"
 - Chrome系ブラウザのタブを多数開いても
 - Yotuube垂れ流ししていても
 
-Web系の開発の方は
+iPad感覚で使えてしまう（ちなみにiOSアプリもある程度入ります
 
 ---
 
@@ -308,7 +309,7 @@ Collecting numpy
 
 - 至って普通に動く。venv, pip などなど
 - ただpipは最新版にする必要あり:
-  - 正しくバイナリ判定がされなくてソースビルドが走ることが多々
+  - 正しくバイナリ判定がされなくてソースビルドが走ること
   - pipの最新: pip-20.3.3
   - `pip install -U pip` これ絶対
 - 性能はRosseta依存: GPUとかの扱いよくわからん
@@ -342,7 +343,7 @@ Successfully installed numpy-1.19.5
 
 提供: [オーイシさん (@oec014)](https://twitter.com/oec014)さん
 
-ベンチ内容: numpyの内積計算のループ
+ベンチ内容: numpyの内積計算のループ（ソースはできたら公開）
 
 比較対象は
 
@@ -392,13 +393,18 @@ Ryzenが振るわない理由は最適化されていないかも（pypiのnumpy
   - [apple/tensorflow_macos: TensorFlow for macOS 11.0+ accelerated using Apple's ML Compute framework.](https://github.com/apple/tensorflow_macos)
 - numpyもビルド済み
   - PyPI側からarmネイティブでビルドしてみたけど動かず
+  - armネイティブベンチはこちらのnumpyを使ってます
 - pandasは入ってないらしい
 
 ---
 
-インストールしてみたものの、吾輩はDLやっていないのである（やりたい
+勢いに任せてインストールしてみたものの、ネタがない。
+
+（インストールでなんかあるだろうと思ったらさっくり入ってしまった）
 
 ---
+
+当人DLやっていないのである（やりたい
 
 なんかネタはないものか...
 
@@ -410,15 +416,49 @@ Ryzenが振るわない理由は最適化されていないかも（pypiのnumpy
 
 ![w:480](./image/karaagesensei_ai_syoei.jpg)
 
+---
 
+## からあげ先生のAI本のコードを試してみた
+
+<!--
+- 画像識別のAI動かしてみよう（動かなくてもそれが結果
+- できればjupyterlabでカーネル指定して、x86環境でやる？
+  - でもarm側でjupyter入っちゃったからそれでもいいかな。
+-->
 
 ---
 
-## からあげ先生のAI本のコードを試す
+## からあげ先生本とは
+
+- 「AI」に関する技術を楽しく紹介
+- 「じゃんけん画像を自動認識する」「実在しない人の顔画像を生成する」「ルンバをAIで制御する」
+- 画像処理、自然言語、画像生成、姿勢推定、エッジコンピューティングといった多数の技術の紹介と実装
+- ソースコードはGitHubに公開済み。Google Colabで試せる
+
+盛りだくさんすぎる…
 
 ---
 
+## tensorflowで動くものを試す
 
+その中から冒頭にある＊＊を試しました。
+
+- armバイナリのPython3.8でjupyterlabは動く
+- notebookをコピーして、動かせられるように改造
+
+改造したjpnbファイルはこちら ->
+
+---
+
+## 試した様子
+
+試した結果 -> 
+
+---
+
+# 気になったら今すぐ買おう！💸
+
+M1 Macを買ったらからあげ先生の本も買いましょう！
 
 ---
 
@@ -432,7 +472,7 @@ Ryzenが振るわない理由は最適化されていないかも（pypiのnumpy
 
 # 気になったら今すぐ買おう！💸
 
-ただ冬場は冷たいです
+冬場はアルミの板で冷えます🧊
 
 ---
 
@@ -440,4 +480,4 @@ Ryzenが振るわない理由は最適化されていないかも（pypiのnumpy
 
 - [M1 Mac](https://oku.edu.mie-u.ac.jp/~okumura/macosx/m1.html)
 - [M1 Macの開発環境 - Qiita](https://qiita.com/shibukawa/items/797b7cbb7e530842e6f7)
-- 
+- [人気ブロガーからあげ先生のとにかく楽しいAI自作教室｜日経BPブックナビ【公式サイト】](https://www.nikkeibp.co.jp/atclpubmkt/book/21/281460/)
