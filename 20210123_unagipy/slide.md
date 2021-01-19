@@ -1,5 +1,5 @@
 ---
-marp: false
+marp: true
 header: "**M1 MacでPythonと機械学習をやろう** "
 footer: "by [@hrs_sano645](https://twitter.com/hrs_sano645)"
 paginate: true
