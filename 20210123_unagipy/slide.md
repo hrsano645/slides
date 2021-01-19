@@ -489,8 +489,9 @@ M1 Macを買ったらからあげ先生の本も買いましょう！
 
 ---
 
-参考
+# 参考
 
 - [M1 Mac](https://oku.edu.mie-u.ac.jp/~okumura/macosx/m1.html)
 - [M1 Macの開発環境 - Qiita](https://qiita.com/shibukawa/items/797b7cbb7e530842e6f7)
 - [人気ブロガーからあげ先生のとにかく楽しいAI自作教室｜日経BPブックナビ【公式サイト】](https://www.nikkeibp.co.jp/atclpubmkt/book/21/281460/)
+  - [karaage0703/karaage-ai-book](https://github.com/karaage0703/karaage-ai-book)
