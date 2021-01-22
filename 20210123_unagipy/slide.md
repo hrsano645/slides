@@ -449,9 +449,12 @@ Ryzenが振るわない理由は最適化されていないかも（pypiのnumpy
 
 ## tensorflow-macosで動かしてみる
 
-元のノートブックのカスタマイズ方法
+動かす環境を用意する
 
 - armバイナリのPython3.8でjupyterlabは動く
+- わけあってminiforgeのcondaで環境を作り直す
+  - pypiのmatplotlibはインストールでない
+  - miniforgeはM1 Mac向けのインストーラーあり。ライブライのインストールも同じく可能
 - notebookをコピーして、動かせられるように改造
   - 必要なパッケージをインストール
   - Google CoLab向けのパッケージやコマンド実行を省く
