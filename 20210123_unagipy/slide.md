@@ -1,5 +1,5 @@
 ---
-marp: true
+marp: false
 header: "**M1 MacでPythonと機械学習をやろう** "
 footer: "by [@hrs_sano645](https://twitter.com/hrs_sano645)"
 paginate: true
@@ -17,7 +17,7 @@ paginate: true
 
 - Hiroshi Sano [@hrs_sano645](https://twitter.com/hrs_sano645) 🏠:静岡の🗻見えるところ
 - Job💼
-  - [佐野設計事務所🚗⚙️📏](https://sano-design.info)::自動車系機械の3D設計事務所
+  - [佐野設計事務所🚗⚙️📏](https://sano-design.info): 自動車系機械の3D設計事務所
   - 米農家🌾
 - Community🧑‍💻
   - 🗻🐍: shizuoka.py, unagi.py, Python駿河
