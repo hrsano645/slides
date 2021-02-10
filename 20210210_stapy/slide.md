@@ -31,7 +31,7 @@ Hiroshi Sano
 
 つまみ食い読書します。ぜひ遊びに来てください！
 
-参加方法は直接聞いてください！
+参加方法はconnpass検索か後で#stapyに流します
 
 ---
 
@@ -95,29 +95,34 @@ firstpost.md
 
 ```
 Title: My First Post
-Date: 2010-12-03 10:20
+Date: 2021-02-10 21:00
 Category: 日記
 
 最初の投稿です。
 ```
-
----
-
-サイトの生成テスト
-
-```
-make devserver
-```
-
-http://127.0.0.1:8000 でPythonのhttp.serverが動きます
-
 ---
 
 サイトを生成
 
 ```
+pelican content
+
+# unixならmakeコマンド使える
 make publish
 ```
+---
+
+サイトの生成テスト
+
+```
+pelican content
+pelican --listen
+
+# unixならmakeコマンド使える
+make devserver
+```
+
+http://127.0.0.1:8000 で確認できます。
 
 ---
 
