@@ -1,15 +1,15 @@
 ---
 marp: true
-header: "**Pelicanを使おう** - Start Python Club LT 2021/02/10"
+header: "**Python-Pelicanで楽々Webサイトを作ろう** - Start Python Club LT 2021/02/10"
 footer: "by [@hrs_sano645](https://twitter.com/hrs_sano645)"
 paginate: true
 ---
 
-### Pelicanを使おう
+### Python-Pelicanで楽々Webサイトを作ろう
 
 Start Python Club 2021/02/10
 
-Hiroshi Sano 
+Hiroshi Sano
 
 ---
 ## お前誰よ
