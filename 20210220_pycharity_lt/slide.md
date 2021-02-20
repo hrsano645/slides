@@ -17,14 +17,17 @@ Hiroshi Sano
 ---
 
 
-Hiroshi Sano [@hrs_sano645](https://twitter.com/hrs_sano645) 🏠:静岡の🗻見えるところ
+# Hiroshi Sano [@hrs_sano645](https://twitter.com/hrs_sano645) 
+
+# 🏠:静岡の🗻見えるところ
 
 ---
 
-- Community🧑‍💻
-  - 🗻🐍: shizuoka.py, unagi.py, Python駿河
-  - 🗻🐍: PyCon mini Shizuokaスタッフ
-  - 🐍: PyCon JP 2020 チュートリアル講師
+# Community🧑‍💻
+
+- 🗻🐍: shizuoka.py, unagi.py, Python駿河
+- 🗻🐍: PyCon mini Shizuokaスタッフ
+- 🐍: PyCon JP 2020 チュートリアル講師
 
 ---
 
@@ -62,8 +65,6 @@ Hiroshi Sano [@hrs_sano645](https://twitter.com/hrs_sano645) 🏠:静岡の🗻�
 
 # 開催めでたい
 
-<!-- footer: -->
-
 ---
 
 # LTラストバッター
@@ -78,7 +79,15 @@ Hiroshi Sano [@hrs_sano645](https://twitter.com/hrs_sano645) 🏠:静岡の🗻�
 
 ---
 
-# 作ってる暇がなかったので
+# 1週間前にリハーサルしてから
+
+<!-- footer: "タイトルだけ用意してあった" -->
+
+---
+
+# 作るのすっかり忘れていたので
+
+<!-- footer: "" -->
 
 ---
 
@@ -88,32 +97,48 @@ Hiroshi Sano [@hrs_sano645](https://twitter.com/hrs_sano645) 🏠:静岡の🗻�
 
 # 高橋メソッドです（懐かしい？
 
+<!-- footer: "[高橋メソッド](http://www.rubycolor.org/takahashi/) " -->
+
 ---
 
 # 今日言いたいことは
 
+<!-- footer: "" -->
+
 ---
 
-# Dashというダッシュボードアプリを簡単に作るフレームワーク便利
+# Plotly Dashというダッシュボードアプリ
+
+# フレームワーク便利
+
+<!-- footer: "[Dash Documentation & User Guide | Plotly](https://dash.plotly.com/)" -->
 
 ---
 
 # IoTとの連携はPythonが手軽
+
+<!-- footer: "" -->
+
 ---
 
 # そこから今のところ思ったことです
 
 ---
 
-# まずhomeenvdashという趣味プロジェクトの紹介します
+# まずhomeenvdashという趣味プロジェクトの紹介
 
 ---
 
-画像1
+![w:600](./images/img1.png)
+
+
+<!-- footer: "[hrsano645/homeenvdash: 家環境ダッシュボードのダッシュボード部分](https://github.com/hrsano645/homeenvdash)" -->
 
 ---
 
 # 一言でいうと
+
+<!-- footer: "" -->
 
 ---
 
@@ -129,11 +154,16 @@ Hiroshi Sano [@hrs_sano645](https://twitter.com/hrs_sano645) 🏠:静岡の🗻�
 
 ---
 
-img2: iPadでお絵描きした
+
+![w:900](./images/img2.png)
+
+<!-- footer: "iPadで書いた" -->
 
 ---
 
 # やってみて思うこと
+
+<!-- footer: "" -->
 
 ---
 
@@ -149,7 +179,7 @@ img2: iPadでお絵描きした
 
 ---
 
-この部分: 温度のグラフ
+![h:480](./images/img3.png)
 
 ---
 
@@ -161,17 +191,20 @@ fig1 = px.line(df, x="Time", y="Temperature", title="温度")
 dcc.Graph(id="tempature", figure=fig1), label="温度"
 
 ```
----
-
-# [?]デザイン面倒
 
 ---
 
-# bootstrapを使えるコンポーネントがある
+# ?. デザイン面倒
 
 ---
 
-# [?]コンポーネントツリーが見づらい問題 
+# A. bootstrapを使えるコンポーネントがある
+
+[Dash Bootstrap Components](https://dash-bootstrap-components.opensource.faculty.ai/)
+
+---
+
+# ?. コンポーネントツリーが見づらい問題
 
 ---
 
@@ -202,7 +235,10 @@ return dbc.Container(
 
 ---
 
-画像: この部分
+
+![h:480](./images/img4.png)
+
+<!-- footer: "デザイン勉強中です..." -->
 
 ---
 
@@ -220,6 +256,9 @@ main_view = html.Div(
 )
 ```
 
+
+<!-- footer: "." -->
+
 ---
 
 # スッキリ
@@ -232,10 +271,18 @@ main_view = html.Div(
 
 # 書籍買おう！
 
+---
+
+![h:480](./images/plotlydashbook.jpg)
+
+<!-- footer: "[朝倉書店｜Python インタラクティブ・データビジュアライゼーション入門](https://www.asakura.co.jp/books/isbn/978-4-254-12258-9/)" -->
 
 ---
 
 # とっても丁寧な説明とリファレンスにも使える
+
+
+<!-- footer: "" -->
 
 ---
 
@@ -265,9 +312,14 @@ main_view = html.Div(
 
 micropython : マイクロコントローラー向けのPython環境
 
+<!-- footer: "ラズパイpico も今日のトークで紹介されてましたね。覚えておきましょう。" -->
+
 ---
 
 # ライブラリそろってる = めっちゃいい環境
+
+
+<!-- footer: "" -->
 
 ---
 
@@ -285,11 +337,15 @@ CurcitPython: Micropythonのポート版
 
 # 最後に
 
+<!-- footer: "ところで後何分？" -->
+
 ---
 
 # センシングとデータ可視化
 
+
 ---
+
 # よくやるパターンではある
 
 ---
@@ -306,11 +362,13 @@ CurcitPython: Micropythonのポート版
 
 # 首悪くしてから低気圧にとても弱い
 
-<!-- footer: "" -->
+<!-- footer: "みなさんもストレートネックとかには気をつけてください" -->
 
 ---
 
 # 実家では祖母の介護で見守りにも使う
+
+<!-- footer: "" -->
 
 ---
 
@@ -370,23 +428,29 @@ CurcitPython: Micropythonのポート版
 
 ---
 
-画像
+
+![h:480](./images/img5.png)
+
 
 ---
 
-画像
+![h:480](./images/img6.png)
 
 ---
 
 # 見えるだけで、状況がわかる
 
+<!-- footer: "ちなみにこちらのプロジェクトも参加者募集中です🙏" -->
+
 ---
 
 # 安心感に繋がる
 
+<!-- footer: "" -->
+
 ---
 
-# 断片的な情報は混乱しかうまない
+# 断片的な情報は混乱しか生まない
 
 ---
 
@@ -446,23 +510,17 @@ Google スプレッドシート is クラウド
 
 ---
 
-センサーは個人な情報も入ってしまうので、出来るだけ内部で
+センサーは個人な情報も入ってしまうので、出来るだけ内部にしたい
 
 ---
 
-センサーノード側は常に最新情報をFastAPIあたりでjsonで出し続けて
-
----
+センサーノード側はFastAPIあたりでjsonで出し続けて
 
 ダッシュボード側はセンサーノードからの情報をプルしてデータをためて可視化
 
 ---
 
-などなど
-
----
-
-進捗出たらどこかで発表を目標です
+進捗出たらどこかで発表を目標です。CfP頑張る。
 
 ---
 
