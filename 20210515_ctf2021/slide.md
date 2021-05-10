@@ -246,7 +246,6 @@ shizuoka.stopcovid19, fuji.stopcovid19
 
 ## フォークプロジェクトを運用する難しさ
 
-
 <!-- ＜組織の比較の絵を入れる -->
 
 フォーク元のプロジェクトはCode for Japanで行っているため（相対的には）強い組織。
@@ -273,7 +272,7 @@ shizuoka.stopcovid19, fuji.stopcovid19
 
 ---
 
-## 例:（とりこみやすかった例とか、
+<!-- ## 例:（とりこみやすかった例とか、 -->
 
 ---
 
@@ -323,7 +322,7 @@ GitHub, Slack, Google Docs
 
 <!-- _footer: この考えはPythonのコミュニティで学びました -->
 
----　
+---
 
 ## まとめ
 
