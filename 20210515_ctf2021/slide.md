@@ -32,8 +32,10 @@ CIVIC TECH FORUM 2021 2021/05/15
 
 ---
 
-＜Pre CIVIC TECH FORUM Online 2020のタイトルスライド
+![bg 70%](images/2020_pre_ctf_title.png)
 
+
+<!-- _footer: "スライドはこちら -> [民間支援情報ナビの静岡県版を作った話](https://docs.google.com/presentation/d/1kNGc2JDnKnGVmSeQ9CeKS_GjwRDu4Hx2JitOKFwpi3s/edit?usp=sharing)" -->
 ---
 
 そこから1年立ち、現在の様子をを共有します
@@ -165,7 +167,7 @@ shizuoka.stopcovid19, fuji.stopcovid19
 - @J.Nagayaさん: サイト上の翻訳情報
 - 青野さん: 開発環境整備
 
-<!-- _footer: 実はみなさんIT系エンジニア方面です -->
+<!-- _footer: "実はみなさんIT系エンジニア方面です -> [covid19/CONTRIBUTORS.md at development · hiroyuki-ichikawa/covid19](https://github.com/hiroyuki-ichikawa/covid19/blob/development/CONTRIBUTORS.md)" -->
 
 ---
 
@@ -178,7 +180,7 @@ shizuoka.stopcovid19, fuji.stopcovid19
 - 静岡県向けに追加したリンクや地域の名称の翻訳をしました
 - 静岡県の保健所各所から集まる情報はばらつきが多い
   - 「10代後半」「60代以上」「県東部」「静岡市葵区」「富士保健所管内」「浜松市内」「県外在住」🤯
-- できれば翻訳サービスを挟んだ方がいいかもしれない
+- できれば翻訳サービス（AWS Translateとか）とかを挟んだ方がいいかもしれない
 
 <!-- _footer: "[8/7時点で多言語対応できていない語句 · Issue #40 · aktnk/covid19](https://github.com/aktnk/covid19/issues/40)" -->
 
@@ -195,7 +197,7 @@ shizuoka.stopcovid19, fuji.stopcovid19
   - プロジェクトで使われている依存パッケージも追い続けるのが大変
   - vue, nuxt系になれてる方は大丈夫かもしれません…
 
-
+<!-- _footer: "[日付表示に西暦を追加する · Issue #60 · aktnk/covid19](https://github.com/aktnk/covid19/issues/60)" -->
 
 ---
 
@@ -321,7 +323,7 @@ GitHub, Slack, Google Docs
 
 <!-- _footer: この考えはPythonのコミュニティで学びました -->
 
----
+---　
 
 ## まとめ
 
