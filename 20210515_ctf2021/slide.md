@@ -20,9 +20,9 @@ CIVIC TECH FORUM 2021 2021/05/15
     - 自動車系機械の3D設計事務所 IT/雑務何でも屋
   - 米農家🌾
 - Community🧑‍💻
-  - 🐍: shizuoka. py, Unagi. py, Python駿河, PyCon mini Shizuokaスタッフ
+  - 🐍: Python駿河, PyCon mini Shizuokaスタッフ
   - Code for ふじのくに
-  - fuji.5374.jp
+- fuji.5374.jp
 
 <!-- _footer: 「お前誰よ」はPython界隈ではよく使われる「自己紹介」の意味です -->
 
@@ -106,7 +106,7 @@ CIVIC TECH FORUM 2021 2021/05/15
 ## 機能追加: 地域別でフィルター
 
 
-![bg left:30%](https://fakeimg.pl/800x600/0288d1/fff/?text=A)
+![bg left:40%](images/vs-covid19_shizuoka_filter.png)
 <!-- <左側に写真載せる> -->
 
 静岡県は横に長く4つのブロックに分かれる
@@ -132,9 +132,8 @@ CIVIC TECH FORUM 2021 2021/05/15
 
 ---
 
-＜写真二つ。
-
-shizuoka.stopcovid19, fuji.stopcovid19
+![h:270px](images/stopcovid19.code4numazu.org.png)  ![h:270px](images/stopcovid19-fuji.netlify.app.png)
+（静岡県:shizuoka.stopcovid19 富士市:fuji.stopcovid19）
 
 「Code for ふじのくに」に集まった有志メンバーで担当
 
@@ -150,7 +149,7 @@ shizuoka.stopcovid19, fuji.stopcovid19
 2020/6月: サービス開始👍
 2020/6 ~ 12月: 翻訳対応、開発環境👍
 2020/10 ~ 12月: 各方面からの要望を盛り込み修正
-2020/10 ~ 12月: 年を超えるので西暦を入れたり、不具合対応👍
+2020/10 ~ 12月: 西暦対応、不具合対応👍
 2020/10 ~ 12月: fuji.stopcovid19を立ち上げ 👍
 2021/4月: ニュース対応中👍
 
@@ -162,12 +161,12 @@ shizuoka.stopcovid19, fuji.stopcovid19
 役割自体はあんまり決まってません
 
 - 市川ご夫妻（Code for ふじのくに）: 立ち上げ、地域向けカスタマイズ
-- 佐野: 対策サイトのデータ生成
-- @aktnkさん（Code for SUSONO）: 対策サイトのフロントエンド
-- @J.Nagayaさん: サイト上の翻訳情報
-- 青野さん: 開発環境整備
+- 佐野@hrsano645: 対策サイトのデータ生成
+- @aktnk（Code for SUSONO）: 対策サイトのフロントエンド
+- @J.Nagaya: サイト上の翻訳情報
+- @Jyury11: 開発環境整備
 
-<!-- _footer: "実はみなさんIT系エンジニア方面です -> [covid19/CONTRIBUTORS.md at development · hiroyuki-ichikawa/covid19](https://github.com/hiroyuki-ichikawa/covid19/blob/development/CONTRIBUTORS.md)" -->
+<!-- _footer: "実はみなさんIT系エンジニア方面 -> [covid19/CONTRIBUTORS.md at development · hiroyuki-ichikawa/covid19](https://github.com/hiroyuki-ichikawa/covid19/blob/development/CONTRIBUTORS.md)" -->
 
 ---
 
