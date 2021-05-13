@@ -38,7 +38,7 @@ CIVIC TECH FORUM 2021 2021/05/15
 <!-- _footer: "スライドはこちら -> [民間支援情報ナビの静岡県版を作った話](https://docs.google.com/presentation/d/1kNGc2JDnKnGVmSeQ9CeKS_GjwRDu4Hx2JitOKFwpi3s/edit?usp=sharing)" -->
 ---
 
-そこから1年立ち、現在の様子をを共有します
+そこから1年立ち、現在の様子を共有します
 
 ---
 
