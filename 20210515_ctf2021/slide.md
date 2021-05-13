@@ -133,14 +133,15 @@ CIVIC TECH FORUM 2021 2021/05/15
 ---
 
 ![h:270px](images/stopcovid19.code4numazu.org.png)  ![h:270px](images/stopcovid19-fuji.netlify.app.png)
-（静岡県:shizuoka.stopcovid19 富士市:fuji.stopcovid19）
+（[静岡県:shizuoka.stopcovid19](https://stopcovid19.code4numazu.org/)、[富士市:fuji.stopcovid19](https://stopcovid19-fuji.netlify.app/)）
 
 「Code for ふじのくに」に集まった有志メンバーで担当
 
-- 静岡市版と浜松市版もあります！
-- 静岡市と浜松市はそれぞれ別の有志チームで作成
+- 静岡市版と浜松市版もあります。それぞれ別の有志チームで作成
+  - [静岡市 新型コロナウイルス感染症対策サイト](https://stopcovid19.city.shizuoka.lg.jp/)
+  - [浜松市 新型コロナウイルス感染症対策サイト](https://stopcovid19.code4hamamatsu.org/)
 
-<!-- _footer: 静岡市版を作成された方に静岡県側もPR頂いたり、助けていただきました！ -->
+<!-- _footer: 静岡市版のチームの方に静岡県側もPR頂いたり、助けていただきました！ -->
 
 ---
 
@@ -149,12 +150,12 @@ CIVIC TECH FORUM 2021 2021/05/15
 - 2020年6月
   - サービス開始👍
   - 翻訳対応👍
-- 2020年12月: 各方面からの要望を盛り込み修正
+- 2020年12月: 各方面からの要望盛り込み/修正
 - 2020年12月 - 2021年1月: 西暦対応、不具合対応👍
 - 2021年1月: fuji.stopcovid19を立ち上げ 👍
 - 2021年4月: ニュース対応中👍
 
-<!-- _footer: "shizuoka.stopcovid19, fuji.stopcovid19 は便宜上そう呼んでいます。ドメインなどは違います。" -->
+<!-- _footer: "shizuoka.stopcovid19, fuji.stopcovid19 はこの発表の便宜上そう呼んでいます。ドメインなどは違います。" -->
 ---
 
 ## 有志メンバーで集まってやってます!
@@ -215,7 +216,7 @@ CIVIC TECH FORUM 2021 2021/05/15
 
 富士市の協力と静岡県の立ち上げノウハウもあったので立ち上げ早めでした
 
-<!-- _footer: "プロジェクトはこちらです -> [hiroyuki-ichikawa/fujicity_covid19: 富士市版新型コロナ対策サイト](https://github.com/hiroyuki-ichikawa/fujicity_covid19)" -->
+<!-- _footer: "プロジェクトはこちらです -> [hiroyuki-ichikawa/fujicity_covid19](https://github.com/hiroyuki-ichikawa/fujicity_covid19)" -->
 
 ---
 
@@ -248,7 +249,17 @@ CIVIC TECH FORUM 2021 2021/05/15
 
 ## フォークプロジェクトを運用する楽しさと難しさ
 
-< ここ治したい: 最新技術を扱う点では面白いけど、追うのが難しいって部分>
+- 最新のWeb開発技術の扱いを学べる
+  - JavaScript、Docker、GitHub Action
+- OSS開発 / GitHub上でのコミュニケーション方法
+
+エンジニアとして学ぶことが多かった
+
+<!-- _footer: OSS開発に参加してレベル上がった気がする💪 -->
+
+---
+
+## フォークプロジェクトを運用する楽しさと難しさ
 
 フォーク元のプロジェクトはCode for Japanで行っているため（相対的には）強い組織。
 
@@ -256,23 +267,11 @@ CIVIC TECH FORUM 2021 2021/05/15
 
 追いつくのには無理がある。できるところをピックアップしてみました。
 
-<!-- _footer: 現在のstopcovid19で地域版を作ろうとしたときには、開始当初と同じような方法論は難しいかも -->
+<!-- _footer: 現在の新型コロナ対策サイトで地域版を作ろうとしたときには、開始当初と同じような方法論は難しいかも -->
 
 ---
 
-## やってみてよかった点
-
-- 最新のWeb開発技術の扱いを学べる
-  - JavaScript、Docker、GitHub Action
-- OSS開発 / GitHub上でのコミュニケーション方法
-
-エンジニアとして学ぶことが多かった
-
-<!-- _footer: OSS開発に参加して勉強になりました -->
-
----
-
-## 大変だった例: フォーク元の追従してサイトの表示が崩れる問題
+## 大変だった例: フォーク元の追従してサイトの表示が崩れる問題😇
 
 ![bg left:30%](images/shizuoka.stopcovid19_brokensite.png)
 
@@ -288,8 +287,8 @@ CIVIC TECH FORUM 2021 2021/05/15
 
 シビックテックを有志で進めるとき、優先できないものでもある。
 
-- 仕事、本業が多忙だったり
-- 生活もある。子育て、介護も
+- 仕事、本業: 多忙だったりして時間作れない
+- 私生活もある: 子育て、介護も
 
 自分の人生優先だけど、思いを持って進めてるプロジェクトの進捗がよくなかったりすると、ちょっともどかしい
 
@@ -298,7 +297,6 @@ CIVIC TECH FORUM 2021 2021/05/15
 ---
 
 ## ボランティアとしてみんなで助け合う
-
 
 ![bg left:45%](images/homeru_img.png)
 
@@ -333,7 +331,7 @@ GitHub, Slack, Google Docs
 
 ---
 
-## 人が主役なんです
+## 人が主役なんです🙋‍♂️
 
 人が頑張るよりツールに頼る
 
