@@ -1,6 +1,6 @@
 ---
 marp: true
-header: "**2020年の新型コロナと静岡シビックテックの1年話** - CIVIC TECH FORUM 2021 2021/05/15"
+header: "**2020年の新型コロナと静岡シビックテックの1年話** - CIVIC TECH FORUM 2021 2021/05/15 B-4"
 # footer: "by [@hrs_sano645](https://twitter.com/hrs_sano645)"
 paginate: true
 ---
@@ -8,7 +8,10 @@ paginate: true
 # 2020年の新型コロナと静岡シビックテックの1年話
 
 CIVIC TECH FORUM 2021 2021/05/15
-佐野浩士
+
+B-4 佐野浩士
+
+![w:180](https://scontent-itm1-1.xx.fbcdn.net/v/t1.6435-9/182579169_3897437993703866_3945831568819198675_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=b9115d&_nc_ohc=CePtFgzMZiEAX_kqpXB&_nc_ht=scontent-itm1-1.xx&oh=dfcf3ee9ad06f2fe6bab1677fdcbbf53&oe=60C31F9F)
 
 ---
 
@@ -43,8 +46,6 @@ CIVIC TECH FORUM 2021 2021/05/15
 ---
 
 # 2020年の新型コロナと静岡シビックテックの1年話
-
----
 
 あれから1年…色々ありましたね。
 
@@ -83,9 +84,9 @@ CIVIC TECH FORUM 2021 2021/05/15
 
 ## 民間支援情報ナビ for 静岡版の役割
 
-- 当初の目的: **静岡県内の民間が提供する支援情報の提供**
+- 当初の目的: **静岡県内の民間が提供する支援情報をまとめる**
 - 始めた当初は情報が錯綜していて混乱 -> まとめることに価値がある
-- 時間が立って混乱も落ち着いてくる（ある種慣れてきている）
+- 時間と共に混乱も落ち着いてくる（ある種慣れてきている）
 
 この1年で当初の目的は達成したと思います。
 
@@ -312,7 +313,7 @@ CIVIC TECH FORUM 2021 2021/05/15
 
 GitHub, Slack, Google Docs
 
-- サービスのデプロイもなるべく自動（CI使う
+- サービスのデプロイもなるべく自動（CI:GitHub Actionsを使う
 - コミュニケーションもチャットベース
 
 <!-- _footer: 定番だしあるあるではある -->
