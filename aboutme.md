@@ -5,7 +5,7 @@
 
 - Job💼
   - [佐野設計事務所🚗⚙️📏🖊️](https://sano-design.info) 
-    - 自動車系機械の3D設計事務所 IT/雑務何でも屋
+    - 自動車系機械の3D設計事務所 ソフトウェアエンジニア
   - 米農家🌾
 - Community🧑‍💻
   - 🗻🐍: shizuoka.py, unagi.py, Python駿河
