@@ -1,5 +1,5 @@
 ---
-marp: false
+marp: true
 header: "**2020年の新型コロナと静岡シビックテックの1年話** - CIVIC TECH FORUM 2021 2021/05/15 B-4"
 # footer: "by [@hrs_sano645](https://twitter.com/hrs_sano645)"
 paginate: true
@@ -21,7 +21,7 @@ B-4 佐野浩士
 - 佐野浩士（Hiroshi Sano）[@hrs_sano645](https://twitter.com/hrs_sano645) 🏠:静岡県の富士市🗻
 - Job💼
   - [佐野設計事務所🚗⚙️📏🖊️](https://sano-design.info)
-    - 自動車系機械の3D設計事務所 IT/雑務何でも屋
+    - 自動車系機械の3D設計事務所　ソフトウェアエンジニア
   - 米農家🌾
 - Community🧑‍💻
   - 🐍: Python駿河, PyCon mini Shizuokaスタッフ
@@ -106,7 +106,6 @@ B-4 佐野浩士
 
 ## 機能追加: 地域別でフィルター
 
-
 ![bg left:40%](images/vs-covid19_shizuoka_filter.png)
 <!-- <左側に写真載せる> -->
 
@@ -134,7 +133,7 @@ B-4 佐野浩士
 ---
 
 ![h:270px](images/stopcovid19.code4numazu.org.png)  ![h:270px](images/stopcovid19-fuji.netlify.app.png)
-（[静岡県:shizuoka.stopcovid19](https://stopcovid19.code4numazu.org/)、[富士市:fuji.stopcovid19](https://stopcovid19-fuji.netlify.app/)）
+（[静岡県](https://stopcovid19.code4numazu.org/)、[富士市](https://stopcovid19-fuji.netlify.app/)）
 
 「Code for ふじのくに」に集まった有志メンバーで担当
 
@@ -146,17 +145,17 @@ B-4 佐野浩士
 
 ---
 
-## shizuoka.stopcovid19, fuji.stopcovid19のイベント
+## 静岡県版, 富士市版のイベント
 
-- 2020年6月
-  - サービス開始👍
-  - 翻訳対応👍
-- 2020年12月: 各方面からの要望盛り込み/修正
-- 2020年12月 - 2021年1月: 西暦対応、不具合対応👍
-- 2021年1月: fuji.stopcovid19を立ち上げ 👍
+- 2020年3月: 静岡県版サービス開始👍
+- 2020年6月: 翻訳対応👍
+- 2020年6月〜12月: 不具合対応、各方面からの要望盛り込み
+- 2020年12月〜2021年1月: 西暦対応👍
+- 2021年1月: 富士市版を立ち上げ 👍
 - 2021年4月: ニュース対応中👍
 
-<!-- _footer: "shizuoka.stopcovid19, fuji.stopcovid19 はこの発表の便宜上そう呼んでいます。ドメインなどは違います。" -->
+継続的に不具合修正も進めてました: グラフが描写されない、うまくビルドされない、サイトが崩れる、などなど
+
 ---
 
 ## 有志メンバーで集まってやってます!
