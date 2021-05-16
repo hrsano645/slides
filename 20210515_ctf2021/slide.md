@@ -1,6 +1,6 @@
 ---
 marp: true
-header: "**2020年の新型コロナと静岡シビックテックの1年話** - CIVIC TECH FORUM 2021 2021/05/15 B-4"
+header: "**2020年の新型コロナと静岡シビックテックの1年話** - CIVIC TECH FORUM 2021 2021/05/15 B-18"
 # footer: "by [@hrs_sano645](https://twitter.com/hrs_sano645)"
 paginate: true
 backgroundColor: #eee
@@ -10,7 +10,7 @@ backgroundColor: #eee
 
 CIVIC TECH FORUM 2021 2021/05/15
 
-B-4 佐野浩士
+B-18 佐野浩士
 
 ![w:180](https://scontent-itm1-1.xx.fbcdn.net/v/t1.6435-9/182579169_3897437993703866_3945831568819198675_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=b9115d&_nc_ohc=CePtFgzMZiEAX_kqpXB&_nc_ht=scontent-itm1-1.xx&oh=dfcf3ee9ad06f2fe6bab1677fdcbbf53&oe=60C31F9F)
 
