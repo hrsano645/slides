@@ -1,6 +1,6 @@
 ---
 marp: true
-header: "zoneinfoを紹介します⏰はんなりPython 34 python3.9を語る LT会"
+header: "zoneinfoを紹介します⏰ はんなりPython 34 python3.9を語る LT会"
 paginate: true
 backgroundColor: #eee
 ---

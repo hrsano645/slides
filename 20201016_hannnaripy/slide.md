@@ -1,6 +1,6 @@
 ---
 marp: true
-header: "格安でMicroPython🐍を試してみよう【オンライン】はんなりPython 33 LT会"
+header: "格安でMicroPython🐍を試してみよう 【オンライン】はんなりPython 33 LT会"
 paginate: true
 backgroundColor: #eee
 ---
@@ -57,8 +57,7 @@ backgroundColor: #eee
 
 これを使います
 
-![height=256, alt=AtomMatrix](https://camo.githubusercontent.com/b79dc8ac6f64f859f6972860bb836fa8884358f3/68747470733a2f2f6d35737461636b2e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f696d6167652f6d352d646f63735f686f6d65706167652f636f72652f61746f6d5f6d61747269785f30312e77656270)
-![height=256, alt=AtomLite](https://camo.githubusercontent.com/cf43e2305efcefc96778b4e34e519dc00980366a/68747470733a2f2f6d35737461636b2e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f696d6167652f6d352d646f63735f686f6d65706167652f636f72652f61746f6d5f6c6974655f30312e77656270)
+![h:400](https://camo.githubusercontent.com/b79dc8ac6f64f859f6972860bb836fa8884358f3/68747470733a2f2f6d35737461636b2e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f696d6167652f6d352d646f63735f686f6d65706167652f636f72652f61746f6d5f6d61747269785f30312e77656270)![h:400](https://camo.githubusercontent.com/cf43e2305efcefc96778b4e34e519dc00980366a/68747470733a2f2f6d35737461636b2e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f696d6167652f6d352d646f63735f686f6d65706167652f636f72652f61746f6d5f6c6974655f30312e77656270)
 
 ---
 
@@ -86,7 +85,7 @@ backgroundColor: #eee
 
 とっても小さい。とっても安い。
 
-![height=256,alt=M5Atomの写真](20201016_hannnaripy/img/PXL_20201010_060716412.jpg)
+![h:500](./img/PXL_20201010_060716412.jpg)
 
 （左にあるのはESP32の開発キット:ESP32-DevKitC）
 
@@ -102,7 +101,7 @@ YouTubeで公開されてる！のでインストールもかんたん！
 
 (インストールしたときの様子)
 
-![height=500](20201016_hannnaripy/img/ss_2020-10-08_15.20.04.png)
+![h:520](./img/ss_2020-10-08_15.20.04.png)
 
 ---
 
@@ -146,14 +145,14 @@ YouTubeで公開されてる！のでインストールもかんたん！
 
 もっとかんたんな手段 -> UiFlow
 
-![height=500,alt=インストールの様子](20201016_hannnaripy/img/ss_2020-10-07_21.49.04.png)
+![h:520](./img/ss_2020-10-07_21.49.04.png)
 
 ---
 
 ## UiFlow
 
 
-![height=500,alt=Blocklyの様子](20201016_hannnaripy/img/ss_2020-10-08_15.08.14.png)
+![h:520](./img/ss_2020-10-08_15.08.14.png)
 
 ---
 
@@ -175,17 +174,17 @@ https://photos.app.goo.gl/JeUyZb1m2JNx6JYG7
 - 温度と水位を測る
 - 蛇口を止める
 
-![height=256,alt=おふろIoTシステム図](20201016_hannnaripy/img/ohutoiot_system_image.png)
+![h:250](./img/ohutoiot_system_image.png)
 
 Ref:[【オンライン】IoT縛りの勉強会! IoTLT vol.68 @Youtube - connpass](https://iotlt.connpass.com/event/189403/)
 
 ---
 
-![(おふろIoT Mk2の発表)](20201016_hannnaripy/img/iotlt_51_ohuroiot_01.png)
+![h:520](./img/iotlt_51_ohuroiot_01.png)
 
 ---
 
-![height=256,alt=(蛇口IoTの裏側)](20201016_hannnaripy/img/FJIMG_20190429_174617.jpg)
+![h:250](./img/FJIMG_20190429_174617.jpg)
 
 そもそもこれお風呂に持っていくのありなのか？基板ごと持っていくのは…
 

@@ -1,6 +1,6 @@
 ---
 marp: true
-header: "家環境ダッシュボード🏠🌡️📉を作ってみた話みんなのＰyhton勉強会 63 懇親会LT"
+header: "家環境ダッシュボード🏠🌡️📉を作ってみた話 みんなのＰyhton勉強会 63 懇親会LT"
 paginate: true
 backgroundColor: #eee
 ---
@@ -21,7 +21,7 @@ backgroundColor: #eee
 
 ---
 
-![height=480, alt=degital_dashboard](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Opsview_Monitor_6.0_Dashboard.jpg/800px-Opsview_Monitor_6.0_Dashboard.jpg)
+![h:520px](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Opsview_Monitor_6.0_Dashboard.jpg/800px-Opsview_Monitor_6.0_Dashboard.jpg)
 
 こういうもの
 
@@ -73,7 +73,7 @@ backgroundColor: #eee
 - COVID19で家にいること多い=家の環境が気になる
 - 家の環境を数値で見れるとストレス減るのでは？
 
-![height=320, alt=work_from_home_irasutoya](https://1.bp.blogspot.com/-jlHonWZdPp0/Xq5vQuVPQrI/AAAAAAABYtI/S0mjN1WK-wEJBBSS2M6xTEhEmVjM5mUwwCEwYBhgL/s1600/shigoto_zaitaku_cat_man.png)
+![h:320px](https://1.bp.blogspot.com/-jlHonWZdPp0/Xq5vQuVPQrI/AAAAAAABYtI/S0mjN1WK-wEJBBSS2M6xTEhEmVjM5mUwwCEwYBhgL/s1600/shigoto_zaitaku_cat_man.png)
 
 ---
 
@@ -81,13 +81,13 @@ backgroundColor: #eee
 
 - 実家の祖母が98歳で見守り的な意味も
 
-![height=320,alt=granma_irasutoya](https://4.bp.blogspot.com/-E5SFXjWPayU/WR6ns-9naMI/AAAAAAABEVw/d2cE-VM_B_AnQp3PHoFIG8esHWmBB6YXgCLcB/s800/keirou_obaachan_smile2.png)
+![h:320px](https://4.bp.blogspot.com/-E5SFXjWPayU/WR6ns-9naMI/AAAAAAABEVw/d2cE-VM_B_AnQp3PHoFIG8esHWmBB6YXgCLcB/s800/keirou_obaachan_smile2.png)
 
 ---
 
 ### システムの全体像
 
-![height=480, alt=home env dashboard system image](https://docs.google.com/drawings/d/e/2PACX-1vQfSWRWP7uD7ffXyjrEStTYVhyFakLvQ0pREvuE8n5v0iceLlHyska3toXvUdRfhh7v_se6CTvm6DBO/pub?w=960&amp;h=720)
+![h:520px](https://docs.google.com/drawings/d/e/2PACX-1vQfSWRWP7uD7ffXyjrEStTYVhyFakLvQ0pREvuE8n5v0iceLlHyska3toXvUdRfhh7v_se6CTvm6DBO/pub?w=960&amp;h=720)
 
 ---
 
@@ -99,11 +99,11 @@ backgroundColor: #eee
   - データを取り出すのにちょっと苦労する🥺
   - AdafruitのCircitPythonが提供するライブラリが使える
 
-@size[0.5em]ref: [Adafruit BME280 Humidity + Barometric Pressure + Temperature Sensor Breakout](https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/python-circuitpython-test)
+[Adafruit BME280 Humidity + Barometric Pressure + Temperature Sensor Breakout](https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/python-circuitpython-test)
 
 ---
 
-![height=480, sensor node](https://docs.google.com/drawings/d/e/2PACX-1vTYhZg5yz9pLjrt0OJQ87xG396d-8jKKyUwIAPZ2MMy9Nv3SgaTOINHsHpFXwocK1gXgcgxRkSwHP9Q/pub?w=960&amp;h=720)
+![h:520px](https://docs.google.com/drawings/d/e/2PACX-1vTYhZg5yz9pLjrt0OJQ87xG396d-8jKKyUwIAPZ2MMy9Nv3SgaTOINHsHpFXwocK1gXgcgxRkSwHP9Q/pub?w=960&amp;h=720)
 
 ---
 
@@ -115,10 +115,10 @@ Google Sheetにため込んでます
 
 - 認証にはサービスアカウントを利用
   - IoTなので鍵配布だけで連携できるのは楽でいい
-  
+   
 ---
 
-![height=480, sensor_recode](./20201112_stapy_63/img/sensor_recode_gsheet.JPG)
+![h:520px](./img/sensor_recode_gsheet.JPG)
 
 ---
 
@@ -133,14 +133,14 @@ Google Sheetにため込んでます
 
 ---
 
-![height=480, dashboard](https://docs.google.com/drawings/d/e/2PACX-1vThEcyEPO9SzCVYEpL0WCAZ4Ceou004nnlmlYci07FiQKklRLvgLDLilj0ipzY30cdp_NcBYhY0Jde7/pub?w=960&amp;h=720)
+![h:520px](https://docs.google.com/drawings/d/e/2PACX-1vThEcyEPO9SzCVYEpL0WCAZ4Ceou004nnlmlYci07FiQKklRLvgLDLilj0ipzY30cdp_NcBYhY0Jde7/pub?w=960&amp;h=720)
 
 ---
 
 ### まとめ🔚
 
 - 家の環境が見れるようになって、体調管理しやすくなったと思う💪
-- **ほかのセンサー（CO2）**とか、**防犯カメラ📹** が見れると面白そう
+- **ほかのセンサー（CO2）** とか、**防犯カメラ📹** が見れると面白そう
 - アラート🚨に対応: Dashだと有料になる💸
 
 ---

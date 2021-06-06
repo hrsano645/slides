@@ -1,6 +1,6 @@
 ---
 marp: true
-header: "静岡Pythonコミュニティイベント振り返りPython駿河 Unagi.py"
+header: "静岡Pythonコミュニティイベント振り返り Python駿河 Unagi.py"
 paginate: true
 backgroundColor: #eee
 ---
@@ -71,7 +71,7 @@ backgroundColor: #eee
 
 ### 会場
 
-![alt](./20201128_pysuruga/img/pysuruga/IMG_20200119_160317.jpg)
+![alt](./img/pysuruga/IMG_20200119_160317.jpg)
 
 ---
 
@@ -87,7 +87,7 @@ backgroundColor: #eee
 
 ---
 
-![online meething](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_060604.png)
+![h:560px](./img/pysuruga/pycon_shizu_2020-11-27_060604.png)
 
 ---
 
@@ -102,7 +102,7 @@ backgroundColor: #eee
 
 ### サイト作成
 
-![サイトイメージ](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_054315.png)
+![h:520px](./img/pysuruga/pycon_shizu_2020-11-27_054315.png)
 
 ---
 
@@ -123,7 +123,7 @@ backgroundColor: #eee
 
 素晴らしいロゴはこちら
 
-![<ロゴ>](./20201128_pysuruga/img/pysuruga/shizuokaLogo.png)
+![<ロゴ>](./img/pysuruga/shizuokaLogo.png)
 
 ---
 
@@ -167,7 +167,7 @@ CfP募集で使ったツール
 
 ---
 
-![レビュー様子](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_055152.png)
+![h:560px](./img/pysuruga/pycon_shizu_2020-11-27_055152.png)
 
 レビューの様子
 
@@ -228,7 +228,7 @@ COVID19の話の前から一応検討 -> 契約
 
 ---
 
-![写真イメージを乗せる:契約書の一部](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_055752.png)
+![h:520px](./img/pysuruga/pycon_shizu_2020-11-27_055752.png)
 
 プロセスを学べたのはよかった
 
@@ -246,7 +246,7 @@ COVID19の話の前から一応検討 -> 契約
 
 ---
 
-![予算管理の様子](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_060043.png)
+![h:560px](./img/pysuruga/pycon_shizu_2020-11-27_060043.png)
 
 ---
 
@@ -268,14 +268,14 @@ COVID19の話の前から一応検討 -> 契約
 
 ### Twitterでの様子
 
-![進捗1](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_062758.png)
+![h:520px](./img/pysuruga/pycon_shizu_2020-11-27_062758.png)
 
 ---
 
 ### Twitterでの様子
 
 
-![進捗2](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_062826.png)
+![進捗2](./img/pysuruga/pycon_shizu_2020-11-27_062826.png)
 
 イベントの進捗様子も伝える
 
@@ -283,7 +283,7 @@ COVID19の話の前から一応検討 -> 契約
 
 ### Twitterでの様子
 
-![b7さんによる](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_062651.png)
+![b7さんによる](./img/pysuruga/pycon_shizu_2020-11-27_062651.png)
 
 ---
 
@@ -297,13 +297,13 @@ PyCon JP方面や参加者皆さんでハッシュタグ使ってもらえてる
 
 ### 勉強会で広報
 
-![stapy](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_062627.png)
+![stapy](./img/pysuruga/pycon_shizu_2020-11-27_062627.png)
 
 stapyで広報
 
 ---
 
-![shizuokajsで](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_062717.png)
+![shizuokajsで](./img/pysuruga/pycon_shizu_2020-11-27_062717.png)
 
 静岡の勉強会でも
 
@@ -329,7 +329,7 @@ stapyで広報
 
 ### 完成したチラシ
 
-![チラシイメージ](./20201128_pysuruga/img/pysuruga/IMG_20200119_131227.jpg)
+![h:520px](./img/pysuruga/IMG_20200119_131227.jpg)
 
 ---
 
@@ -376,13 +376,13 @@ mini Shizuokaは最終的に延期にしかけてた😱
 
 ---
 
-![テストの様子](./20201128_pysuruga/img/pysuruga/IMG_20200222_192907.jpg)
+![h:520px](./img/pysuruga/IMG_20200222_192907.jpg)
 
 テストの様子
 
 ---
 
-![オンライン版の資料](./20201128_pysuruga/img/pysuruga/pycon_shizu_2020-11-27_060631.png)
+![h:520px](./img/pysuruga/pycon_shizu_2020-11-27_060631.png)
 
 資料も色々と作成
 
@@ -425,7 +425,7 @@ mini Shizuokaは最終的に延期にしかけてた😱
 
 ---
 
-![<スタッフ集合写真>](./20201128_pysuruga/img/pysuruga/89195403_3577855202287057_313655384248156160_o.jpg)
+![h:520px](./img/pysuruga/89195403_3577855202287057_313655384248156160_o.jpg)
 
 本当にお疲れさまでした！🥳
 
@@ -556,7 +556,7 @@ PyCon JPスタッフより一報
 
 マサカリ投げられてしまう…
 
-![マサカリ金太郎 by いらすとや](./20201128_pysuruga/img/pysuruga/monogatari_kintarou_kuma.png)
+![マサカリ金太郎 by いらすとや](./img/pysuruga/monogatari_kintarou_kuma.png)
 
 
 ---
@@ -623,7 +623,7 @@ mini Shizuokaの反省を元に~~沼に落ちる~~機材を買う
 
 ---
 
-![機材沼](/20201128_pysuruga/img/pysuruga/pycon_jp_tutorial_2020-11-28_115850.png)
+![h:520px](./img/pysuruga/pycon_jp_tutorial_2020-11-28_115850.png)
 
 今年買ったもので一番有用だった
 
@@ -646,14 +646,14 @@ mini Shizuokaの反省を元に~~沼に落ちる~~機材を買う
 
 自動文字起こしをやってミタミタ
 
-![文字起こし](./20201128_pysuruga/img/pysuruga/IMG_20200908_195007.jpg)
+![文字起こし](./img/pysuruga/IMG_20200908_195007.jpg)
 
 - 画面を見る方向けに喋りの不明瞭を解決できる？
   - -> 現状だと厳しそう
 
 ---
 
-![静岡銘菓](./20201128_pysuruga/img/pysuruga/pycon_jp_tutorial_2020-11-28_115500.png)
+![静岡銘菓](./img/pysuruga/pycon_jp_tutorial_2020-11-28_115500.png)
 
 静岡銘菓を紹介。
 
@@ -667,13 +667,13 @@ mini Shizuokaの反省を元に~~沼に落ちる~~機材を買う
 
 インタビュー受けたり
 
-![ブログの画像](./20201128_pysuruga/img/pysuruga/pycon_jp_tutorial_2020-11-28_114704.png)
+![h:520px](./img/pysuruga/pycon_jp_tutorial_2020-11-28_114704.png)
 
 ---
 
 アンケート
 
-![アンケート結果の画像](./20201128_pysuruga/img/pysuruga/pycon_jp_tutorial_2020-11-28_115002.png)
+![h:520px](./img/pysuruga/pycon_jp_tutorial_2020-11-28_115002.png)
 
 ---
 
@@ -699,7 +699,7 @@ mini Shizuokaの反省を元に~~沼に落ちる~~機材を買う
 
 個人的にうれしかったことといえば
 
-![瀬良さんからのメンション](./20201128_pysuruga/img/pysuruga/pycon_jp_tutorial_2020-11-28_120236.png)
+![瀬良さんからのメンション](./img/pysuruga/pycon_jp_tutorial_2020-11-28_120236.png)
 
 Slackの中の人にこういってもらえた。書籍化…😳
 

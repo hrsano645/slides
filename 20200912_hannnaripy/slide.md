@@ -1,6 +1,6 @@
 ---
 marp: true
-header: "俺はpathlibで行く！はんなりPython 32 標準ライブラリなLT会"
+header: "俺はpathlibで行く！ はんなりPython 32 標準ライブラリなLT会"
 paginate: true
 backgroundColor: #eee
 ---
