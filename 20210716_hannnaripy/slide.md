@@ -1,12 +1,12 @@
 ---
 marp: true
-header: "**ほぼPython標準ライブラリでオープンデータを触った話** 2021/07/16 はんなりPython LT"
+header: "**ほぼ標準ライブラリでオープンデータは扱えるの？** 2021/07/16 はんなりPython LT"
 # footer: "by [@hrs_sano645](https://twitter.com/hrs_sano645)"
 paginate: true
 backgroundColor: #eee
 ---
 
-# ほぼPython標準ライブラリでオープンデータを触った話
+# ほぼ標準ライブラリでオープンデータは扱えるの？
 
 2021/07/16 はんなりPython LT
 
