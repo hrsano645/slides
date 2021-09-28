@@ -71,8 +71,13 @@ PyCon JP 2021
 - PythonとIoT（10min
   - micropython/CircuitPythonの紹介
     - micropythonはpyboardというクラウドファンディングで生まれた言語系
+      - [Micro Python: Python for microcontrollers by Damien George — Kickstarter](https://www.kickstarter.com/projects/214379695/micro-python-python-for-microcontrollers)
+      - 特徴は、
+        - CPythonの3系（3.4, 3.5の一部）の文法をベースにした独自の実装系
+        - マイクロコントローラー向けにカスタマイズした標準ライブラリやサードパーティライブラリを備える
+        - シリアルコンソールからREPLが扱える
     - 他のボードにもポートされ、arduino系のボードで扱える
-    - 便利なのはESP32系です。M5Stackシリーズでほとんど対応していて手に入りやすい
+      - 便利なのはESP32系です。M5Stackシリーズでほとんど対応していて手に入りやすい
     - circuitpythonはmicropythonの派生版。adafruitというSTEAM系に取り組んでる電子部品の販売や教育分野のメーカーが作成
     - そのメーカーのボードに対応したり、専用のライブラリを用意して、メーカーのセンサーデバイスと接続しやすい
   - CircuitPythonのライブラリをRaspberry Piで扱う
