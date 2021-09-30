@@ -130,3 +130,7 @@ PyCon JP 2021
   - ラズパイでセンサー情報を取りに行く手段でおすすめな方法を紹介
   - ダッシュボードアプリをplotlyのdashで作成
 - おしらせ: pycon mini shizuoka やります。 LTと参加者募集をしていきますー
+
+---
+
+つまづきポイントの記事は参考になる -> https://qiita.com/chromia/items/4b91d8b6ca520782672c
