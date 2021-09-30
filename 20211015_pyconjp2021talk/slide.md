@@ -15,7 +15,7 @@ PyCon JP 2021
 
 ## お前誰よ
 
-- 佐野浩士（Hiroshi Sano）[@hrs_sano645](https://twitter.com/hrs_sano645) 
+- 佐野浩士（Hiroshi Sano）[@hrs_sano645](https://twitter.com/hrs_sano645)
   - 🏠:静岡県の富士市🗻
 - Job💼
   - [佐野設計事務所](https://sano-design.info)
@@ -79,37 +79,48 @@ PyCon JP 2021
     - 他のボードにもポートされ、arduino系のボードで扱える
       - 便利なのはESP32系です。M5Stackシリーズでほとんど対応していて手に入りやすい
     - circuitpythonはmicropythonの派生版。adafruitというSTEAM系に取り組んでる電子部品の販売や教育分野のメーカーが作成
+    - [Welcome To CircuitPython | Welcome to CircuitPython! | Adafruit Learning System](https://learn.adafruit.com/welcome-to-circuitpython)
     - そのメーカーのボードに対応したり、専用のライブラリを用意して、メーカーのセンサーデバイスと接続しやすい
   - CircuitPythonのライブラリをRaspberry Piで扱う
-    - このcircuitpythonはraspberry pi でも利用できる。というより、circuitpython向けのコードやライブラリをraspberry pi上でも扱える様にしているライブラリがある
-    - それらを扱うことで、ラズパイやマイコン向けに同じコードで作業できる。
-      TODO: 2021/09/27 ちゃんとその通りかチェックする
+    - blinkaというライブラリを使う。 [Overview | CircuitPython on Linux and Raspberry Pi | Adafruit Learning System](https://learn.adafruit.com/circuitpython-on-raspberrypi-linux)
+    - このcircuitpythonはraspberry piでも利用できる。というより、circuitpython向けのコードやライブラリをraspberry pi上でも扱える様にしているライブラリがある。
+    - blinkaはcircuitpythonで使うマイコンボードの機能をraspberry pi向けに変換するレイヤー。
+    - それらを扱うことで、ラズパイやマイコン向けに同じコードで作業できる。（もちろんラズパイ向けのコードやライブラリはcircuitpythonでは動かないので注意）
+      ~~TODO: 2021/09/27 ちゃんとその通りかチェックする~~
   - センサー情報取得の実例: BME280という温度湿度センサーから情報を取得する
+    - 実践する
+    - BME280を接続して動かしてみる
+    -
   - ここでtips: Raspberry PiでPythonを扱う方法:VSCodeのリモート開発が便利です
-    - ssh経由で扱うといい。ただpi3あたりからでないと、リモート開発できない（vscodeのリモートサーバーが対応するCPUアーキテクチャがあたらしめでないとだめ）
+    - ssh経由で扱うといい。ただpi3あたりからでないと、リモート開発できない（vscodeのリモートサーバーが対応するCPUアーキテクチャの問題）
+    - <https://www.raspberrypi.org/blog/coding-on-raspberry-pi-remotely-with-visual-studio-code/>
+    > Remote SSH needs a Raspberry Pi 3 or 4. It is not supported on older Raspberry Pis, or on Raspberry Pi Zero.
 - Dashでセンサー情報を可視化する（10min
   - Dashの紹介
-    - plotlyという企業、またグラフライブラリの名称である。
+    - plotlyという企業、またグラフライブラリ、が作成しているWebアプリフレームワーク
     - plotlyがこのグラフライブラリを使いつつwebアプリを簡単に作ってデータ分析向けにプロトタイピングしやすくしたライブラリがdash
-    - もう時期新しいバージョンが出てくるらしい
+      - サンプルもたくさん（有料機能を使ったものもあるので注意）<https://dash.gallery/Portal/>
+    - もう時期新しいバージョンが出てくるらしい: 2.0
   - Dashの基本的な構成の紹介:
     - dashは flask + reactで作られている。
-    - デプロイしやすい構成でもある。
-    - dbの扱いはないが、pandasを使ってplotlyのグラフを作れるので、pandas経由で何かしらをするときに便利
-    - HTMLを書く必要がない
+      > Built on top of Plotly.js, React and Flask, Dash ties modern UI elements like dropdowns, sliders, and graphs directly to your analytical Python code. Read our tutorial proudly crafted ❤️ by Dash itself.
+    - HTMLを書く必要がない -> PythonのみでWebサイト構成が作れる
       - tips: と言ってもhtmlっぽい構造は作る必要がある。これらは関数などでカプセル化していくとわかりやすい。
       　慣れてくるとwebアプリを書いている様な扱いになってくる。（コンポーネント用意して呼び出すなど）
-    - ホットリロードによる開発
-      - 開発中は自動的にリロードしてくれる。デバッグモードを有効にしておくと開発しやすい
+    <!-- - ホットリロードによる開発
+      - 自動的にリロードしてくれる。デバッグモードを有効にしておくと開発しやすい -->
     - コールバック機能を使って動的な操作が可能
       - ライブラリのサンプルには自動運転時の状況の可視化とかもある。かなり面白い
+    - dbを扱いたい場合は自前で用意。
+      - pandasを使ってplotlyのグラフを作れるので、pandas経由で何かしらをするときに便利
   - フォームなどの操作から動的な変更:コールバック機能
-    - dashは動的な操作を可能にするためにコールバックという機能がある
-    - 例えばグラフの種類を変更することができる: 実演
-    - homeenvdashでは
+    - dashは動的な操作を可能にするためのコールバックという機能がある
+    - たとえばグラフの種類を変更することができる: 実演
+    - homeenvdashではフォームで部屋ごとや温度湿度気圧を含めて操作をする
   - センサー情報を可視化する
-    - センサー情報の取得方法は、直接センサーの値を取りに行くのも一つだが、今回は中間にGoogleスプレッドシートの取り込みをしているので、pandasで操作しやすい
-    - 最新の値や
+    - 実演:センサー情報の取得方法は、直接センサーの値を取りに行く
+    - 実際のところはファイルかDB, 外部のデータソースへ保存して扱う方がわかりやすい
+      - 時系列グラフを作るなら、データの記録は必須になる。
   - Dashの便利なライブラリ: Dash bootstrap componets（dbc）によるデザインの整え方
     - dashの利点は扱いやすいが、CSSなどのデザインはややしづらい
     - そこで、bootstrapを扱いやすいコンポーネントでまとめたライブラリがある
