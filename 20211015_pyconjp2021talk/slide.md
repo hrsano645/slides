@@ -125,7 +125,6 @@ PyCon JP 2021
 
 ### CurcitPythonとは
 
-
 <左に画像>
 
 - circuitpythonはMicroPythonの派生版。adafruitというSTEAM系に取り組んでる電子部品の販売や教育分野のメーカーが作成
@@ -144,7 +143,7 @@ PyCon JP 2021
 ### CircuitPythonのライブラリをRaspberry Piで扱う
 
   - blinkaというライブラリを使う。 [Overview | CircuitPython on Linux and Raspberry Pi | Adafruit Learning System](https://learn.adafruit.com/circuitpython-on-raspberrypi-linux)
-  - このcircuitpythonはraspberry piでも利用できる。というより、circuitpython向けのコードやライブラリをraspberry pi上でも扱える様にしているライブラリがある。
+  - circuitpython向けのコードやライブラリをraspberry pi上でも扱える様にしているライブラリがある。
   - blinkaはcircuitpythonで使うマイコンボードの機能をraspberry pi向けに変換するレイヤー。
 
 <!-- _footer: もちろんラズパイ向けのコードやライブラリはcircuitpythonでは動かないので注意 -->
@@ -245,7 +244,11 @@ HTMLを書く必要がない -> PythonのみでWebサイト構成が作れる
 - 自作のダッシュボードであるhomeenvdashをネタに
 - ラズパイでセンサー情報を取りに行く手段でおすすめな方法を紹介
 - ダッシュボードアプリをplotlyのdashで作成
-
+- 言いたいこと
+  - PythonのIoT活用をしてみよう
+  - 日常のデータを見れる世にしてみよう
+  - 積みボードを活用していこう。
+  - 
 
 ### おしらせ: pycon mini shizuoka やります。 LTと参加者募集をしていきますー
 
