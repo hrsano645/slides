@@ -142,9 +142,9 @@ PyCon JP 2021
 
 ### CircuitPythonのライブラリをRaspberry Piで扱う
 
-  - blinkaというライブラリを使う。 [Overview | CircuitPython on Linux and Raspberry Pi | Adafruit Learning System](https://learn.adafruit.com/circuitpython-on-raspberrypi-linux)
-  - circuitpython向けのコードやライブラリをraspberry pi上でも扱える様にしているライブラリがある。
-  - blinkaはcircuitpythonで使うマイコンボードの機能をraspberry pi向けに変換するレイヤー。
+- blinkaというライブラリを使う。 [Overview | CircuitPython on Linux and Raspberry Pi | Adafruit Learning System](https://learn.adafruit.com/circuitpython-on-raspberrypi-linux)
+- circuitpython向けのコードやライブラリをraspberry pi上でも扱える様にしているライブラリがある。
+- blinkaはcircuitpythonで使うマイコンボードの機能をraspberry pi向けに変換するレイヤー。
 
 <!-- _footer: もちろんラズパイ向けのコードやライブラリはcircuitpythonでは動かないので注意 -->
 
@@ -152,8 +152,13 @@ PyCon JP 2021
 
 ### センサー情報取得の実例: BME280という温度湿度センサーから情報を取得する
 
-- 実践する
 - BME280を接続して動かしてみる
+  - 必要な物を用意する: ブレットボード、BME280、ワイヤー
+  - Amazonとかでも集まる。日本のお店で買うなら秋月、スイッチサイエンス、マルツ、千石電商がおすすめ
+  - 配線はこうする
+
+---
+
 - デモを見せながら披露
 
 ---
