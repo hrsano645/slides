@@ -152,6 +152,8 @@ PyCon JP 2021
 
 ### センサー情報取得の実例: BME280という温度湿度センサーから情報を取得する
 
+デモしながら様子を見せていきます
+
 - BME280を接続して動かしてみる
   - 必要な物を用意する: ブレットボード、BME280、ワイヤー
   - Amazonとかでも集まる。日本のお店で買うなら秋月、スイッチサイエンス、マルツ、千石電商がおすすめ
@@ -159,33 +161,39 @@ PyCon JP 2021
 
 ---
 
-- デモを見せながら披露
+配線の様子を見せる
 
 ---
 
-  - ここでtips: Raspberry PiでPythonを扱う方法:VSCodeのリモート開発が便利です
-    - ssh経由で扱うといい。ただpi3あたりからでないと、リモート開発できない（vscodeのリモートサーバーが対応するCPUアーキテクチャの問題）
-    - <https://www.raspberrypi.org/blog/coding-on-raspberry-pi-remotely-with-visual-studio-code/>
-    > Remote SSH needs a Raspberry Pi 3 or 4. It is not supported on older Raspberry Pis, or on Raspberry Pi Zero.
+デモを見せながら披露
 
 ---
 
-- Dashでセンサー情報を可視化する（10min
+- ここでtips: Raspberry PiでPythonを扱う方法:VSCodeのリモート開発が便利です
+  - ssh経由で扱うといい。ただpi3あたりからでないと、リモート開発できない（vscodeのリモートサーバーが対応するCPUアーキテクチャの問題）
+  - <https://www.raspberrypi.org/blog/coding-on-raspberry-pi-remotely-with-visual-studio-code/>
+  > Remote SSH needs a Raspberry Pi 3 or 4. It is not supported on older Raspberry Pis, or on Raspberry Pi Zero.
 
 ---
 
-  - Dashの紹介
-    - plotlyという企業、またグラフライブラリ、が作成しているWebアプリフレームワーク
-    - plotlyがこのグラフライブラリを使いつつwebアプリを簡単に作ってデータ分析向けにプロトタイピングしやすくしたライブラリがdash
-      - サンプルもたくさん（有料機能を使ったものもあるので注意）<https://dash.gallery/Portal/>
-    - もう時期新しいバージョンが出てくるらしい: 2.0
+## Dashでセンサー情報を可視化する（10min
 
 ---
 
-### Dashの基本的な情報
+### Dashの紹介
+
+- plotlyという企業、またグラフライブラリ、が作成しているWebアプリフレームワーク
+- plotlyがこのグラフライブラリを使いつつwebアプリを簡単に作れる
+  - データ分析向けにプロトタイピングしやすくしたライブラリがdash
+- サンプルもたくさん（有料機能を使ったものもあるので注意）<https://dash.gallery/Portal/>
+
+---
+
+### Dashの特徴
+
 - dashは flask + reactで作られている。
   > Built on top of Plotly.js, React and Flask, Dash ties modern UI elements like dropdowns, sliders, and graphs directly to your analytical Python code. Read our tutorial proudly crafted ❤️ by Dash itself.
-- HTMLを書く必要がない -> PythonのみでWebサイト構成が作れる
+- （ほぼ）PythonのみでWebサイト構成が作れる
 - コールバック機能を使ってインタラクティブ操作が可能
   - ライブラリのサンプルには自動運転時の状況の可視化とかもある。かなり面白い
 - dbを扱いたい場合は自前で用意。
@@ -193,10 +201,11 @@ PyCon JP 2021
 
 ---
 
-HTMLを書く必要がない -> PythonのみでWebサイト構成が作れる
+（ほぼ）PythonのみでWebサイト構成が作れる
 
+- HTMLを書く必要がない
 - htmlのフォームや構造をラッピングしたコンポーネントを呼び出して構成を用意する
-- plotlyと連携することが可能
+- plotlyと連携して豊富なグラフを扱うことができる
 - htmlな操作は知らないと扱いづらいはづらい
 
 
