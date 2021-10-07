@@ -158,6 +158,24 @@ homeenvdashの全体構成
 
 ---
 
+### Raspberry Piとは
+
+- もともとは教育目的のLinuxが動作するシングルボード
+  - 工場やサイネージ、センサーノードとして業務利用もされている
+- インターフェイスが豊富。WLAN, Ethernet, USB, Bluetooth
+- GPIO（デジタル）でセンサーと接続可能
+- GUI/CUIで利用可能
+
+---
+
+画像で紹介
+
+- 教育目的のデバイスとして
+- 工場系
+- 農場のセンサーとして
+
+---
+
 ### MicroPython/CircuitPythonの紹介
 
 <左に画像>
@@ -192,10 +210,6 @@ homeenvdashの全体構成
 
 ---
 
-<ラズパイ+micropythonたちの比較画像を載せる。>
-
----
-
 ### CircuitPythonのライブラリをRaspberry Piで扱う
 
 - blinkaというライブラリを使う。 [Overview | CircuitPython on Linux and Raspberry Pi | Adafruit Learning System](https://learn.adafruit.com/circuitpython-on-raspberrypi-linux)
@@ -203,6 +217,10 @@ homeenvdashの全体構成
 - blinkaはcircuitpythonで使うマイコンボードの機能をraspberry pi向けに変換するレイヤー。
 
 <!-- _footer: もちろんラズパイ向けのコードやライブラリはcircuitpythonでは動かないので注意 -->
+
+---
+
+![](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?h=480)
 
 ---
 
