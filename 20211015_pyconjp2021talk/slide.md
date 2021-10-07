@@ -30,10 +30,9 @@ PyCon JP 2021
 
 - 環境ダッシュボードを作った話
 - ラズパイとセンサーを扱う
-  - CurcitPythonを使う選択肢
+  - CurcitPythonを一緒に使う選択肢
 - Plotly Dashでダッシュボードアプリを構築する
   - PythonコードだけでWebアプリを構築する
-  - 動的な操作
   - センサー情報を可視化する
 - まとめ
 
@@ -85,7 +84,6 @@ PyCon JP 2021
 
 < 画像入れる: 体の不調を出した様ないらすとやイメージ>
 
-
 - 低気圧に弱いので調子が悪くなる前兆を調べたい
 - 予報サービスはあるけど現在の状態を見たい
 - 世の中にはIoTの製品はあるものの、気圧を見られるものが意外となかった
@@ -105,7 +103,6 @@ PyCon JP 2021
 
 - Makerという文化
 - ものづくりが好きである
-- 
 
 ---
 
@@ -118,7 +115,6 @@ PyCon JP 2021
 ---
 
 ラズパイが大量に転がっているので有効活用することが目的
-
 
 <家にあるラズパイを積む -> 写真撮影>
 
@@ -135,8 +131,6 @@ PyCon JP 2021
 
 homeenvdashの全体構成
 
-<!-- TODO: 2021/10/06 画像を小さくして、小型化する, 真ん中揃えにする -->
-
 ![](https://docs.google.com/drawings/d/e/2PACX-1vR6NyaVJv9P6mVH4wCfPot4IbAtuBWNaP-wvr2_8SkwpkCfYD2qxP5LHsPo1iW311P9WVHtUSIBHLCm/pub?w=960)
 
 ---
@@ -149,7 +143,9 @@ homeenvdashの全体構成
 
 ---
 
-## PythonとIoT（10min
+## PythonとIoT
+
+より手軽にPythonとIoTを行う方法を紹介します
 
 ---
 
@@ -158,7 +154,7 @@ homeenvdashの全体構成
 - ラズパイ + CPython
 - MicroPython/CircuitPython
 
-![](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?w=960&h=540)
+![](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?h=480)
 
 ---
 
@@ -184,14 +180,13 @@ homeenvdashの全体構成
 
 ---
 
-### CurcitPythonとは
+### CircuitPythonとは
 
 <左に画像>
 
 - circuitpythonはMicroPythonの派生版。adafruitというSTEAM系に取り組んでる電子部品の販売や教育分野のメーカーが作成
 - そのメーカーのボードに対応したり、専用のライブラリを用意
   - メーカーのセンサーデバイスと接続しやすい
-
 
 <!-- _footer: CircuitPython: https://learn.adafruit.om/welcome-to-circuitpython  -->
 
@@ -215,10 +210,18 @@ homeenvdashの全体構成
 
 デモしながら様子を見せていきます
 
-- BME280を接続して動かしてみる
-  - 必要な物を用意する: ブレットボード、BME280、ワイヤー
-  - Amazonとかでも集まる。日本のお店で買うなら秋月、スイッチサイエンス、マルツ、千石電商がおすすめ
-  - 配線はこうする
+- 実際にラズパイ4BとBME280を接続して動かしてみる
+
+---
+
+<画像: ワイヤーやセンサーを載せて左側に載せる>
+
+まずは必要なものを揃えます
+
+- 必要な物を用意する: ブレットボード、BME280、ワイヤー
+- Amazonとかでも集まる。
+  [秋月電子通商](https://akizukidenshi.com/catalog/default.aspx)、[スイッチサイエンス](https://www.switch-science.com/)、[aitendo](https://www.aitendo.com/)、
+  [マルツオンライン](https://www.marutsu.co.jp/)、[せんごくネット通販](https://www.sengoku.co.jp/)がおすすめ
 
 ---
 
@@ -230,14 +233,17 @@ homeenvdashの全体構成
 
 ---
 
-- ここでtips: Raspberry PiでPythonを扱う方法:VSCodeのリモート開発が便利です
-  - ssh経由で扱うといい。ただpi3あたりからでないと、リモート開発できない（vscodeのリモートサーバーが対応するCPUアーキテクチャの問題）
-  - <https://www.raspberrypi.org/blog/coding-on-raspberry-pi-remotely-with-visual-studio-code/>
-  > Remote SSH needs a Raspberry Pi 3 or 4. It is not supported on older Raspberry Pis, or on Raspberry Pi Zero.
+- Tips: Raspberry PiでPythonを扱う方法:
+
+VSCodeのリモート開発が便利です
+
+- ssh経由で扱うといい。ただpi3あたりからでないと、リモート開発できない（vscodeのリモートサーバーが対応するCPUアーキテクチャの問題）
+- <https://www.raspberrypi.org/blog/coding-on-raspberry-pi-remotely-with-visual-studio-code/>
+> Remote SSH needs a Raspberry Pi 3 or 4. It is not supported on older Raspberry Pis, or on Raspberry Pi Zero.
 
 ---
 
-## Dashでセンサー情報を可視化する（10min
+## Dashでセンサー情報を可視化する
 
 ---
 
