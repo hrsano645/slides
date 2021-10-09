@@ -16,7 +16,7 @@ PyCon JP 2021
 - 佐野浩士（Hiroshi Sano）[@hrs_sano645](https://twitter.com/hrs_sano645)
   - 🏠:静岡県の富士市🗻
 - Job💼
-  - [佐野設計事務所](https://sano-design.info)
+  - [株式会社佐野設計事務所](https://sano-design.info)
   - 米農家🌾
 - Community🧑‍💻
   - 🐍: Python駿河, PyCon mini Shizuokaスタッフ
@@ -60,6 +60,8 @@ PyCon JP 2021
 
 ### homeenvdashプロジェクトの紹介
 
+![bg left:40% 60%](img/2021-10-09-12-00-46.png)
+
 環境センサーの情報が見れるダッシュボードアプリを作りました
 
 このプロジェクトのモチベーションを紹介します。
@@ -90,12 +92,12 @@ PyCon JP 2021
 < 画像で市販のサービス, ダッシュボードの紹介>
 
 
-
 - センサーは市販にも販売されている
 - ダッシュボードもさまざまなプロジェクトがある
 
 なんで作る必要があるか？
 
+<!-- _footer: 車輪の再開発ってやつ -->
 ---
 
 ![bg left:40% 70%](img/2021-10-09-11-52-55.png)
@@ -113,8 +115,11 @@ PyCon JP 2021
 
 ### 見守りに使う
 
-- 実家の祖母の部屋の状況を見れるようにして、気をつけるために
+- 実家の祖母の部屋の状況を見れるよう
+  気をつけるために利用していました
+- 高齢者は気温に対して間違えやすい
 - 体感より数値化された状態を見た方が対応しやすい
+  - => 誰でも同じ
 
 ---
 
@@ -127,40 +132,44 @@ PyCon JP 2021
 - 世の中に存在していなければ
   自分で作る精神！
 
+<!-- _footer: 車輪の再開発上等だ！という文化です -->
+
 ---
 
 世の中に存在していなければ自分で作る
 
-< 小池さんの例 >
+< 小池さんの例 : きゅうりAIの第一号>
 
-< からあげさんの例 >
+< からあげさんの例 : >
 
 ---
 
-ラズパイが大量に転がっているので有効活用することが目的
+![bg left:40% 70%](img/2021-10-09-14-45-08.png)
 
-<家にあるラズパイを積む -> 写真撮影>
+ラズパイが大量に転がっているので有効活用することが目的
 
 <!-- _footer: 実際のところみなさんもありますよね？積みボード -->
 
 ---
 
-![](img/2021-10-02-14-31-48.png)
+![drop-shadow](img/2021-10-02-14-31-48.png)
 
 > https://twitter.com/karaage0703/status/1413347181705105410?s=20
 
-<!-- _footer: やっぱり先人はちげーわ！ -->
+<!-- _footer: やっぱり闇のエンジニアはちげーわ！ -->
 ---
 
 積みボードがある方は贅沢に使って快適な日常を手に入れる！
 
-<!-- _footer: 普通にサーバーとして使っても便利ですよ -->
+<!-- _footer: 一応2台ぐらい有効活用してます -->
 
 ---
 
 ### homeenvdashの全体構成
 
-![](https://docs.google.com/drawings/d/e/2PACX-1vR6NyaVJv9P6mVH4wCfPot4IbAtuBWNaP-wvr2_8SkwpkCfYD2qxP5LHsPo1iW311P9WVHtUSIBHLCm/pub?w=960)
+<!-- TODO:2021-10-09 この絵はシュリンクして整理しなおす -->
+
+![drop-shadow](https://docs.google.com/drawings/d/e/2PACX-1vR6NyaVJv9P6mVH4wCfPot4IbAtuBWNaP-wvr2_8SkwpkCfYD2qxP5LHsPo1iW311P9WVHtUSIBHLCm/pub?h=500)
 
 ---
 
@@ -180,11 +189,10 @@ PyCon JP 2021
 
 ### PythonでIoTを行う選択肢
 
-- ラズパイ + CPython
-- 対応マイコン + MicroPython/CircuitPython
-- ラズパイ + CircuitPython=>Blinkaライブラリ
 
-![](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?h=480)
+<!-- TODO:2021-10-09 ここは比較表を使ってまとめる -->
+
+![bg ](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?h=480)
 
 ---
 
@@ -226,16 +234,16 @@ PyCon JP 2021
 
 ### MicroPython/CircuitPythonの紹介
 
-<左に画像 ロゴ>
+![bg left:40% 80%](img/2021-10-09-15-18-30.png)
 
 - MicroPythonはマイコンボード向けの処理系
+  - micropython.org
 - クラウドファンディングで生まれたpyboardに載せたのが初出
 
 <!-- _footer: MicroPython Kickstarterページ https://www.kickstarter.com/projects/214379695/micro-python-python-for-microcontrollers -->
 
 ---
-
-<左に画像 作例, 自分の作ったものを載せながら>
+![bg left:45% 100%](https://docs.google.com/drawings/d/e/2PACX-1vR6Kfmi6lFMG-UlxtRCNep0R2tOzNiIFSakbMOT3TNiCh6MZuQZrw1jUGC_f7TU99_vCmWtWZeItGnJ/pub?w=960&h=720)
 
 特徴は
 
@@ -277,11 +285,15 @@ PythonとIoTは扱いやすさもあって環境がとてもいい
 
 ---
 
+
+
 ![](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?h=480)
 
 ---
 
 ### センサー情報取得の実例: BME280という温度湿度センサーから情報を取得する
+ 
+![bg left:40% 80%](img/2021-10-09-15-29-48.png)
 
 デモしながら様子を見せていきます
 
@@ -354,7 +366,62 @@ VSCodeのリモート開発が便利です
 
 ---
 
-コード: Pythonのみで作成している様子
+```python
+# homeenvdash mini
+from dash import Dash, callback, html, dcc, Input, Output
+
+# dashアプリの初期化
+app = Dash(
+    __name__,
+    meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}],
+)
+app.title = "Hello Dash App"
+
+def _layout():
+    """アプリの全体のレイアウト"""
+    return html.Div(
+        [
+            dcc.Location(id="url", refresh=False),
+            html.H2(app.title),
+            html.Label("PythonのみでWEBアプリを作ります")
+        ],
+    )
+
+if __name__ == "__main__":
+    app.layout = _layout
+    app.run_server(debug=True, host="0.0.0.0")
+```
+
+---
+
+![bg right:45% 100%](https://docs.google.com/drawings/d/e/2PACX-1vT9jRrJQciSzPbd5fUG2_6kNyV1aCbJWgamL1UF4j52s5dOK3oehShiohxU1J6HbNd14Iy046pVgDBe/pub?w=960&h=720)
+
+```python
+# homeenvdash mini
+from dash import Dash, callback, html, dcc, Input, Output
+
+# dashアプリの初期化
+app = Dash(
+    __name__,
+    meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}],
+)
+app.title = "Hello Dash App"
+
+def _layout():
+    """アプリの全体のレイアウト"""
+    return html.Div(
+        [
+            dcc.Location(id="url", refresh=False),
+            html.H2(app.title),
+            html.Label("PythonのみでWEBアプリを作ります")
+        ],
+    )
+
+if __name__ == "__main__":
+    app.layout = _layout
+    app.run_server(debug=True, host="0.0.0.0")
+
+```
 
 ---
 
