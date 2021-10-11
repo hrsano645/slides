@@ -89,8 +89,7 @@ PyCon JP 2021
 
 ---
 
-< 画像で市販のサービス, ダッシュボードの紹介>
-
+![bg left:40% 70%](https://docs.google.com/drawings/d/e/2PACX-1vQXMlRsnlBNhLizyfzQwirXjXnXSzhTnddZEfyb3w2HPayW-ide6twZFT7R2BA-oivWwawkJZNadUHG/pub?w=960&h=720)
 
 - センサーは市販にも販売されている
 - ダッシュボードもさまざまなプロジェクトがある
@@ -136,11 +135,10 @@ PyCon JP 2021
 
 ---
 
-世の中に存在していなければ自分で作る
+世の中に存在していなければ自分で作る！
 
-< 小池さんの例 : きゅうりAIの第一号>
 
-< からあげさんの例 : >
+![](https://docs.google.com/drawings/d/e/2PACX-1vQrMi7_CD1k7DgHPmkrSJIwCLcJfn_ZjmgHnl4dXM-tNIMMXb5oCacRyf9nZbG2Y91zXvZ5TU5O5hwQ/pub?w=1393&h=615)
 
 ---
 
@@ -285,14 +283,12 @@ PythonとIoTは扱いやすさもあって環境がとてもいい
 
 ---
 
-
-
 ![](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?h=480)
 
 ---
 
 ### センサー情報取得の実例: BME280という温度湿度センサーから情報を取得する
- 
+
 ![bg left:40% 80%](img/2021-10-09-15-29-48.png)
 
 デモしながら様子を見せていきます
