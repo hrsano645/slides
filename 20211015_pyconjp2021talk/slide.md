@@ -49,12 +49,27 @@ PyCon JP 2021
 ---
 
 - ラズパイ
-  => Raspberry Pi
+  => **Raspberry Pi**
 - Dash
-  => Plotly Dash
+  => **Plotly Dash**
 - 環境ダッシュボード
   => 環境センサー（今回は温度湿度気圧）を記録とグラフを表示する
-  ダッシュボードアプリ
+  **ダッシュボードアプリ**
+
+---
+
+### このトークの趣旨、モチベーション
+
+- 私的プロジェクトを紹介しつつ、Pythonを使ったIoTとデータ可視化を
+  デモを交えてお伝えします
+  - IoT:Pythonでセンサーデータを扱う
+  - データ可視化: Pythonでダッシュボードアプリを作る
+
+このトークで言いたいこと
+
+- 世の中にない、けどほしいなら自分で作ろう
+- 世の中に存在しないデータを集めて見てみよう
+  - 身近だけど見えないデータ
 
 ---
 
@@ -72,27 +87,30 @@ PyCon JP 2021
 
 - ラズパイ+環境センサーを接続してセンサーノード
 - ダッシュボードアプリはDashを利用する
-- さまざま/複数の環境センサーと接続して1つの
-  ダッシュボードでモニターできる様にするのが目的
+- さまざま/複数の環境センサーと接続して
+  1つのダッシュボードでモニターできる
+  - 複数の部屋や種類が異なるセンサーを扱える
 
-<!-- _footer: 現在温度湿度気圧センサーのBME280のみに対応。今後はCO2センサーに対応したい -->
+<!-- _footer: 現在は、温度湿度気圧のBME280に対応。今後はCO2や非接触温度センサなどに対応したい -->
 
 ---
 
-### なぜ作ったか？
+### なぜ作ったのか？
 
 ![bg left:40% 70%](img/2021-10-09-12-03-48.png)
 
 ---
 
-そもそもセンサーやダッシュボードはすでに製品サービスが多数ある
+そもそも、センサーやダッシュボードはすでに製品サービスが多数ある
 
 ---
 
-![bg left:40% 70%](https://docs.google.com/drawings/d/e/2PACX-1vQXMlRsnlBNhLizyfzQwirXjXnXSzhTnddZEfyb3w2HPayW-ide6twZFT7R2BA-oivWwawkJZNadUHG/pub?w=960&h=720)
+![bg left:40% 120%](https://docs.google.com/drawings/d/e/2PACX-1vQXMlRsnlBNhLizyfzQwirXjXnXSzhTnddZEfyb3w2HPayW-ide6twZFT7R2BA-oivWwawkJZNadUHG/pub?w=960&h=720)
 
 - センサーは市販にも販売されている
 - ダッシュボードもさまざまなプロジェクトがある
+  - OSSなサーバーアプリ
+  - サービスとして提供されているもの
 
 なんで作る必要があるか？
 
@@ -117,12 +135,12 @@ PyCon JP 2021
 - 実家の祖母の部屋の状況を見れるよう
   気をつけるために利用していました
 - 高齢者は気温に対して間違えやすい
-- 体感より数値化された状態を見た方が対応しやすい
-  - => 誰でも同じ
+  - 体感より数値化された状態を見た方が対応しやすい
+- センシティブな環境でもあったので、余り外部サービスを使いたくなかった
 
 ---
 
-### 欲しいものを自分で作る精神
+### 欲しいものを自分で作る
 
 ![bg left:40% 70%](img/2021-10-09-11-58-08.png)
 
@@ -137,8 +155,9 @@ PyCon JP 2021
 
 世の中に存在していなければ自分で作る！
 
-
 ![](https://docs.google.com/drawings/d/e/2PACX-1vQrMi7_CD1k7DgHPmkrSJIwCLcJfn_ZjmgHnl4dXM-tNIMMXb5oCacRyf9nZbG2Y91zXvZ5TU5O5hwQ/pub?w=1393&h=615)
+
+<!-- _footer: 小池さん:http://workpiles.com/2016/08/ccb9-prototype2-complete/  からあげさん:https://karaage.hatenadiary.jp/entry/2019/11/06/073000 -->
 
 ---
 
@@ -155,7 +174,7 @@ PyCon JP 2021
 > https://twitter.com/karaage0703/status/1413347181705105410?s=20
 
 <!-- _footer: やっぱり闇のエンジニアはちげーわ！ -->
----
+--- 
 
 積みボードがある方は贅沢に使って快適な日常を手に入れる！
 
@@ -187,10 +206,15 @@ PyCon JP 2021
 
 ### PythonでIoTを行う選択肢
 
+- Raspberry Pi + CPython
+- MicroPython / CircuitPython
+- Raspberry Pi + Blinkaライブラリ（CircitPython）
 
-<!-- TODO:2021-10-09 ここは比較表を使ってまとめる -->
+<!-- _footer: 上記は私が知っている限りで一例です。ほかにも選択したがある場合は教えていただけると嬉しいです -->
 
-![bg ](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?h=480)
+---
+
+![bg 80%](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?h=480)
 
 ---
 
@@ -208,11 +232,7 @@ PyCon JP 2021
 
 ---
 
-< 画像で紹介 >
-
-- 教育目的のデバイスとして
-- 工場系
-- 農場のセンサーとして
+![bg 80%](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?h=480)
 
 ---
 
@@ -230,28 +250,17 @@ PyCon JP 2021
 
 ---
 
-### MicroPython/CircuitPythonの紹介
+### MicroPythonとは
 
 ![bg left:40% 80%](img/2021-10-09-15-18-30.png)
 
 - MicroPythonはマイコンボード向けの処理系
-  - micropython.org
-- クラウドファンディングで生まれたpyboardに載せたのが初出
+  - マイコン=マイクロコントローラ
+  - CPUより用途が限られている
+  - 特定の機器制御に最適化された集積回路
+- [クラウドファンディング](https://www.kickstarter.com/projects/214379695/micro-python-python-for-microcontrollers)で生まれたpyboardの開発環境として作られた
 
-<!-- _footer: MicroPython Kickstarterページ https://www.kickstarter.com/projects/214379695/micro-python-python-for-microcontrollers -->
-
----
-![bg left:45% 100%](https://docs.google.com/drawings/d/e/2PACX-1vR6Kfmi6lFMG-UlxtRCNep0R2tOzNiIFSakbMOT3TNiCh6MZuQZrw1jUGC_f7TU99_vCmWtWZeItGnJ/pub?w=960&h=720)
-
-特徴は
-
-- CPythonの3系（3.4, 3.5の一部）の文法をベースにした独自の実装系
-- マイクロコントローラー向けにカスタマイズした標準ライブラリやサードパーティライブラリを備える
-- シリアルコンソールからREPLが扱える
-- 他のボードにもポートされ、arduino系のボードで扱える
-  - 便利なのはESP32系のマイコンボード
-
-<!-- _footer: ESP32をよく使うM5Stack系が便利です。 -->
+<!-- _footer: MicroPython: micropython.org -->
 
 ---
 
@@ -259,31 +268,49 @@ PyCon JP 2021
 
 ![bg left:40% 80%](img/2021-10-09-11-48-25.png)
 
-- circuitpythonはMicroPythonの派生版。adafruitというSTEAM系に取り組んでる電子部品の販売や教育分野のメーカーが作成
-- そのメーカーのボードに対応したり、専用のライブラリを用意
+- MicroPythonの派生版
+  - adafruitというSTEAM系に取り組んでる電子部品の販売や教育分野のメーカーが作成
+- adafruitのボードに対応したり、専用のライブラリを用意
   - メーカーのセンサーデバイスと接続しやすい
 
-<!-- _footer: CircuitPython: https://learn.adafruit.om/welcome-to-circuitpython  -->
+<!-- _footer: CircuitPython https://circuitpython.org -->
+
+---
+![bg left:40% 130%](https://docs.google.com/drawings/d/e/2PACX-1vR6Kfmi6lFMG-UlxtRCNep0R2tOzNiIFSakbMOT3TNiCh6MZuQZrw1jUGC_f7TU99_vCmWtWZeItGnJ/pub?w=960&h=720)
+
+
+### MicroPython/CircuitPythonの特徴
+
+- CPythonの3系（3.4, 3.5の一部）の文法をベースにした独自の実装系
+- マイクロコントローラー向けカスタムした標準ライブラリやサードパーティライブラリがある
+- シリアルコンソールからREPLが動く
+- 他のボードにもポートされてインストール可能
+
+⭕️ Raspberry Piより安価。電源はバッテリーでも動く
+🔺 CPythonライクだが完全互換ではない
+
+<!-- _footer: 写真はESP32+MicroPythonで水栓を開け閉めするものを作ってました -->
 
 ---
 
-![](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?h=480)
-
-PythonとIoTは扱いやすさもあって環境がとてもいい
+![bg 80%](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?h=480)
 
 ---
 
 ### CircuitPythonのライブラリをRaspberry Piで扱う
 
-- blinkaというライブラリを使う。 [Overview | CircuitPython on Linux and Raspberry Pi | Adafruit Learning System](https://learn.adafruit.com/circuitpython-on-raspberrypi-linux)
-- circuitpython向けのコードやライブラリをraspberry pi上でも扱える様にしているライブラリがある。
-- blinkaはcircuitpythonで使うマイコンボードの機能をraspberry pi向けに変換するレイヤー。
+- blinkaというライブラリを使う
+  - [CircuitPython on Linux and Raspberry Pi](https://learn.adafruit.com/circuitpython-on-raspberrypi-linux)
+  - CircuitPythonで使うマイコンボードの機能をRaspberry Pi向けに変換するレイヤー
+- CircuitPython向けのライブラリをRaspberry Piで扱うことができる（すべてではない） 
+  - Raspberry PiとCircityPythonのコードの相互利用もやりやすい（らしいです）
 
-<!-- _footer: もちろんラズパイ向けのコードやライブラリはcircuitpythonでは動かないので注意 -->
+⭕️ CircityPythonのライブラリを使うことで接続センサーの扱いが楽
+🔺 どちらかの環境依存のコードを書く場合は扱いが難しい
 
 ---
 
-![](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?h=480)
+![bg 80%](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?h=480)
 
 ---
 
@@ -291,36 +318,57 @@ PythonとIoTは扱いやすさもあって環境がとてもいい
 
 ![bg left:40% 80%](img/2021-10-09-15-29-48.png)
 
+Rasberry Pi + Blinkaライブラリを使って、
 デモしながら様子を見せていきます
 
-- 実際にラズパイ4BとBME280を接続して動かしてみる
+- 実際にラズパイ4BとBME280を接続します
 - BME280はこちらものを使ってます
   - SPI接続です（I2Cの場合接続方法とセンサーのコードが少し違います）
 
 ---
 
-<画像: ワイヤーやセンサーを載せて左側に載せる>
+![bg left:40% 100%](https://docs.google.com/drawings/d/e/2PACX-1vSfoVxBK7x3Q2Zvx6yfWzpsfyrsHkt7FYiqbbD0_tEVkzwomfw8BcrRta_-VscBz0QkM6lnI3l92Blh/pub?w=960&h=720)
 
 まずは必要なものを揃えます
 
-- 必要な物を用意する: ブレットボード、BME280、ワイヤー
-- Amazonとかでも集まる。
+- 必要な物を用意する: ブレットボード、ワイヤー、BME280（利用するセンサー）
+- 道具: はんだごて、はんだ、はんだこて台
+  センサーにピンが実装されていない場合は必要です
+- 購入先:
+  Amazonとかでも集まる。
   [秋月電子通商](https://akizukidenshi.com/catalog/default.aspx)、[スイッチサイエンス](https://www.switch-science.com/)、[aitendo](https://www.aitendo.com/)、
-  [マルツオンライン](https://www.marutsu.co.jp/)、[せんごくネット通販](https://www.sengoku.co.jp/)がおすすめ
+  [マルツオンライン](https://www.marutsu.co.jp/)、[せんごくネット通販](https://www.sengoku.co.jp/) がおすすめ
 
 ---
 
-配線の様子を見せる
+配線の様子を見せます
 
 ---
 
-デモを見せながら披露
+
+配線方法まとめ
+
+<!-- <画像で載せる: 表を載せて、SPI接続の例を示す, raspberry piのピンアウトとの接続例を載せる> -->
+
+![h:500](https://docs.google.com/drawings/d/e/2PACX-1vRDhv5roVz3g6nr87qmO39TdlWHT1DTQ1jizOjaE6P6TTGJUJDw3wBXpu6SrFNx-K6hjTp9T1-G5jBS/pub?w=960&h=720)
 
 ---
 
-- Tips: Raspberry PiでPythonを扱う方法:
+環境作成してデモを見せながら披露
 
-VSCodeのリモート開発が便利です
+---
+
+動作させたテストコードの例
+
+```python
+# test_bme280.pyのコードをサンプルとして載せる
+```
+
+---
+
+### Tips: Raspberry PiでPython開発をしやすくする
+
+VSCodeのリモート開発が便利です-> RemoteSSH
 
 - ssh経由で扱うといい。ただpi3あたりからでないと、リモート開発できない（vscodeのリモートサーバーが対応するCPUアーキテクチャの問題）
 - <https://www.raspberrypi.org/blog/coding-on-raspberry-pi-remotely-with-visual-studio-code/>
@@ -330,25 +378,28 @@ VSCodeのリモート開発が便利です
 
 ## Dashでセンサー情報を可視化する
 
+Dashライブラリを使ってセンサー情報を表示する
+ダッシュボードを作ります
+
 ---
 
 ### Dashの紹介
 
-- plotlyという企業、またグラフライブラリ、が作成しているWebアプリフレームワーク
-- plotlyがこのグラフライブラリを使いつつwebアプリを簡単に作れる
-  - データ分析向けにプロトタイピングしやすくしたライブラリがdash
-- サンプルもたくさん（有料機能を使ったものもあるので注意）<https://dash.gallery/Portal/>
+- Plotlyが作成しているWebアプリフレームワーク
+  - Plotlyはグラフライブラリの名称でもある: Plotly.js、Plotly.py
+- Plotlyとセットで使うと、データ分析向けのプロトタイピングがしやすい
+- サンプル（有料機能を使ったものもあるので注意）<https://dash.gallery/Portal/>
+  - ライブラリのサンプルには自動運転時の状況の可視化とかもある。かなり面白い
 
 ---
 
 ### Dashの特徴
 
-- dashは flask + reactで作られている。
+- Dashは flask + reactで作られている。
   > Built on top of Plotly.js, React and Flask, Dash ties modern UI elements like dropdowns, sliders, and graphs directly to your analytical Python code. Read our tutorial proudly crafted ❤️ by Dash itself.
 - （ほぼ）PythonのみでWebサイト構成が作れる
 - コールバック機能を使ってインタラクティブ操作が可能
-  - ライブラリのサンプルには自動運転時の状況の可視化とかもある。かなり面白い
-- dbを扱いたい場合は自前で用意。
+- データセットやDBを扱いたい場合は自前で用意
   - pandasを使ってplotlyのグラフを作れるので、pandas経由で何かしらをするときに便利
 
 ---
@@ -358,7 +409,7 @@ VSCodeのリモート開発が便利です
 - HTMLを書く必要がない
 - htmlのフォームや構造をラッピングしたコンポーネントを呼び出して構成を用意する
 - plotlyと連携して豊富なグラフを扱うことができる
-- htmlな操作は知らないと扱いづらいはづらい
+- htmlな操作は知らないと扱いづらい
 
 ---
 
@@ -377,7 +428,6 @@ def _layout():
     """アプリの全体のレイアウト"""
     return html.Div(
         [
-            dcc.Location(id="url", refresh=False),
             html.H2(app.title),
             html.Label("PythonのみでWEBアプリを作ります")
         ],
@@ -393,7 +443,6 @@ if __name__ == "__main__":
 ![bg right:45% 100%](https://docs.google.com/drawings/d/e/2PACX-1vT9jRrJQciSzPbd5fUG2_6kNyV1aCbJWgamL1UF4j52s5dOK3oehShiohxU1J6HbNd14Iy046pVgDBe/pub?w=960&h=720)
 
 ```python
-# homeenvdash mini
 from dash import Dash, callback, html, dcc, Input, Output
 
 # dashアプリの初期化
@@ -407,7 +456,6 @@ def _layout():
     """アプリの全体のレイアウト"""
     return html.Div(
         [
-            dcc.Location(id="url", refresh=False),
             html.H2(app.title),
             html.Label("PythonのみでWEBアプリを作ります")
         ],
@@ -430,6 +478,11 @@ if __name__ == "__main__":
 ---
 
 コード: callbackの様子
+
+```python
+# 動的な操作の例として
+# ドロップダウンリストの種類が変わったときに、画像を置き換えるみたいなことをする
+```
 
 ---
 
@@ -456,6 +509,14 @@ if __name__ == "__main__":
 
 ---
 
+### センサーの最新の値を見る
+
+
+---
+
+### 記録したセンサーの値をグラフ化する
+
+
 
 ---
 
@@ -470,6 +531,8 @@ if __name__ == "__main__":
 
 ### デモ: デザインを整えてみる
 
+
+
 ---
 
 ### まとめ（3min
@@ -482,7 +545,8 @@ if __name__ == "__main__":
   - PythonのIoT活用をしてみよう
   - 日常のデータを見れる世にしてみよう
   - 積みボードを活用していこう。
-  - 
+
+---
 
 ### おしらせ: pycon mini shizuoka やります。 LTと参加者募集をしていきますー
 
