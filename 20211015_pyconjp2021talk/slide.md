@@ -18,9 +18,9 @@ PyCon JP 2021
 - Job💼
   - [株式会社佐野設計事務所](https://sano-design.info)
   - 米農家🌾
-- Community🧑‍💻
-  - 🐍: Python駿河, PyCon mini Shizuokaスタッフ
-  - 🏙💻: Code for ふじのくに
+- Community🙋
+  - Python駿河, PyCon mini Shizuokaスタッフ
+  - Code for ふじのくに
 
 <!-- _footer:  -->
 
@@ -30,7 +30,7 @@ PyCon JP 2021
 
 - 環境ダッシュボードを作った話
 - PythonとIoT
-  - CurcitPython
+  - CurcitPythonとラズパイを使う選択
 - Plotly Dashでダッシュボードアプリを作る
   - Dashの特徴を紹介
   - センサー情報を可視化する
@@ -182,15 +182,11 @@ PyCon JP 2021
 
 積みボードがある方は贅沢に使って快適な日常を手に入れる！
 
-
-
 <!-- _footer: ラズパイは一応2台ぐらい有効活用してます。踏み台サーバーとか実験用とか... -->
 
 ---
 
 ### homeenvdashの全体構成
-
-<!-- TODO:2021-10-09 この絵はシュリンクして整理しなおす -->
 
 ![drop-shadow](https://docs.google.com/drawings/d/e/2PACX-1vR6NyaVJv9P6mVH4wCfPot4IbAtuBWNaP-wvr2_8SkwpkCfYD2qxP5LHsPo1iW311P9WVHtUSIBHLCm/pub?h=500)
 
@@ -201,6 +197,14 @@ PyCon JP 2021
 - ダッシュボードはDash + Plotly
 - センサーで取得した情報はGoogleスプレッドシートで保存
   - 今後はローカルなDBに保持して、エクスポートする形が望ましい
+
+---
+
+今日は `homeenvdash-mini` というデモ用のアプリを使って解説します。
+
+honeenvdash-miniはこちら -> 
+
+https://github.com/hrsano645/homeenvdash-mini
 
 ---
 
@@ -267,7 +271,7 @@ PyCon JP 2021
   - 特定の機器制御に最適化された集積回路
 - [クラウドファンディング](https://www.kickstarter.com/projects/214379695/micro-python-python-for-microcontrollers)で生まれたpyboardの開発環境として作られた
 
-<!-- _footer: MicroPython: micropython.org -->
+<!-- _footer: MicroPython micropython.org -->
 
 ---
 
@@ -293,7 +297,7 @@ PyCon JP 2021
 - シリアルコンソールからREPLが動く
 - 他のボードにもポートされてインストール可能
 
-⭕️ Raspberry Piより安価。電源はバッテリーでも動く
+⭕️ Raspberry Piより安価。電源はバッテリーも
 🔺 CPythonライクだが完全互換ではない
 
 <!-- _footer: 写真はESP32+MicroPythonで水栓を開け閉めするものを作ってました -->
@@ -375,7 +379,7 @@ Rasberry Pi + Blinkaライブラリを使って、
 
 ### Tips: Raspberry PiでPython開発をしやすくする
 
-VSCodeのリモート開発が便利です-> RemoteSSH
+VS Codeのリモート開発が便利です -> Remote-SSH
 
 - ssh経由で扱うといい。ただpi3あたりからでないと、リモート開発できない（vscodeのリモートサーバーが対応するCPUアーキテクチャの問題）
 - <https://www.raspberrypi.org/blog/coding-on-raspberry-pi-remotely-with-visual-studio-code/>
@@ -393,10 +397,11 @@ Dashライブラリを使ってセンサー情報を表示する
 ### Dashの紹介
 
 - Plotlyが作成しているWebアプリフレームワーク
-  - Plotlyはグラフライブラリの名称でもある: Plotly.js、Plotly.py
+  - Plotlyはグラフライブラリの名称でもある: `Plotly.js`、`Plotly.py`
 - Plotlyとセットで使うと、データ分析向けのプロトタイピングがしやすい
 - サンプル（有料機能を使ったものもあるので注意）<https://dash.gallery/Portal/>
-  - ライブラリのサンプルには自動運転時の状況の可視化とかもある。かなり面白い
+  - ライブラリのサンプルには自動運転時の状況の可視化とかもある。
+  かなりおもしろい
 
 ---
 
@@ -421,7 +426,6 @@ Dashライブラリを使ってセンサー情報を表示する
 ---
 
 ```python
-# homeenvdash mini
 from dash import Dash, callback, html, dcc, Input, Output
 
 # dashアプリの初期化
@@ -494,7 +498,7 @@ if __name__ == "__main__":
 
 ---
 
-### tips:ホットリロードによる開発
+### Tips:ホットリロードによる開発
 
 - 自動的にリロードしてくれる。デバッグモードを有効にしておくと開発しやすい
 
@@ -527,7 +531,7 @@ if __name__ == "__main__":
 
 ---
 
-### tips: htmlっぽい構造は作る必要がある
+### Tips: htmlっぽい構造は作る必要がある
 
 複雑なアプリやレイアウトを作ると、構造も複雑になる
 
@@ -580,9 +584,6 @@ Dashの便利なライブラリ: Dash bootstrap componets（dbc）によるデ�
 
 ---
 
-
----
-
 ## 最後にお知らせ
 
 ---
@@ -593,10 +594,14 @@ Dashの便利なライブラリ: Dash bootstrap componets（dbc）によるデ�
 
 ### PyCon  mini Shizuoka 2021 やります
 
-- 
+- ## PyCon mini Shizuoka 2021
 
-- LTと参加者募集をしていきます
-- 
+開催します🎉
+
+- 2021/11/20 土曜日
+- 詳しくは公式サイトをチェック
+  - shizuoka.pycon.jp/2021
+- LTと参加者募集をします
 
 ---
 
