@@ -224,7 +224,7 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ---
 
-![bg 80%](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?h=480)
+![bg 80%](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?w=1440&h=810)
 
 ---
 
@@ -243,7 +243,7 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ---
 
-![bg 80%](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?h=480)
+![bg 80%](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?w=1440&h=810)
 
 ---
 
@@ -304,7 +304,7 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ---
 
-![bg 80%](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?h=480)
+![bg 80%](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?w=1440&h=810)
 
 ---
 
@@ -321,7 +321,7 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ---
 
-![bg 80%](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?h=480)
+![bg 80%](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?w=1440&h=810)
 
 ---
 
@@ -338,7 +338,7 @@ Rasberry Pi + Blinkaライブラリを使って、
 
 ---
 
-![bg left:40% 100%](https://docs.google.com/drawings/d/e/2PACX-1vSfoVxBK7x3Q2Zvx6yfWzpsfyrsHkt7FYiqbbD0_tEVkzwomfw8BcrRta_-VscBz0QkM6lnI3l92Blh/pub?w=960&h=720)
+![bg left:40% 100%](https://docs.google.com/drawings/d/e/2PACX-1vSfoVxBK7x3Q2Zvx6yfWzpsfyrsHkt7FYiqbbD0_tEVkzwomfw8BcrRta_-VscBz0QkM6lnI3l92Blh/pub?w=922&h=1083)
 
 まずは必要なものを揃えます
 
@@ -372,7 +372,25 @@ Rasberry Pi + Blinkaライブラリを使って、
 動作させたテストコードの例
 
 ```python
-# test_bme280.pyのコードをサンプルとして載せる
+import time
+import board
+from adafruit_bme280 import basic as adafruit_bme280
+import digitalio
+
+# SPI接続
+spi = board.SPI()
+bme_cs = digitalio.DigitalInOut(board.D5)
+bme280 = adafruit_bme280.Adafruit_BME280_SPI(spi, bme_cs)
+
+# 海の気圧を描くこと。大体1013hPaとのこと
+bme280.sea_level_pressure = 1013.25
+
+while True:
+    print(f"温度: {bme280.temperature:.1f} C")
+    print(f"湿度: {bme280.relative_humidity:.1f} %%")
+    print(f"気圧: {bme280.pressure:.1f} hPa")
+    print(f"高度: {bme280.altitude:.2f} meters")
+    time.sleep(2)
 ```
 
 ---
@@ -408,7 +426,8 @@ Dashライブラリを使ってセンサー情報を表示する
 ### Dashの特徴
 
 - Dashはflask + reactで作られている。
-  > Built on top of Plotly.js, React and Flask, Dash ties modern UI elements like dropdowns, sliders, and graphs directly to your analytical Python code. Read our tutorial proudly crafted ❤️ by Dash itself.
+  > Built on top of Plotly.js, React and Flask, Dash ties modern UI elements like dropdowns, sliders, and graphs directly to your analytical Python code.
+  > https://github.com/plotly/dash
 - （ほぼ）PythonのみでWebサイト構成が作れる
 - コールバック機能を使ってインタラクティブ操作が可能
 - データセットやDBを扱いたい場合は自前で用意
@@ -526,7 +545,8 @@ if __name__ == "__main__":
 ---
 
 ```Python
-# レイアウトに追加するコードと、値取得の部分
+# センサーの値を表示するコードの一部を載せる
+# レイアウトに追加するコードと、値取得のコード
 ```
 
 ---
@@ -536,7 +556,9 @@ if __name__ == "__main__":
 ---
 
 ```Python
-# レイアウトに追加するコードと、値取得の部分
+
+# センサーの値をグラフ化するコードの一部を載せる
+# レイアウトに追加するコードと、値取得のコード
 ```
 
 ---
@@ -553,7 +575,7 @@ if __name__ == "__main__":
 ---
 
 ```python
-# homeenvdashを例に、更新するグラフの関数を見せて、callback側での様子も見せる
+# homeenvdashを例に、更新するグラフの関数を見せて、callback側で指定する様子も見せる
 ```
 
 ---
@@ -585,18 +607,17 @@ Dashの便利なライブラリ: Dash bootstrap componets（dbc）によるデ�
 
 - PythonとIoT
 - Plotly Dashでダッシュボードを作る
-- 言いたいこと
-  - PythonのIoT活用をしてみよう
-  - 日常のデータを見れる様にしてみよう
-  - 積みボードを活用していこう
+
+本日お伝えしたかったこと
+
+- 世の中にない、けどほしいなら自分で作ろう
+- 世の中に存在しないデータを集めて見てみよう
+  - 身近だけど見えないデータ
+- 積みボードを活用していこう
 
 ---
 
 ## 最後にお知らせ
-
----
-
-
 
 ---
 
@@ -606,8 +627,9 @@ Dashの便利なライブラリ: Dash bootstrap componets（dbc）によるデ�
 
 - 2021/11/20 土曜日
 - 詳しくは公式サイトをチェック
-  - shizuoka.pycon.jp/2021
-- LTと参加者募集をします
+  - https://shizuoka.pycon.jp/2021
+  - Twitterアカウント: @PyconShizu
+- LTと参加者募集をします。近日
 
 ---
 
