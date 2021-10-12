@@ -407,7 +407,7 @@ Dashライブラリを使ってセンサー情報を表示する
 
 ### Dashの特徴
 
-- Dashは flask + reactで作られている。
+- Dashはflask + reactで作られている。
   > Built on top of Plotly.js, React and Flask, Dash ties modern UI elements like dropdowns, sliders, and graphs directly to your analytical Python code. Read our tutorial proudly crafted ❤️ by Dash itself.
 - （ほぼ）PythonのみでWebサイト構成が作れる
 - コールバック機能を使ってインタラクティブ操作が可能
@@ -507,6 +507,7 @@ if __name__ == "__main__":
     app.layout = _layout
     app.run_server(debug=True, host="0.0.0.0")
 ```
+
 ![bg left 50% 80%](img/2021-10-12-11-13-30.png)
 
 ---
@@ -522,12 +523,21 @@ if __name__ == "__main__":
 
 ### センサーの最新の値を見る
 
+---
+
+```Python
+# レイアウトに追加するコードと、値取得の部分
+```
 
 ---
 
 ### 記録したセンサーの値をグラフ化する
 
+---
 
+```Python
+# レイアウトに追加するコードと、値取得の部分
+```
 
 ---
 
@@ -546,11 +556,9 @@ if __name__ == "__main__":
 # homeenvdashを例に、更新するグラフの関数を見せて、callback側での様子も見せる
 ```
 
-
 ---
 
-
-### tips: Bootstrapを使ってデザインを良くする
+### Tips: Bootstrapを使ってデザインを良くする
 
 Dashの便利なライブラリ: Dash bootstrap componets（dbc）によるデザインの整え方
 
@@ -566,21 +574,21 @@ Dashの便利なライブラリ: Dash bootstrap componets（dbc）によるデ�
 ---
 
 
+
 ---
 
-### まとめ（3min
+<!-- TODO: 2021/10/12 ここのスライドを作り直す。 -->
+
+### まとめ
 
 環境センサーのダッシュボードhomeenvdashを紹介しつつ
 
-- ラズパイでセンサー情報を取りに行く手段でおすすめな方法を紹介
-- ダッシュボードアプリをplotlyのdashで作成
+- PythonとIoT
+- Plotly Dashでダッシュボードを作る
 - 言いたいこと
   - PythonのIoT活用をしてみよう
-  - 日常のデータを見れる世にしてみよう
-  - 積みボードを活用していこう。
-
----
-
+  - 日常のデータを見れる様にしてみよう
+  - 積みボードを活用していこう
 
 ---
 
@@ -588,13 +596,11 @@ Dashの便利なライブラリ: Dash bootstrap componets（dbc）によるデ�
 
 ---
 
-### 
+
 
 ---
 
 ### PyCon  mini Shizuoka 2021 やります
-
-- ## PyCon mini Shizuoka 2021
 
 開催します🎉
 
