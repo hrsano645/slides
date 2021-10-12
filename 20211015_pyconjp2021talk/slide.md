@@ -155,9 +155,13 @@ PyCon JP 2021
 
 世の中に存在していなければ自分で作る！
 
-![](https://docs.google.com/drawings/d/e/2PACX-1vQrMi7_CD1k7DgHPmkrSJIwCLcJfn_ZjmgHnl4dXM-tNIMMXb5oCacRyf9nZbG2Y91zXvZ5TU5O5hwQ/pub?w=1393&h=615)
+![h:500](https://docs.google.com/drawings/d/e/2PACX-1vQrMi7_CD1k7DgHPmkrSJIwCLcJfn_ZjmgHnl4dXM-tNIMMXb5oCacRyf9nZbG2Y91zXvZ5TU5O5hwQ/pub?w=1393&h=615)
 
 <!-- _footer: 小池さん:http://workpiles.com/2016/08/ccb9-prototype2-complete/  からあげさん:https://karaage.hatenadiary.jp/entry/2019/11/06/073000 -->
+
+---
+
+個人的に解決したい問題として
 
 ---
 
@@ -177,6 +181,8 @@ PyCon JP 2021
 --- 
 
 積みボードがある方は贅沢に使って快適な日常を手に入れる！
+
+
 
 <!-- _footer: 一応2台ぐらい有効活用してます -->
 
@@ -345,12 +351,12 @@ Rasberry Pi + Blinkaライブラリを使って、
 
 ---
 
+### 配線方法まとめ
 
-配線方法まとめ
+![bg left 50% 100%](https://docs.google.com/drawings/d/e/2PACX-1vRDhv5roVz3g6nr87qmO39TdlWHT1DTQ1jizOjaE6P6TTGJUJDw3wBXpu6SrFNx-K6hjTp9T1-G5jBS/pub?w=960&h=720)
 
-<!-- <画像で載せる: 表を載せて、SPI接続の例を示す, raspberry piのピンアウトとの接続例を載せる> -->
-
-![h:500](https://docs.google.com/drawings/d/e/2PACX-1vRDhv5roVz3g6nr87qmO39TdlWHT1DTQ1jizOjaE6P6TTGJUJDw3wBXpu6SrFNx-K6hjTp9T1-G5jBS/pub?w=960&h=720)
+- 配線は一例です。
+- 画像で利用しているBME280はAE-BME280ではないので、表を元に配線してください
 
 ---
 
@@ -472,7 +478,9 @@ if __name__ == "__main__":
 
 - dashは動的な操作を可能にするためのコールバックという機能がある
 - たとえばグラフの種類を変更することができる: 実演
-- homeenvdashではフォームで部屋ごとや温度湿度気圧を含めて操作をする
+- homeenvdashでは
+  - フォームで部屋ごとや温度湿度気圧を含めて操作をする
+  - 定期的な表示の更新を行う（interval）
 
 ---
 
@@ -482,14 +490,6 @@ if __name__ == "__main__":
 # 動的な操作の例として
 # ドロップダウンリストの種類が変わったときに、画像を置き換えるみたいなことをする
 ```
-
----
-
-### tips: と言ってもhtmlっぽい構造は作る必要がある
-
-- これらは関数などでカプセル化していくとわかりやすい
-- 慣れてくるとwebアプリを書いている様な扱いになってくる。
-（コンポーネント用意して呼び出すなど）
 
 ---
 
@@ -526,17 +526,39 @@ if __name__ == "__main__":
 
 ---
 
+### tips: htmlっぽい構造は作る必要がある
+
+複雑なアプリやレイアウトを作ると、構造も複雑になる
+
+- 複雑になるので関数などで部品（カプセル）化していく
+- コールバックで更新したい部分をカプセル化すると、コールバック側の更新処理を作る時に呼び出しやすい
+- 慣れてくるとwebアプリを書いている様な扱いになってくる。
+（別のモジュールにコンポーネント用意して呼び出すなど）
+
+---
+
+```python
+# homeenvdashを例に、更新するグラフの関数を見せて、callback側での様子も見せる
+```
+
+
+---
+
+
 ### tips: Bootstrapを使ってデザインを良くする
 
-- Dashの便利なライブラリ: Dash bootstrap componets（dbc）によるデザインの整え方
-  - dashの利点は扱いやすいが、CSSなどのデザインはややしづらい
-  - そこで、bootstrapを扱いやすいコンポーネントでまとめたライブラリがある
-  - それらを使うことで、レスポンシブデザインがしやすいし、bootstrapのコンポーネントがdas上で扱いやすい
+Dashの便利なライブラリ: Dash bootstrap componets（dbc）によるデザインの整え方
+
+- Dashのデメリットは、CSSを扱ったデザインがしづらい
+  - レスポンシブ対応とか
+- CSSフレームワークのBootstrapを扱いやすいコンポーネントで
+まとめたライブラリがある
 
 ---
 
 ### デモ: デザインを整えてみる
 
+---
 
 
 ---
@@ -554,8 +576,26 @@ if __name__ == "__main__":
 
 ---
 
-### おしらせ: pycon mini shizuoka やります。 LTと参加者募集をしていきますー
 
 ---
 
-つまづきポイントの記事は参考になる -> https://qiita.com/chromia/items/4b91d8b6ca520782672c
+
+---
+
+## 最後にお知らせ
+
+---
+
+### 
+
+---
+
+### PyCon  mini Shizuoka 2021 やります
+
+- 
+
+- LTと参加者募集をしていきます
+- 
+
+---
+
