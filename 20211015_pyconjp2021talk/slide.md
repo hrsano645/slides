@@ -377,7 +377,6 @@ def _layout():
     """アプリの全体のレイアウト"""
     return html.Div(
         [
-            dcc.Location(id="url", refresh=False),
             html.H2(app.title),
             html.Label("PythonのみでWEBアプリを作ります")
         ],
@@ -416,7 +415,6 @@ def _layout():
 if __name__ == "__main__":
     app.layout = _layout
     app.run_server(debug=True, host="0.0.0.0")
-
 ```
 
 ---
@@ -437,13 +435,20 @@ if __name__ == "__main__":
 
 - これらは関数などでカプセル化していくとわかりやすい
 - 慣れてくるとwebアプリを書いている様な扱いになってくる。
-  （コンポーネント用意して呼び出すなど）
+（コンポーネント用意して呼び出すなど）
 
 ---
 
 ### tips:ホットリロードによる開発
 
 - 自動的にリロードしてくれる。デバッグモードを有効にしておくと開発しやすい
+
+```python
+if __name__ == "__main__":
+    app.layout = _layout
+    app.run_server(debug=True, host="0.0.0.0")
+```
+![bg left 50% 80%](img/2021-10-12-11-13-30.png)
 
 ---
 
