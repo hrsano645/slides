@@ -159,6 +159,10 @@ PyCon JP 2021
 
 <!-- _footer: 小池さん:http://workpiles.com/2016/08/ccb9-prototype2-complete/  からあげさん:https://karaage.hatenadiary.jp/entry/2019/11/06/073000 -->
 
+<!-- note: -->
+<!-- 小池さんはPyCon JPのキーノートスピーカーもされたきゅうり農家さんです。機械学習できゅうりの仕分けを行うプロジェクトはまさにないものを一から作られています。きゅうりの仕分け用の画像は自身の農園で育てたものも利用されているので、まさにないものは自分で作る精神です。 -->
+<!-- もう1人、からあげさんはPyCon mini Shizuokaでキーノートスピーカーをされたエンジニアさんです。さまざまなことに取り組まれていますが、ルンバをAI化するプロジェクトではルンバに外部インターフェイスがあることに気がつかれて、ロボット系のOSとして使われているROSと接続してハックしています。 -->
+
 ---
 
 個人的に解決したい問題として
@@ -171,6 +175,9 @@ PyCon JP 2021
 
 <!-- _footer: 実際のところみなさんもありますよね？積みボード -->
 
+<!-- note: -->
+<!-- 私も小さなガジェットが好きな性分で、小型サーバーにもなるラズパイは毎回買ってしまいます。しかし先ほど紹介したからあげ氏はこう述べていまして... -->
+
 ---
 
 ![drop-shadow](img/2021-10-02-14-31-48.png)
@@ -180,7 +187,13 @@ PyCon JP 2021
 <!-- _footer: やっぱり闇のエンジニアはちげーわ！ -->
 --- 
 
+<!-- note: -->
+<!-- こういったマイコンやボードは積んでからが勝負と言われています。みなさんの中にも引き出しに眠っている積みボードが気になる方も出てきたと思いますが -->
+
 積みボードがある方は贅沢に使って快適な日常を手に入れる！
+
+<!-- note: -->
+<!-- もちろん、新しく購入して初めてトライしてもらってもいいと思います！ -->
 
 <!-- _footer: ラズパイは一応2台ぐらい有効活用してます。踏み台サーバーとか実験用とか... -->
 
@@ -205,6 +218,10 @@ PyCon JP 2021
 honeenvdash-miniはこちら -> 
 
 https://github.com/hrsano645/homeenvdash-mini
+
+- センサーの値を取得して現在情報とグラフ表示はほぼ同じ
+- センサーの値はCSVファイルへ保存される
+- （デモの都合上）ダッシュボード起動時にしかセンサー値の記録はされません
 
 ---
 
@@ -511,9 +528,45 @@ if __name__ == "__main__":
 コード: callbackの様子
 
 ```python
-# 動的な操作の例として
-# ドロップダウンリストの種類が変わったときに、画像を置き換えるみたいなことをする
+from dash import Dash, callback, html, dcc, Input, Output
+
+# dashアプリの初期化
+app = Dash(
+    __name__,
+    meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}],
+)
+app.title = "Hello Dash Callback"
+
+def _layout():
+    return html.Div(
+        [
+            html.H1(app.title),
+            html.Hr(),
+            html.P("文字を入力すると、出力の部分が更新されます"),
+            html.Div(
+                [
+                    html.Span("入力: "),
+                    dcc.Input(id="input-form", value="Callbackを試しています", type="text"),
+                ]
+            ),
+            html.P(id="output-p"),
+        ]
+    )
+
+@app.callback(Output("output-p", "children"), Input("input-form", "value"))
+def update_output_text(input_value):
+    # 引数がInputのvalueの値を取得
+    # return側に更新したいコンポーネントを指定する。childrenは指定コンポーネントの子要素の事
+    return "出力: {}".format(input_value)
+
+if __name__ == "__main__":
+    app.layout = _layout
+    app.run_server(debug=True, host="0.0.0.0")
 ```
+
+---
+
+![bg center 65%](https://docs.google.com/drawings/d/e/2PACX-1vR-TInuDS_1OjtVrtHimZvNfZzks7sDHMuj_O7As0r71FBXlTt9moSIlEADgJ-gIkwOzT0JA7pu47N7/pub?w=1440&h=1080)
 
 ---
 
