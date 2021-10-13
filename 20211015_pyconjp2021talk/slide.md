@@ -1,6 +1,6 @@
 ---
 marp: true
-header: "**ラズパイとDashで環境ダッシュボードを作ろう** 2021/10/16 PyCon JP 2021"
+header: "**ラズパイとDashで環境ダッシュボードを作ろう** PyCon JP 2021 2021/10/16"
 backgroundColor: #eee
 ---
 
@@ -60,16 +60,18 @@ PyCon JP 2021
 
 ### このトークの趣旨、モチベーション
 
-- 私的プロジェクトを紹介しつつ、Pythonを使ったIoTとデータ可視化を
+私的プロジェクトを紹介しつつ、Pythonを使ったIoTとデータ可視化を
   デモを交えてお伝えします
-  - IoT:Pythonでセンサーデータを扱う
-  - データ可視化: Pythonでダッシュボードアプリを作る
 
-このトークで言いたいこと
+- PythonとIoT
+- Plotly Dashでダッシュボードを作る
 
-- 世の中にない、けどほしいなら自分で作ろう
+本日お伝えしたいこと
+
+- 世の中にないけど、ほしいなら自分で作ろう
 - 世の中に存在しないデータを集めて見てみよう
   - 身近だけど見えないデータ
+- 積みボードを活用していこう
 
 ---
 
@@ -79,7 +81,8 @@ PyCon JP 2021
 
 環境センサーの情報が見れるダッシュボードアプリを作りました
 
-このプロジェクトのモチベーションを紹介します。
+このプロジェクトのモチベーションを
+紹介します。
 
 ---
 
@@ -99,6 +102,8 @@ PyCon JP 2021
 
 ![bg left:40% 70%](img/2021-10-09-12-03-48.png)
 
+理由は3つほどあります
+
 ---
 
 そもそも、センサーやダッシュボードはすでに製品サービスが多数ある
@@ -107,24 +112,27 @@ PyCon JP 2021
 
 ![bg left:40% 120%](https://docs.google.com/drawings/d/e/2PACX-1vQXMlRsnlBNhLizyfzQwirXjXnXSzhTnddZEfyb3w2HPayW-ide6twZFT7R2BA-oivWwawkJZNadUHG/pub?w=960&h=720)
 
-- センサーは市販にも販売されている
+- 環境センサーは市販にも販売されている: 高価な製品は精度がいい
 - ダッシュボードもさまざまなプロジェクトがある
   - OSSなサーバーアプリ
-  - サービスとして提供されているもの
+  - サービスとして提供されているもの: [Anbient](https://ambidata.io),[Machinist](https://machinist.iij.jp/), [MotionBoard](https://www.wingarc.com/product/motionboard/scene/iot.html)
 
 なんで作る必要があるか？
 
-<!-- _footer: 車輪の再開発ってやつ -->
+<!-- _footer: 車輪の再開発になるけどどうなのか？ -->
 ---
 
 ![bg left:40% 70%](img/2021-10-09-11-52-55.png)
 
 ### 低気圧の体調不良に対応したかった
 
-- 低気圧に弱いので調子が悪くなる前兆を調べたい
-- 予報サービスはあるけど現在の状態を見たい
-- 世の中にはIoTの製品はあるものの、
-  **気圧を見られるものが意外となかった**
+- 低気圧に弱いので不調の前兆を調べたい
+- 予報サービスはあるけど現在状況を見たい
+- 世の中にはIoTの製品はあるものの
+  **「気圧」を見られるものが手に入りにくい**
+  - 高価な製品に多い
+  
+<!-- _footer: オムロンの環境センサーは高価ですが扱いやすそうです: https://www.omron.co.jp/ecb/product-detail?partNumber=2JCIE-BL -->
 
 ---
 
@@ -136,7 +144,8 @@ PyCon JP 2021
   気をつけるために利用していました
 - 高齢者は気温に対して間違えやすい
   - 体感より数値化された状態を見た方が対応しやすい
-- センシティブな環境でもあったので、余り外部サービスを使いたくなかった
+- **センシティブ**な環境なので外部の
+  ダッシュボードサービスを使いたくない
 
 ---
 
@@ -211,6 +220,8 @@ PyCon JP 2021
 - センサーで取得した情報はGoogleスプレッドシートで保存
   - 今後はローカルなDBに保持して、エクスポートする形が望ましい
 
+<!-- _footer: 外部サービス使いたくないと言っていたものの、使ってますね... 今後は外したいと思ってます -->
+
 ---
 
 今日は `homeenvdash-mini` というデモ用のアプリを使って解説します。
@@ -219,6 +230,7 @@ honeenvdash-miniはこちら ->
 
 https://github.com/hrsano645/homeenvdash-mini
 
+- ラズパイ1つで動作しています
 - センサーの値を取得して現在情報とグラフ表示はほぼ同じ
 - センサーの値はCSVファイルへ保存される
 - （デモの都合上）ダッシュボード起動時にしかセンサー値の記録はされません
@@ -235,13 +247,15 @@ https://github.com/hrsano645/homeenvdash-mini
 
 - Raspberry Pi + CPython
 - MicroPython / CircuitPython
-- Raspberry Pi + Blinkaライブラリ（CircitPython）
+- Raspberry Pi + CircuitPython
 
 <!-- _footer: 上記は私が知っている限りで一例です。ほかにも選択したがある場合は教えていただけると嬉しいです -->
 
 ---
 
-![bg 80%](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?w=1440&h=810)
+- **Raspberry Pi + CPython**
+- MicroPython / CircuitPython
+- Raspberry Pi + CircuitPython
 
 ---
 
@@ -260,21 +274,23 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ---
 
-![bg 80%](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?w=1440&h=810)
-
----
-
 ## Raspberry PiとIoT
 
 特徴は
 
-- Linuxが動くのでCPythonを扱える
+- Linuxが動きCPythonを扱える
 - GPIO（デジタル）でセンサーと接続可能
 - シリアル通信規格対応: SPI, I2C
 - ディスプレイを繋ぐとサイネージ的なデバイスも作れる
 
 ⭕️ 安価ながら高機能なIoT端末として扱える
 🔺 **ACアダプタなど給電環境が必要** 電源がない環境では扱いづらい
+
+---
+
+- Raspberry Pi + CPython
+- **MicroPython / CircuitPython**
+- Raspberry Pi + CircuitPython
 
 ---
 
@@ -321,7 +337,9 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ---
 
-![bg 80%](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?w=1440&h=810)
+- Raspberry Pi + CPython
+- MicroPython / CircuitPython
+- **Raspberry Pi + CircuitPython）*
 
 ---
 
@@ -357,15 +375,14 @@ Rasberry Pi + Blinkaライブラリを使って、
 
 ![bg left:40% 100%](https://docs.google.com/drawings/d/e/2PACX-1vSfoVxBK7x3Q2Zvx6yfWzpsfyrsHkt7FYiqbbD0_tEVkzwomfw8BcrRta_-VscBz0QkM6lnI3l92Blh/pub?w=922&h=1083)
 
-まずは必要なものを揃えます
+### デモを試す時に必要なもの
 
-- 必要な物を用意する: ブレットボード、ワイヤー、BME280（利用するセンサー）
+- 利用する部品: ブレットボード、ワイヤー、BME280（利用するセンサー）
 - 道具: はんだごて、はんだ、はんだこて台
-  センサーにピンが実装されていない場合は必要です
+  （センサーにピンが実装されていない場合は必要です）
 - 購入先:
   Amazonとかでも集まる。
-  [秋月電子通商](https://akizukidenshi.com/catalog/default.aspx)、[スイッチサイエンス](https://www.switch-science.com/)、[aitendo](https://www.aitendo.com/)、
-  [マルツオンライン](https://www.marutsu.co.jp/)、[せんごくネット通販](https://www.sengoku.co.jp/) がおすすめ
+  [秋月電子通商](https://akizukidenshi.com/catalog/default.aspx)、[スイッチサイエンス](https://www.switch-science.com/)、[aitendo](https://www.aitendo.com/)、[マルツオンライン](https://www.marutsu.co.jp/)、[せんごくネット通販](https://www.sengoku.co.jp/) がおすすめ
 
 ---
 
@@ -412,7 +429,7 @@ while True:
 
 ---
 
-### Tips: Raspberry PiでPython開発をしやすくする
+### Tips: Raspberry Pi上で開発をしやすくする
 
 VS Codeのリモート開発が便利です -> Remote-SSH
 
@@ -456,7 +473,7 @@ Dashライブラリを使ってセンサー情報を表示する
 
 - HTMLを書く必要がない
 - htmlのフォームや構造をラッピングしたコンポーネントを呼び出して構成を用意する
-- plotlyと連携して豊富なグラフを扱うことができる
+- Plotlyと連携して豊富なグラフを扱うことができる
 - htmlな操作は知らないと扱いづらい
 
 ---
@@ -518,14 +535,12 @@ if __name__ == "__main__":
 ### フォームなどの操作から動的な変更:コールバック機能
 
 - dashは動的な操作を可能にするためのコールバックという機能がある
-- たとえばグラフの種類を変更することができる: 実演
+- たとえばグラフの種類を変更することができる
 - homeenvdashでは
-  - フォームで部屋ごとや温度湿度気圧を含めて操作をする
-  - 定期的な表示の更新を行う（interval）
+  - ドロップダウンリストで部屋単位のセンサーグラフの切り替え
+  - 定期的な表示の更新を行う（dcc.Interval）
 
 ---
-
-コード: callbackの様子
 
 ```python
 from dash import Dash, callback, html, dcc, Input, Output
@@ -552,7 +567,13 @@ def _layout():
             html.P(id="output-p"),
         ]
     )
+# 次へ続く
+```
 
+---
+
+```python
+# 続き
 @app.callback(Output("output-p", "children"), Input("input-form", "value"))
 def update_output_text(input_value):
     # 引数がInputのvalueの値を取得
@@ -566,7 +587,11 @@ if __name__ == "__main__":
 
 ---
 
-![bg center 65%](https://docs.google.com/drawings/d/e/2PACX-1vR-TInuDS_1OjtVrtHimZvNfZzks7sDHMuj_O7As0r71FBXlTt9moSIlEADgJ-gIkwOzT0JA7pu47N7/pub?w=1440&h=1080)
+![bg center 100%](https://docs.google.com/drawings/d/e/2PACX-1vR-TInuDS_1OjtVrtHimZvNfZzks7sDHMuj_O7As0r71FBXlTt9moSIlEADgJ-gIkwOzT0JA7pu47N7/pub?w=1440&h=1080)
+
+---
+
+![bg center 100%](https://docs.google.com/drawings/d/e/2PACX-1vRviOLeuAbH7SQJ4sJBHM3xVafcGgwPKERUkNqtXdTBlhkhbM3hfan5BsWl5H5Zv_yFeIKwIjk1C7PA/pub?w=1663&h=1079)
 
 ---
 
@@ -586,10 +611,12 @@ if __name__ == "__main__":
 
 ### デモ: センサー情報を可視化する
 
-- 実演:センサー情報の取得方法は、直接センサーの値を取りに行く
+センサー情報の取得方法は、直接センサーの値を取りに行く
+
 - 時系列グラフを作るなら、データの記録は必須になる。
-  - 実際のところはファイルかDB, 外部のデータソースへ保存して扱う方がわかりやすい
-  - 今回はCSVファイルに10分1週間分の保存を行う設定
+  - 実際のところはファイルかDB, 外部のデータソースへ保存して
+  扱う方がわかりやすい
+  - 今回はCSVファイルに1分ごと、30回分の測定結果を保存
 
 ---
 
@@ -598,8 +625,48 @@ if __name__ == "__main__":
 ---
 
 ```Python
-# センサーの値を表示するコードの一部を載せる
-# レイアウトに追加するコードと、値取得のコード
+# センサー取得用関数
+def get_sensor_values():
+    """センサーの値を取得する。記録は文字列にする"""
+    temperature = f"{bme280.temperature:.1f}"
+    relative_humidity = f"{bme280.relative_humidity:.1f}"
+    pressure = f"{bme280.pressure:.1f}"
+    return (temperature, relative_humidity, pressure)
+
+# callback関数部分
+def update_sensor_values(n):
+
+    now_dt = datetime.datetime.now().astimezone()
+    sensor_values = get_sensor_values()
+    #中略
+    latest_values = latest_sensor_values(sensor_values, now_dt)
+    return latest_values
+```
+
+---
+
+```python
+# レイアウト
+def latest_sensor_values(sensor_values: tuple, now_datetime: datetime.datetime):
+    """現在のセンサー値を描写する。"""
+    latest_datetime = now_datetime.strftime("%Y-%m-%d %H:%M:%S")
+    latest_temperature = sensor_values[0]
+    latest_pressure = sensor_values[1]
+    latest_humidity = sensor_values[2]
+
+    return html.Div(
+        [
+            html.Label(f"更新時間 :{latest_datetime}"),
+            html.Div(
+                [
+                    html.P(f"気温: {latest_temperature}℃"),
+                    html.P(f"湿度: {latest_pressure}%"),
+                    html.P(f"気圧: {latest_humidity}hPa"),
+                ],
+            ),
+        ],
+        id="latest_values",
+    )
 ```
 
 ---
@@ -609,61 +676,138 @@ if __name__ == "__main__":
 ---
 
 ```Python
-
-# センサーの値をグラフ化するコードの一部を載せる
-# レイアウトに追加するコードと、値取得のコード
+import pandas
+import plotly.express as px
+# 中略
+from dash import Dash, callback, html, dcc, Input, Output
+# 中略
+def sensor_graphs():
+     # センサー値を記録しているCSVファイルをDataFrameにする
+    sensor_values_df = pandas.read_csv(
+        SENSOR_VALUES_FILE, names=("datetime", "temperature", "humidity", "pressure")
+    )
+    # DataFrameをグラフに展開
+    fig1 = px.line(sensor_values_df, x="datetime", y="temperature", title="温度")
+    fig2 = px.line(sensor_values_df, x="datetime", y="humidity", title="湿度")
+    fig3 = px.line(sensor_values_df, x="datetime", y="pressure", title="気圧")
+    # レイアウトのコンポーネントを返す
+    return html.Div(
+        [
+            dcc.Graph(id="tempature", figure=fig1),
+            dcc.Graph(id="humidity", figure=fig2),
+            dcc.Graph(id="pressure", figure=fig3),
+        ],
+        id="graphs",
+    )
+# 後略...
 ```
 
 ---
 
-### Tips: htmlっぽい構造は作る必要がある
+### Tips: 複雑化したらまとめてコンポーネント化する
 
-複雑なアプリやレイアウトを作ると、構造も複雑になる
+複雑なアプリやレイアウトを作ると、構造も複雑になりがち
 
+- 複雑になることはしょうがない
 - 複雑になるので関数などで部品（カプセル）化していく
 - コールバックで更新したい部分をカプセル化すると、コールバック側の更新処理を作る時に呼び出しやすい
-- 慣れてくるとwebアプリを書いている様な扱いになってくる。
-（別のモジュールにコンポーネント用意して呼び出すなど）
+
+
+慣れてくるとwebアプリを書いている様な扱いになってくる
 
 ---
 
+最初にレイアウトの一部を関数化しておく
+
+```Python
+# 中略, 関数化しておくと呼び出しやすくなり管理もしやすい
+def sensor_graphs():
+    """過去に記録したセンサーの値をグラフにする"""
+
+    # センサー値を記録しているCSVファイルをDataFrameにする
+    sensor_values_df = pandas.read_csv(
+        SENSOR_VALUES_FILE, names=("datetime", "temperature", "humidity", "pressure")
+    )
+    # DataFrameをグラフに展開
+    fig1 = px.line(sensor_values_df, x="datetime", y="temperature", title="温度")
+    fig2 = px.line(sensor_values_df, x="datetime", y="humidity", title="湿度")
+    fig3 = px.line(sensor_values_df, x="datetime", y="pressure", title="気圧")
+    # レイアウトのコンポーネントを返す
+    return html.Div(
+        [
+            dcc.Graph(id="tempature", figure=fig1),
+            dcc.Graph(id="humidity", figure=fig2),
+            dcc.Graph(id="pressure", figure=fig3),
+        ],
+        id="graphs",
+    )
+```
+---
+
+最後にレイアウト上で呼び出す
+
 ```python
-# homeenvdashを例に、更新するグラフの関数を見せて、callback側で指定する様子も見せる
+def _layout():
+    now_dt = datetime.datetime.now().astimezone()
+    sensor_values = get_sensor_values()
+    save_sensor_values(sensor_values, now_dt, 50)
+
+    return html.Div(
+        [
+            html.H2(app.title),
+            html.Hr(),
+            # 現在の値を取得
+            latest_sensor_values(sensor_values, now_dt),
+            # 温度、湿度、気圧のグラフ
+
+            sensor_graphs(), # <= 関数でレイアウトオブジェクトを生成して呼び出す
+            dcc.Interval(
+                id="interval-component",
+                interval=UPDATE_MINITS * 60 * 1000,  # in milliseconds
+                n_intervals=0,
+            ),
+        ],
+    )
 ```
 
 ---
 
 ### Tips: Bootstrapを使ってデザインを良くする
 
-Dashの便利なライブラリ: Dash bootstrap componets（dbc）によるデザインの整え方
+Dashの便利なライブラリ: dash-bootstrap-componets（dbc）によるデザインの整え方
 
 - Dashのデメリットは、CSSを扱ったデザインがしづらい
   - レスポンシブ対応とか
-- CSSフレームワークのBootstrapを扱いやすいコンポーネントで
-まとめたライブラリがある
+- CSSフレームワークのBootstrapを扱いやすくコンポーネント化されている
+- 扱いやすいもののBootstrapを知っている必要あり
+
+※Dashのv2バージョンアップに伴って、dash-bootstrap-componetsも追従したバージョンアップが行われます。
+デモ中は最新バージョンのリリース候補版を利用してます。
+
+<!-- _footer: 発表資料作っている途中でバージョンアップされたので、対応がめっちゃ大変だった… -->
 
 ---
 
 ### デモ: デザインを整えてみる
 
+- 実際にコードを見せつつ解説します
+- レスポンシブ対応を例にします
+- （スライドにコードを収めるには長すぎるので、詳しくはこちらをご覧ください）
+  - (url掲載する)
+
 ---
-
-
-
----
-
-<!-- TODO: 2021/10/12 ここのスライドを作り直す。 -->
 
 ### まとめ
 
-環境センサーのダッシュボードhomeenvdashを紹介しつつ
+homeenvdashプロジェクトを紹介しつつ、Pythonを使ったIoTとデータ可視化を
+  デモを交えてお伝えしました。
 
 - PythonとIoT
 - Plotly Dashでダッシュボードを作る
 
 本日お伝えしたかったこと
 
-- 世の中にない、けどほしいなら自分で作ろう
+- 世の中にないけど、ほしいなら自分で作ろう
 - 世の中に存在しないデータを集めて見てみよう
   - 身近だけど見えないデータ
 - 積みボードを活用していこう
@@ -676,13 +820,32 @@ Dashの便利なライブラリ: Dash bootstrap componets（dbc）によるデ�
 
 ### PyCon  mini Shizuoka 2021 やります
 
-開催します🎉
+開催します🎉是非来てください🙌
 
 - 2021/11/20 土曜日
 - 詳しくは公式サイトをチェック
   - https://shizuoka.pycon.jp/2021
   - Twitterアカウント: @PyconShizu
-- LTと参加者募集をします。近日
+- LTと参加者募集をします
+- 同時にイベントの詳しい内容は近日公開します！
+
 
 ---
 
+質問対策
+
+---
+
+- Dashを使うメリット,デメリットは？
+  - メリットはHTMLを書く必要なくWEBアプリ作成ができる
+  - デメリットはDB接続や高度な動的処理（ログイン処理やセッション管理）、API連携はそれほど得意ではない
+    - それを解決する有償のサービスが提供されている
+- 気圧センサーいろいろあるよ！
+  - 知らなかったのでありがたいです！
+- 精度はどう？
+  - 数字というより変化を見たかったので、精度については今回は扱ってない
+  - 実際にキャリブレーションする必要はあると思うし、高度なセンサーもあるので、用途によると思います。
+
+---
+
+- 
