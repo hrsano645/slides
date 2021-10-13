@@ -23,7 +23,7 @@ PyCon JP 2021
   - Python駿河, PyCon mini Shizuokaスタッフ
   - Code for ふじのくに
 
-<!-- _footer:  -->
+<!-- _footer: こんにちは。フッターです。 -->
 
 ---
 
@@ -31,15 +31,10 @@ PyCon JP 2021
 
 - 環境ダッシュボードを作った話
 - PythonとIoT
-  - PythonでIoTを行う選択肢
-  - ラズパイとCurcitPythonを使う選択
-  - センサー情報を取得するデモ
 - Dashでダッシュボードアプリを作る
-  - Dashの特徴を紹介
-  - センサー情報を可視化するデモ
 - まとめ
 
-<!-- _footer: この部分でツッコミや補足等を入れていきます -->
+<!-- _footer: この部分でツッコミや補足等を入れていきます。 -->
 
 ---
 
@@ -53,8 +48,6 @@ PyCon JP 2021
 
 本日お伝えしたいこと
 
-<!-- TODO:2021-10-13 ここでいうことがスライドで全体的に言えているか -->
-
 - 自分の欲しい物が無ければ作ろう
 - 身の回りで見えない数字を可視化してみよう
   - 身近だけど見えないデータ
@@ -65,7 +58,7 @@ PyCon JP 2021
 
 # ラズパイとDashで環境ダッシュボードを作ろう
 
-<!-- _footer:  -->
+<!-- _footer: 久しぶりに長めのトークをやらせてもらってます。 -->
 
 ---
 
@@ -75,6 +68,17 @@ PyCon JP 2021
 （Webアプリフレームワークのこと）
 
 - 環境ダッシュボード => 環境センサーの情報が見れる**ダッシュボードアプリ**
+
+<!-- _footer: 御見苦しい部分もありますが生暖かく見守ってもらえたら/やんわりマサカリ投げてください -->
+
+---
+
+## 目次
+
+- **環境ダッシュボードを作った話**
+- PythonとIoT
+- Dashでダッシュボードアプリを作る
+- まとめ
 
 ---
 
@@ -89,15 +93,14 @@ PyCon JP 2021
 
 ### homeenvdashの全体構成
 
-![](https://docs.google.com/drawings/d/e/2PACX-1vR6NyaVJv9P6mVH4wCfPot4IbAtuBWNaP-wvr2_8SkwpkCfYD2qxP5LHsPo1iW311P9WVHtUSIBHLCm/pub?h=500)
+![bg left:50% 100%](https://docs.google.com/drawings/d/e/2PACX-1vR6NyaVJv9P6mVH4wCfPot4IbAtuBWNaP-wvr2_8SkwpkCfYD2qxP5LHsPo1iW311P9WVHtUSIBHLCm/pub?h=500)
 
----
-
-- センサーノードはラズパイ + センサーを接続
-- センサーノードは複数対応
+- センサーノード
+  - ラズパイ + センサー
+  - センサーノードは複数対応
 - ダッシュボードはDash + Plotly
 - センサーで取得した情報はGoogleスプレッドシートで保存
-  - 今後はローカルなDBに保持して、エクスポートする形が望ましい
+  - 今後はローカルなDBを利用検討
 
 <!-- _footer: 現在は、温度湿度気圧のBME280に対応。今後はCO2や非接触温度センサなどに対応したい -->
 
@@ -114,11 +117,11 @@ PyCon JP 2021
 ![bg left:40% 120%](https://docs.google.com/drawings/d/e/2PACX-1vQXMlRsnlBNhLizyfzQwirXjXnXSzhTnddZEfyb3w2HPayW-ide6twZFT7R2BA-oivWwawkJZNadUHG/pub?w=960&h=720)
 
 - 環境センサーは市販にも販売されている
-  - クラウド対応とか
+  - 単体でクラウド対応とか
   - 高価な製品は精度がいい
 - ダッシュボードサービスも多数ある
-  - OSSなサーバーアプリ
-  - サービスとして提供されているもの: [Anbient](https://ambidata.io),[Machinist](https://machinist.iij.jp/), [MotionBoard](https://www.wingarc.com/product/motionboard/scene/iot.html)
+  - OSSなサーバーアプリ: Grafana, Zabbix, Home Assistant...
+  - サービスとして提供されているもの: [Anbient](https://ambidata.io),[Machinist](https://machinist.iij.jp/), [MotionBoard](https://www.wingarc.com/product/motionboard/scene/iot.html), [Google データポータル](https://marketingplatform.google.com/intl/ja/about/data-studio/)...
 
 <!-- _footer: 車輪の再開発になるけどどうなのか？ -->
 
@@ -127,7 +130,6 @@ PyCon JP 2021
 なんで作る必要があるか？
 
 - 自分の欲しい物がなかった
-- 身の回りで見えない数字を可視化する
 
 ---
 
@@ -137,8 +139,8 @@ PyCon JP 2021
 
 - 低気圧に弱いので不調の前兆を調べたい
   - 予報サービスはあるけど現状を見たい
-- 世の中にはIoTの製品はあるものの
-**手を出しずらい製品**
+- 世の中にはIoT/センサー製品はあるものの
+気圧対応がされてるものは**手を出しずらかった**
   - 選択肢が少ない
   - 独自のサービス
   - 高価な製品
@@ -153,14 +155,15 @@ PyCon JP 2021
 
 - 実家の祖母の部屋の状況確認に利用
 - 高齢者は気温の変化を感じづらい
-  - 体感より数値化された状態を見た方が
+  - 体感より数値化されていた方が
   対応しやすい
 - **センシティブ**な環境なので扱ったことが
 ない外部サービスだと不安
   - できればローカルのみで扱いたい
   （そうしたかった）
 
-<!-- _footer: 外部サービスとしてGoogleSheetを使ってますが、スライド作っていて矛盾に気が付く🤦‍♂️ -->
+<!-- _footer: 外部サービスとしてGoogleSheetを使ってますが、このスライド作っていて矛盾に気が付く🤦‍♂️ -->
+
 ---
 
 ### 欲しいものを自分で作る
@@ -172,7 +175,7 @@ PyCon JP 2021
   > オライリージャパン「私たちはみなメイカーだ」より引用
 - 世の中に存在していなければ自分で作る精神！
 
-<!-- _footer: 車輪の再開発、楽しいよ！ -->
+<!-- _footer: 車輪の再開発も楽しいよ！ -->
 
 ---
 
@@ -191,7 +194,7 @@ PyCon JP 2021
 
 ---
 
-![bg left:40% 70%](img/2021-10-09-14-45-08.png)
+![bg left:40% 75%](img/2021-10-09-14-45-08.png)
 
 ガジェット好きなもので...
 
@@ -201,7 +204,7 @@ PyCon JP 2021
 
 ---
 
-しかし先人はこういいます
+しかし先人はこう言います
 
 ![drop-shadow](img/2021-10-02-14-31-48.png)
 
@@ -218,12 +221,11 @@ PyCon JP 2021
 <!-- note: -->
 <!-- もちろん、新しく購入して初めてトライしてもらってもいいと思います！ -->
 
-<!-- _footer: ラズパイは一応2台ぐらい有効活用してます。踏み台サーバーとか実験用とか... -->
+<!-- _footer: ラズパイは一応2台ぐらい有効活用してます。踏み台サーバーや3Dプリンタのコントローラーが便利 -->
 
 ---
 
-
-## トークの進め方
+## トークで使うデモアプリ
 
 今日は `homeenvdash-mini` というデモ用のアプリを使い扱う技術について
 デモを交えて解説します。
@@ -238,6 +240,17 @@ https://github.com/hrsano645/homeenvdash-mini
 - センサーの値を取得して現在情報とグラフ表示はほぼ同じ
 - センサーの値はCSVファイルへ保存される
 - （デモの都合上）ダッシュボード起動時にしかセンサー値の記録はされません
+
+---
+
+## 目次
+
+- 環境ダッシュボードを作った話
+- **PythonとIoT**
+- Dashでダッシュボードアプリを作る
+- まとめ
+
+<!-- _footer: この部分でツッコミや補足等を入れていきます -->
 
 ---
 
@@ -257,6 +270,8 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ---
 
+### PythonでIoTを行う選択肢
+
 - **Raspberry Pi + CPython**
 - MicroPython / CircuitPython
 - Raspberry Pi + CircuitPython
@@ -267,9 +282,9 @@ https://github.com/hrsano645/homeenvdash-mini
 
 - もともとは教育目的のLinuxが動作するシングルボードコンピューター（SBC）
   - 工場自動化やサイネージ、センサーノードとして業務利用も
-  - クラスター構成を作ってクラウドっぽく（おうちクラウドと呼ばれている）
+  - クラスター構成を作ってクラウドっぽく（おうちクラスター）
 - インターフェイスが豊富
-  - WLAN, Ethernet, USB, Bluetooth, HDMI出力
+  - 無線LAN, Ethernet, USB, Bluetooth, HDMI出力
 - GUI/CUIで利用可能
   - 最新版は高性能なのでデスクトップ端末としても
   - ヘッドレスなサーバーとしても扱える
@@ -280,17 +295,17 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ## Raspberry PiとIoT
 
-特徴は
-
 - Linuxが動きCPythonを扱える
-- GPIO（デジタル）でセンサーと接続可能
-- シリアル通信規格対応: SPI, I2C
+- GPIO（デジタル入出力）でセンサーと接続可能
+- シリアル通信規格: SPI, I2C  
 - ディスプレイを繋ぐとサイネージ的なデバイスも作れる
 
 ⭕️ 安価ながら高機能なIoT端末として扱える
 🔺 **ACアダプタなど給電環境が必要** 電源がない環境では扱いづらい
 
 ---
+
+### PythonでIoTを行う選択肢
 
 - Raspberry Pi + CPython
 - **MicroPython / CircuitPython**
@@ -300,11 +315,10 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ### MicroPythonとは
 
-![bg left:40% 80%](img/2021-10-09-15-18-30.png)
+![bg left:35% 80%](img/2021-10-09-15-18-30.png)
 
 - MicroPythonはマイコンボード向けの処理系
-  - マイコン=マイクロコントローラ
-  - CPUより用途が限られている
+  - マイコン=マイクロコントローラー
   - 特定の機器制御に最適化された集積回路
 - [クラウドファンディング](https://www.kickstarter.com/projects/214379695/micro-python-python-for-microcontrollers)で生まれたpyboardの開発環境として作られた
 
@@ -314,17 +328,19 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ### CircuitPythonとは
 
-![bg left:40% 80%](img/2021-10-09-11-48-25.png)
+![bg left:35% 80%](img/2021-10-09-11-48-25.png)
 
 - MicroPythonの派生版
-  - adafruitというSTEAM系に取り組んでる電子部品の販売や教育分野のメーカーが作成
-- adafruitのボードに対応したり、専用のライブラリを用意
-  - メーカーのセンサーデバイスと接続しやすい
+  - adafruitが開発支援: オープンソースハードウェア企業で教育向け製品を扱う
+- 当初はadafruitのマイコンボードに対応
+  - その後他社製のマイコンボードにも広がる
+- 専用ライブラリを使うとセンサーやLED
+コントローラーが少ないコードで扱える
 
-<!-- _footer: CircuitPython https://circuitpython.org -->
+<!-- _footer: CircuitPython https://circuitpython.org adafruitは「えいだーふるーつ」と呼ぶそうです-->
 
 ---
-![bg left:40% 130%](https://docs.google.com/drawings/d/e/2PACX-1vR6Kfmi6lFMG-UlxtRCNep0R2tOzNiIFSakbMOT3TNiCh6MZuQZrw1jUGC_f7TU99_vCmWtWZeItGnJ/pub?w=960&h=720)
+![bg left:35% 130%](https://docs.google.com/drawings/d/e/2PACX-1vR6Kfmi6lFMG-UlxtRCNep0R2tOzNiIFSakbMOT3TNiCh6MZuQZrw1jUGC_f7TU99_vCmWtWZeItGnJ/pub?w=960&h=720)
 
 
 ### MicroPython/CircuitPythonの特徴
@@ -341,9 +357,11 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ---
 
+### PythonでIoTを行う選択肢
+
 - Raspberry Pi + CPython
 - MicroPython / CircuitPython
-- **Raspberry Pi + CircuitPython）*
+- **Raspberry Pi + CircuitPython**
 
 ---
 
@@ -358,9 +376,11 @@ https://github.com/hrsano645/homeenvdash-mini
 ⭕️ CircityPythonのライブラリを使うことで接続センサーの扱いが楽
 🔺 どちらかの環境依存のコードを書く場合は扱いが難しい
 
+<!-- TODO:2021-10-14 この部分整理が必要なので修正すること -->
+
 ---
 
-![bg 80%](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?w=1440&h=810)
+![bg 82%](https://docs.google.com/drawings/d/e/2PACX-1vT_1IVFkLGrAzqOTQElWpsYjsMq_NCQvbUkF0FMq2DgscdKyWwFeJGgJ0DmXTBsg4GR7zE5iulV_i-2/pub?w=1440&h=810)
 
 ---
 
@@ -371,9 +391,10 @@ https://github.com/hrsano645/homeenvdash-mini
 Rasberry Pi + Blinkaライブラリを使って、
 デモしながら様子を見せていきます
 
-- 実際にラズパイ4BとBME280を接続します
-- BME280はこちらものを使ってます
-  - SPI接続です（I2Cの場合接続方法とセンサーのコードが少し違います）
+- 実際にラズパイ4BとBME280を接続
+- BME280を搭載したモジュール製品
+  - 今回は[AE-BME280](https://akizukidenshi.com/catalog/g/gK-09421/)（秋月電子通商）
+  - SPI接続を利用します
 
 ---
 
@@ -384,10 +405,12 @@ Rasberry Pi + Blinkaライブラリを使って、
 - 利用する部品: ブレットボード、ワイヤー、BME280（利用するセンサー）
 - 道具: はんだごて、はんだ、はんだこて台
   （センサーにピンが実装されていない場合は必要です）
+- ラズパイも買ってください
 - 購入先:
   Amazonとかでも集まる。
   [秋月電子通商](https://akizukidenshi.com/catalog/default.aspx)、[スイッチサイエンス](https://www.switch-science.com/)、[aitendo](https://www.aitendo.com/)、[マルツオンライン](https://www.marutsu.co.jp/)、[せんごくネット通販](https://www.sengoku.co.jp/) がおすすめ
 
+<!-- _footer: とりあえずこれだけあれば作れます。そのうちに工具も部材も増えて沼になります  -->
 ---
 
 配線の様子を見せます
@@ -401,6 +424,8 @@ Rasberry Pi + Blinkaライブラリを使って、
 - 配線は一例です。
 - 画像で利用しているBME280はAE-BME280ではないので、表を元に配線してください
 
+<!-- _footer: このピン配置を行っているとUSBが偉大に見えますね。 -->
+
 ---
 
 環境作成してデモを見せながら披露
@@ -409,27 +434,7 @@ Rasberry Pi + Blinkaライブラリを使って、
 
 動作させたテストコードの例
 
-```python
-import time
-import board
-from adafruit_bme280 import basic as adafruit_bme280
-import digitalio
-
-# SPI接続
-spi = board.SPI()
-bme_cs = digitalio.DigitalInOut(board.D5)
-bme280 = adafruit_bme280.Adafruit_BME280_SPI(spi, bme_cs)
-
-# 海の気圧を描くこと。大体1013hPaとのこと
-bme280.sea_level_pressure = 1013.25
-
-while True:
-    print(f"温度: {bme280.temperature:.1f} C")
-    print(f"湿度: {bme280.relative_humidity:.1f} %%")
-    print(f"気圧: {bme280.pressure:.1f} hPa")
-    print(f"高度: {bme280.altitude:.2f} meters")
-    time.sleep(2)
-```
+<!-- TODO:2021-10-14 コードはURL掲載でデモとして表示させる -->
 
 ---
 
@@ -440,6 +445,15 @@ VS Codeのリモート開発が便利です -> Remote-SSH
 - ssh経由で扱うといい。ただpi3あたりからでないと、リモート開発できない（vscodeのリモートサーバーが対応するCPUアーキテクチャの問題）
 - <https://www.raspberrypi.org/blog/coding-on-raspberry-pi-remotely-with-visual-studio-code/>
 > Remote SSH needs a Raspberry Pi 3 or 4. It is not supported on older Raspberry Pis, or on Raspberry Pi Zero.
+
+---
+
+## 目次
+
+- 環境ダッシュボードを作った話
+- PythonとIoT
+- **Dashでダッシュボードアプリを作る**
+- まとめ
 
 ---
 
@@ -454,32 +468,39 @@ Dashライブラリを使ってセンサー情報を表示する
 
 - Plotlyが作成しているWebアプリフレームワーク
   - Plotlyはグラフライブラリの名称でもある: `Plotly.js`、`Plotly.py`
-- Plotlyとセットで使うと、データ分析向けのプロトタイピングがしやすい
+- データ分析向けのプロトタイピングがしやすい
 - サンプル（有料機能を使ったものもあるので注意）<https://dash.gallery/Portal/>
-  - ライブラリのサンプルには自動運転時の状況の可視化とかもある。
-  かなりおもしろい
+
+<!-- _footer: サンプルにある自動運転のデモが面白かったです https://dash.gallery/dash-avs-explorer/ -->
+  
 
 ---
 
 ### Dashの特徴
 
-- Dashはflask + reactで作られている。
-  > Built on top of Plotly.js, React and Flask, Dash ties modern UI elements like dropdowns, sliders, and graphs directly to your analytical Python code.
-  > https://github.com/plotly/dash
-- （ほぼ）PythonのみでWebサイト構成が作れる
-- コールバック機能を使ってインタラクティブ操作が可能
+- **ほぼPythonのみでWebサイト構成が作れる**
+- **コールバック機能を使ってインタラクティブ操作**
 - データセットやDBを扱いたい場合は自前で用意
-  - pandasを使ってplotlyのグラフを作れるので、pandas経由で何かしらをするときに便利
+  - PlotlyはPandasのDataFrameを使うのでPandas経由がやりやすいはず
+
+ちなみにDashはFlask + Reactで作られている。
+> Built on top of Plotly.js, React and Flask, Dash ties modern UI elements like dropdowns, sliders, and graphs directly to your analytical Python code.
+> https://github.com/plotly/dash
+
+<!-- _footer: 補足: 今回のスライドやデモで利用するDashのバージョンはv2.0です。最近更新されたので追従が大変だった… -->
 
 ---
 
 ### （ほぼ）PythonのみでWebサイト構成が作れる
 
 - HTMLを書く必要がない
-- htmlのフォームや構造をラッピングしたコンポーネントを呼び出して構成を用意する
+  - htmlタグとして扱えるコンポーネントも利用可能
+  - dash-core-components/dcc からはより高度なフォームや操作インターフェイスが扱える
 - Plotlyと連携して豊富なグラフを扱うことができる
-- htmlな操作は知らないと扱いづらい
 
+HTMLを書く必要がない≠HTMLの知識が必要ない
+
+<!-- _footer: dash-core-components https://dash.plotly.com/dash-core-components -->
 ---
 
 ```python
@@ -505,6 +526,8 @@ if __name__ == "__main__":
     app.layout = _layout
     app.run_server(debug=True, host="0.0.0.0")
 ```
+
+<!-- _footer: Flaskっぽいアプリの初期化 -->
 
 ---
 
@@ -534,15 +557,20 @@ if __name__ == "__main__":
     app.run_server(debug=True, host="0.0.0.0")
 ```
 
+<!-- _footer: あら簡単！ -->
+
 ---
 
-### フォームなどの操作から動的な変更:コールバック機能
+### コールバック機能:動的な操作
 
-- dashは動的な操作を可能にするためのコールバックという機能がある
-- たとえばグラフの種類を変更することができる
-- homeenvdashでは
-  - ドロップダウンリストで部屋単位のセンサーグラフの切り替え
+- 動的な操作を可能にする
+- 例えば
+  - HTMlのフォーム操作
+  - グラフの描写結果を更新する（日付別とか）
   - 定期的な表示の更新を行う（dcc.Interval）
+- コールバック関数を用意してデコレーターで設定
+
+<!-- _footer: 高度なコールバックとして、パターンマッチングやロングコールバック（v2.0から） があります -->
 
 ---
 
@@ -578,7 +606,7 @@ def _layout():
 
 ```python
 # 続き
-@app.callback(Output("output-p", "children"), Input("input-form", "value"))
+@callback(Output("output-p", "children"), Input("input-form", "value"))
 def update_output_text(input_value):
     # 引数がInputのvalueの値を取得
     # return側に更新したいコンポーネントを指定する。childrenは指定コンポーネントの子要素の事
@@ -606,10 +634,13 @@ if __name__ == "__main__":
 ```python
 if __name__ == "__main__":
     app.layout = _layout
+    # debug=Trueでデバッグモード
     app.run_server(debug=True, host="0.0.0.0")
 ```
 
 ![bg left 50% 80%](img/2021-10-12-11-13-30.png)
+
+<!-- _footer: host="0.0.0.0"は外部公開として扱います。この辺もFlask踏襲ですかね -->
 
 ---
 
@@ -622,12 +653,15 @@ if __name__ == "__main__":
   扱う方がわかりやすい
   - 今回はCSVファイルに1分ごと、30回分の測定結果を保存
 
+<!-- _footer: 補足: センサー情報の記録は別スクリプトにする方が扱いやすいです -->
+<!-- TODO:2021-10-14 コードはURL掲載でデモとして表示させる -->
+
 ---
 
 ### センサーの最新の値を見る
 
 ---
-
+<!-- 
 ```Python
 # センサー取得用関数
 def get_sensor_values():
@@ -673,12 +707,12 @@ def latest_sensor_values(sensor_values: tuple, now_datetime: datetime.datetime):
     )
 ```
 
----
+--- -->
 
 ### 記録したセンサーの値をグラフ化する
 
 ---
-
+<!-- 
 ```Python
 import pandas
 import plotly.express as px
@@ -706,7 +740,7 @@ def sensor_graphs():
 # 後略...
 ```
 
----
+--- -->
 
 ### Tips: 複雑化したらまとめてコンポーネント化する
 
@@ -714,13 +748,16 @@ def sensor_graphs():
 
 - 複雑になることはしょうがない
 - 複雑になるので関数などで部品（カプセル）化していく
-- コールバックで更新したい部分をカプセル化すると、コールバック側の更新処理を作る時に呼び出しやすい
+- コールバックで更新したいコンポーネント箇所をカプセル化すると、コールバック側の更新処理を作る時に呼び出しやすい
 
+慣れてくるとwebアプリを書いている様な扱いに
 
-慣れてくるとwebアプリを書いている様な扱いになってくる
+<!-- TODO:2021-10-14 コードはURL掲載でデモとして表示させる -->
+
+<!-- _footer: 大いなる力には大いなる責任が伴う （チョット言い回し違うかｗ）-->
 
 ---
-
+<!-- 
 最初にレイアウトの一部を関数化しておく
 
 ```Python
@@ -774,7 +811,7 @@ def _layout():
     )
 ```
 
----
+--- -->
 
 ### Tips: Bootstrapを使ってデザインを良くする
 
@@ -788,7 +825,7 @@ Dashの便利なライブラリ: dash-bootstrap-componets（dbc）によるデ�
 ※Dashのv2バージョンアップに伴って、dash-bootstrap-componetsも追従したバージョンアップが行われます。
 デモ中は最新バージョンのリリース候補版を利用してます。
 
-<!-- _footer: 発表資料作っている途中でバージョンアップされたので、対応がめっちゃ大変だった… -->
+<!-- _footer: ライブラリのバージョンアップが資料作成のタイミングだとほんときついよ… -->
 
 ---
 
@@ -799,22 +836,46 @@ Dashの便利なライブラリ: dash-bootstrap-componets（dbc）によるデ�
 - （スライドにコードを収めるには長すぎるので、詳しくはこちらをご覧ください）
   - (url掲載する)
 
+<!-- TODO:2021-10-14 コードはURL掲載でデモとして表示させる -->
+
+---
+
+## 目次
+
+- 環境ダッシュボードを作った話
+- PythonとIoT
+- Dashでダッシュボードアプリを作る
+- **まとめ**
+
 ---
 
 ### まとめ
 
-homeenvdashプロジェクトを紹介しつつ、Pythonを使ったIoTとデータ可視化を
-  デモを交えてお伝えしました。
+趣味プロジェクトを紹介しつつ、Pythonを使ったIoTとデータ可視化を
+デモを交えてお伝えしました
 
-- PythonとIoT
-- Plotly Dashでダッシュボードを作る
+- IoT: ラズパイ+CircitPythonを合わせる選択肢
+- データ可視化: Dashでダッシュボードアプリを作る
 
-本日お伝えしたかったこと
+本日お伝えしたいこと
 
-- 世の中にないけど、ほしいなら自分で作ろう
-- 世の中に存在しないデータを集めて見てみよう
+- 自分の欲しい物が無ければ作ろう
+- 身の回りで見えない数字を可視化してみよう
   - 身近だけど見えないデータ
-- 積みボードを活用していこう
+
+---
+
+## 終わりに
+
+今日のトークで、
+
+- IoTやダッシュボードを作ることが楽しいと思ってもらえたらうれしいです
+- また作るきっかけにもなったらさらにうれしいです
+- 手間暇はかかるけど、そこはモノづくりの大事な所だと思います
+
+存分に手間暇かけてテクノロジーを楽しみましょう！
+
+<!-- TODO:2021-10-14 （最後に思いを込めた一言を載せる） -->
 
 ---
 
@@ -833,6 +894,7 @@ homeenvdashプロジェクトを紹介しつつ、Pythonを使ったIoTとデー
 - LTと参加者募集をします
 - 同時にイベントの詳しい内容は近日公開します！
 
+<!-- _footer: 実はこちらを宣伝したくてトーク応募したものです。ぜひこちらにも遊びに来てください！ -->
 
 ---
 
