@@ -86,8 +86,11 @@ PyCon JP 2021
 
 ![bg left:40% 60%](img/2021-10-09-12-00-46.png)
 
-このプロジェクトの概要とモチベーションを
-紹介します
+趣味プロジェクトです
+
+- センサーの情報をダッシュボードで見るアプリ/システム
+- 計測した時の最新の数値が見れる
+- グラフで1日分/1週間分の推移も確認
 
 ---
 
@@ -100,7 +103,7 @@ PyCon JP 2021
   - センサーノードは複数対応
 - ダッシュボードはDash + Plotly
 - センサーで取得した情報はGoogleスプレッドシートで保存
-  - 今後はローカルなDBを利用検討
+  - 今後はローカルなDBを検討
 
 <!-- _footer: 現在は、温度湿度気圧のBME280に対応。今後はCO2や非接触温度センサなどに対応したい -->
 
@@ -110,7 +113,8 @@ PyCon JP 2021
 
 ![bg left:40% 70%](img/2021-10-09-12-03-48.png)
 
-そもそも、センサーやダッシュボードはすでに製品サービスが多数ある
+そもそもセンサーやダッシュボードは
+すでに製品、サービスが多数ある
 
 ---
 
@@ -121,15 +125,13 @@ PyCon JP 2021
   - 高価な製品は精度がいい
 - ダッシュボードサービスも多数ある
   - OSSなサーバーアプリ: Grafana, Zabbix, Home Assistant...
-  - サービスとして提供されているもの: [Anbient](https://ambidata.io),[Machinist](https://machinist.iij.jp/), [MotionBoard](https://www.wingarc.com/product/motionboard/scene/iot.html), [Google データポータル](https://marketingplatform.google.com/intl/ja/about/data-studio/)...
+  - サービスとして提供: [Anbient](https://ambidata.io), [Machinist](https://machinist.iij.jp/), [MotionBoard](https://www.wingarc.com/product/motionboard/scene/iot.html), [Google データポータル](https://marketingplatform.google.com/intl/ja/about/data-studio/)...
 
 <!-- _footer: 車輪の再開発になるけどどうなのか？ -->
 
 ---
 
-なんで作る必要があるか？
-
-- 自分の欲しい物がなかった
+作った理由は自分の欲しい物がなかったため
 
 ---
 
@@ -160,7 +162,6 @@ PyCon JP 2021
 - **センシティブ**な環境なので扱ったことが
 ない外部サービスだと不安
   - できればローカルのみで扱いたい
-  （そうしたかった）
 
 <!-- _footer: 外部サービスとしてGoogleSheetを使ってますが、このスライド作っていて矛盾に気が付く🤦‍♂️ -->
 
@@ -170,7 +171,7 @@ PyCon JP 2021
 
 ![bg left:35% 70%](img/2021-10-09-11-58-08.png)
 
-- Maker（メイカー）という文化にあこがれる
+- Maker（メイカー）という文化
   > **メイカーとは「テクノロジー」という言葉を、できる限り開放的に解釈、自分で学び利用出来る技能全般のことを理解して、冒険と実験への招待状だと考えている人のことだ**
   > オライリージャパン「私たちはみなメイカーだ」より引用
 - 世の中に存在していなければ自分で作る精神！
@@ -198,9 +199,9 @@ PyCon JP 2021
 
 ガジェット好きなもので...
 
-ラズパイが大量に転がっているので有効活用したい
+ラズパイが大量に転がっている
 
-<!-- _footer:  実際のところみなさんもありますよね？積みボード -->
+<!-- _footer:  みなさんも引き出しにありますよね？積みボード -->
 
 ---
 
@@ -258,13 +259,18 @@ https://github.com/hrsano645/homeenvdash-mini
 
 より手軽にPythonとIoTを行う方法を紹介します
 
+- ※IoTは広義だといろんな意味がありますが
+ここではセンシングや電子機器操作をネットワーク経由で行うことを指します
+
+<!-- _footer:  -->
+
 ---
 
 ### PythonでIoTを行う選択肢
 
-- Raspberry Pi + CPython
-- MicroPython / CircuitPython
-- Raspberry Pi + CircuitPython
+1. Raspberry Pi + CPython
+2. MicroPython / CircuitPython
+3. Raspberry Pi + CircuitPython
 
 <!-- _footer: 上記は私が知っている限りで一例です。ほかにも選択したがある場合は教えていただけると嬉しいです -->
 
@@ -272,24 +278,24 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ### PythonでIoTを行う選択肢
 
-- **Raspberry Pi + CPython**
-- MicroPython / CircuitPython
-- Raspberry Pi + CircuitPython
+1. **Raspberry Pi + CPython**
+2. MicroPython / CircuitPython
+3. Raspberry Pi + CircuitPython
 
 ---
 
 ### Raspberry Piとは
 
+![bg left:45% 80%](img/2021-10-14-17-12-56.png)
+
 - もともとは教育目的のLinuxが動作するシングルボードコンピューター（SBC）
   - 工場自動化やサイネージ、センサーノードとして業務利用も
-  - クラスター構成を作ってクラウドっぽく（おうちクラスター）
 - インターフェイスが豊富
   - 無線LAN, Ethernet, USB, Bluetooth, HDMI出力
 - GUI/CUIで利用可能
-  - 最新版は高性能なのでデスクトップ端末としても
-  - ヘッドレスなサーバーとしても扱える
+  - デスクトップ端末、ヘッドレスなサーバー
 
-<!-- _footer: ちょっと工夫はいるけどルーターを作ることもできます。便利ですよ -->
+<!-- _footer: 界隈ではK8sを使ってクラスター構成を作ったりもしてるそうです。楽しそう。 -->
 
 ---
 
@@ -307,9 +313,9 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ### PythonでIoTを行う選択肢
 
-- Raspberry Pi + CPython
-- **MicroPython / CircuitPython**
-- Raspberry Pi + CircuitPython
+1. Raspberry Pi + CPython
+2. **MicroPython / CircuitPython**
+3. Raspberry Pi + CircuitPython
 
 ---
 
@@ -347,7 +353,7 @@ https://github.com/hrsano645/homeenvdash-mini
 
 - CPythonの3系（3.4, 3.5の一部）の文法をベースにした独自の実装系
 - マイクロコントローラー向けカスタムした標準ライブラリやサードパーティライブラリがある
-- シリアルコンソールからREPLが動く
+- シリアルポートから直接REPLを実行
 - 他のボードにもポートされてインストール可能
 
 ⭕️ Raspberry Piより安価。電源はバッテリーも
@@ -359,24 +365,25 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ### PythonでIoTを行う選択肢
 
-- Raspberry Pi + CPython
-- MicroPython / CircuitPython
-- **Raspberry Pi + CircuitPython**
+1. Raspberry Pi + CPython
+2. MicroPython / CircuitPython
+3. **Raspberry Pi + CircuitPython**
 
 ---
 
-### CircuitPythonのライブラリをRaspberry Piで扱う
+### 3. CircuitPythonのライブラリをRaspberry Piで扱う
 
-- blinkaというライブラリを使う
-  - [CircuitPython on Linux and Raspberry Pi](https://learn.adafruit.com/circuitpython-on-raspberrypi-linux)
-  - CircuitPythonで使うマイコンボードの機能をRaspberry Pi向けに変換するレイヤー
-- CircuitPython向けのライブラリをRaspberry Piで扱うことができる（すべてではない） 
-  - Raspberry PiとCircityPythonのコードの相互利用もやりやすい（らしいです）
+- CircuitPythonの豊富なライブラリをRaspberry Piで扱う選択肢
+- Adafruit-Blinkaライブラリを使う
+  -Raspberry PiのGPIOをCircuitPythonのハードウェア向けに変換するレイヤーとなる
+- Raspberry PiとCircityPython間でコードの相互利用がしやすい
+  > CircuitPython features unified Python core APIs and a growing list of 300+ device libraries and drivers that work with it. These libraries also work on single board computers with regular Python via the Adafruit Blinka Library.
+  > https://circuitpython.readthedocs.io/en/latest/docs/index.html
 
-⭕️ CircityPythonのライブラリを使うことで接続センサーの扱いが楽
+⭕️ CircityPythonのライブラリが使えセンサーモジュールの扱いが楽
 🔺 どちらかの環境依存のコードを書く場合は扱いが難しい
 
-<!-- TODO:2021-10-14 この部分整理が必要なので修正すること -->
+<!-- _footer: "Blinkライブラリの概要: [CircuitPython on Linux and Raspberry Pi](https://learn.adafruit.com/circuitpython-on-raspberrypi-linux)"  -->
 
 ---
 
@@ -384,17 +391,17 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ---
 
-### センサー情報取得の実例: BME280という温度湿度センサーから情報を取得する
+### デモ: 温度湿度気圧センサーから情報を取得する
 
 ![bg left:40% 80%](img/2021-10-09-15-29-48.png)
 
 Rasberry Pi + Blinkaライブラリを使って、
 デモしながら様子を見せていきます
 
-- 実際にラズパイ4BとBME280を接続
+- ラズパイ4BとBME280を接続
 - BME280を搭載したモジュール製品
   - 今回は[AE-BME280](https://akizukidenshi.com/catalog/g/gK-09421/)（秋月電子通商）
-  - SPI接続を利用します
+  - ラズパイとの通信はSPI接続を利用
 
 ---
 
@@ -410,7 +417,7 @@ Rasberry Pi + Blinkaライブラリを使って、
   Amazonとかでも集まる。
   [秋月電子通商](https://akizukidenshi.com/catalog/default.aspx)、[スイッチサイエンス](https://www.switch-science.com/)、[aitendo](https://www.aitendo.com/)、[マルツオンライン](https://www.marutsu.co.jp/)、[せんごくネット通販](https://www.sengoku.co.jp/) がおすすめ
 
-<!-- _footer: とりあえずこれだけあれば作れます。そのうちに工具も部材も増えて沼になります  -->
+<!-- _footer: 上記を用意できれば作れます。そのうちに工具も部材も増えていきます。沼ですね  -->
 ---
 
 配線の様子を見せます
@@ -428,13 +435,9 @@ Rasberry Pi + Blinkaライブラリを使って、
 
 ---
 
-環境作成してデモを見せながら披露
-
----
-
 動作させたテストコードの例
 
-<!-- TODO:2021-10-14 コードはURL掲載でデモとして表示させる -->
+https://github.com/hrsano645/homeenvdash-mini/blob/main/test_bme280.py
 
 ---
 
@@ -457,7 +460,7 @@ VS Codeのリモート開発が便利です -> Remote-SSH
 
 ---
 
-## Dashでセンサー情報を可視化する
+## Dashでダッシュボードアプリを作る
 
 Dashライブラリを使ってセンサー情報を表示する
 ダッシュボードを作ります
@@ -478,7 +481,7 @@ Dashライブラリを使ってセンサー情報を表示する
 
 ### Dashの特徴
 
-- **ほぼPythonのみでWebサイト構成が作れる**
+- **ほぼPythonのみでWebアプリのレイアウトが作れる**
 - **コールバック機能を使ってインタラクティブ操作**
 - データセットやDBを扱いたい場合は自前で用意
   - PlotlyはPandasのDataFrameを使うのでPandas経由がやりやすいはず
@@ -491,14 +494,17 @@ Dashライブラリを使ってセンサー情報を表示する
 
 ---
 
-### （ほぼ）PythonのみでWebサイト構成が作れる
+### ほぼPythonのみでWebアプリのレイアウトが作れる
 
-- HTMLを書く必要がない
-  - htmlタグとして扱えるコンポーネントも利用可能
-  - dash-core-components/dcc からはより高度なフォームや操作インターフェイスが扱える
+- HTMLタグを書く必要がない
+  - HTMLを扱うコンポーネント
+   => Pythonの操作のみでアプリが作れる
+  - `dash-core-components`（`dcc`）を使うと高度なフォームや
+  操作インターフェイスが扱える
 - Plotlyと連携して豊富なグラフを扱うことができる
 
-HTMLを書く必要がない≠HTMLの知識が必要ない
+※ HTMLを書く必要がない≠HTMLの知識が必要ない
+
 
 <!-- _footer: dash-core-components https://dash.plotly.com/dash-core-components -->
 ---
@@ -564,13 +570,21 @@ if __name__ == "__main__":
 ### コールバック機能:動的な操作
 
 - 動的な操作を可能にする
-- 例えば
+- たとえば
   - HTMlのフォーム操作
   - グラフの描写結果を更新する（日付別とか）
   - 定期的な表示の更新を行う（dcc.Interval）
 - コールバック関数を用意してデコレーターで設定
+  - アプリ上の操作を入力としてトリガーさせる
+  - 入力された情報を元にデコレーター対象の関数が処理
+  - 処理した結果をアプリ上へ出力する
 
 <!-- _footer: 高度なコールバックとして、パターンマッチングやロングコールバック（v2.0から） があります -->
+
+<!-- --- -->
+
+<!-- TODO: 2021/10/14 画像一つ追加予定: コールバックのベーシックな説明を画像で説明。 -->
+
 
 ---
 
@@ -653,94 +667,23 @@ if __name__ == "__main__":
   扱う方がわかりやすい
   - 今回はCSVファイルに1分ごと、30回分の測定結果を保存
 
-<!-- _footer: 補足: センサー情報の記録は別スクリプトにする方が扱いやすいです -->
-<!-- TODO:2021-10-14 コードはURL掲載でデモとして表示させる -->
+<!-- _footer: 補足 センサー情報の記録は別スクリプトにする方が扱いやすいです -->
 
 ---
 
 ### センサーの最新の値を見る
 
----
-<!-- 
-```Python
-# センサー取得用関数
-def get_sensor_values():
-    """センサーの値を取得する。記録は文字列にする"""
-    temperature = f"{bme280.temperature:.1f}"
-    relative_humidity = f"{bme280.relative_humidity:.1f}"
-    pressure = f"{bme280.pressure:.1f}"
-    return (temperature, relative_humidity, pressure)
-
-# callback関数部分
-def update_sensor_values(n):
-
-    now_dt = datetime.datetime.now().astimezone()
-    sensor_values = get_sensor_values()
-    #中略
-    latest_values = latest_sensor_values(sensor_values, now_dt)
-    return latest_values
-```
+デモ用アプリの該当箇所:
+https://github.com/hrsano645/homeenvdash-mini/blob/main/homeenvdash-mini.py#L83
 
 ---
-
-```python
-# レイアウト
-def latest_sensor_values(sensor_values: tuple, now_datetime: datetime.datetime):
-    """現在のセンサー値を描写する。"""
-    latest_datetime = now_datetime.strftime("%Y-%m-%d %H:%M:%S")
-    latest_temperature = sensor_values[0]
-    latest_pressure = sensor_values[1]
-    latest_humidity = sensor_values[2]
-
-    return html.Div(
-        [
-            html.Label(f"更新時間 :{latest_datetime}"),
-            html.Div(
-                [
-                    html.P(f"気温: {latest_temperature}℃"),
-                    html.P(f"湿度: {latest_pressure}%"),
-                    html.P(f"気圧: {latest_humidity}hPa"),
-                ],
-            ),
-        ],
-        id="latest_values",
-    )
-```
-
---- -->
 
 ### 記録したセンサーの値をグラフ化する
 
----
-<!-- 
-```Python
-import pandas
-import plotly.express as px
-# 中略
-from dash import Dash, callback, html, dcc, Input, Output
-# 中略
-def sensor_graphs():
-     # センサー値を記録しているCSVファイルをDataFrameにする
-    sensor_values_df = pandas.read_csv(
-        SENSOR_VALUES_FILE, names=("datetime", "temperature", "humidity", "pressure")
-    )
-    # DataFrameをグラフに展開
-    fig1 = px.line(sensor_values_df, x="datetime", y="temperature", title="温度")
-    fig2 = px.line(sensor_values_df, x="datetime", y="humidity", title="湿度")
-    fig3 = px.line(sensor_values_df, x="datetime", y="pressure", title="気圧")
-    # レイアウトのコンポーネントを返す
-    return html.Div(
-        [
-            dcc.Graph(id="tempature", figure=fig1),
-            dcc.Graph(id="humidity", figure=fig2),
-            dcc.Graph(id="pressure", figure=fig3),
-        ],
-        id="graphs",
-    )
-# 後略...
-```
+デモ用アプリの該当箇所:
+https://github.com/hrsano645/homeenvdash-mini/blob/main/homeenvdash-mini.py#L106
 
---- -->
+---
 
 ### Tips: 複雑化したらまとめてコンポーネント化する
 
@@ -752,66 +695,11 @@ def sensor_graphs():
 
 慣れてくるとwebアプリを書いている様な扱いに
 
-<!-- TODO:2021-10-14 コードはURL掲載でデモとして表示させる -->
+- 説明箇所コードのリンク: https://github.com/hrsano645/homeenvdash-mini/blob/main/homeenvdash-mini.py#L103
 
-<!-- _footer: 大いなる力には大いなる責任が伴う （チョット言い回し違うかｗ）-->
+<!-- _footer: 大いなる力には大いなる責任が伴う-->
 
 ---
-<!-- 
-最初にレイアウトの一部を関数化しておく
-
-```Python
-# 中略, 関数化しておくと呼び出しやすくなり管理もしやすい
-def sensor_graphs():
-    """過去に記録したセンサーの値をグラフにする"""
-
-    # センサー値を記録しているCSVファイルをDataFrameにする
-    sensor_values_df = pandas.read_csv(
-        SENSOR_VALUES_FILE, names=("datetime", "temperature", "humidity", "pressure")
-    )
-    # DataFrameをグラフに展開
-    fig1 = px.line(sensor_values_df, x="datetime", y="temperature", title="温度")
-    fig2 = px.line(sensor_values_df, x="datetime", y="humidity", title="湿度")
-    fig3 = px.line(sensor_values_df, x="datetime", y="pressure", title="気圧")
-    # レイアウトのコンポーネントを返す
-    return html.Div(
-        [
-            dcc.Graph(id="tempature", figure=fig1),
-            dcc.Graph(id="humidity", figure=fig2),
-            dcc.Graph(id="pressure", figure=fig3),
-        ],
-        id="graphs",
-    )
-```
----
-
-最後にレイアウト上で呼び出す
-
-```python
-def _layout():
-    now_dt = datetime.datetime.now().astimezone()
-    sensor_values = get_sensor_values()
-    save_sensor_values(sensor_values, now_dt, 50)
-
-    return html.Div(
-        [
-            html.H2(app.title),
-            html.Hr(),
-            # 現在の値を取得
-            latest_sensor_values(sensor_values, now_dt),
-            # 温度、湿度、気圧のグラフ
-
-            sensor_graphs(), # <= 関数でレイアウトオブジェクトを生成して呼び出す
-            dcc.Interval(
-                id="interval-component",
-                interval=UPDATE_MINITS * 60 * 1000,  # in milliseconds
-                n_intervals=0,
-            ),
-        ],
-    )
-```
-
---- -->
 
 ### Tips: Bootstrapを使ってデザインを良くする
 
@@ -825,7 +713,7 @@ Dashの便利なライブラリ: dash-bootstrap-componets（dbc）によるデ�
 ※Dashのv2バージョンアップに伴って、dash-bootstrap-componetsも追従したバージョンアップが行われます。
 デモ中は最新バージョンのリリース候補版を利用してます。
 
-<!-- _footer: ライブラリのバージョンアップが資料作成のタイミングだとほんときついよ… -->
+<!-- _footer: ライブラリのバージョンアップが資料作成のタイミングだとほんとね… -->
 
 ---
 
@@ -833,10 +721,8 @@ Dashの便利なライブラリ: dash-bootstrap-componets（dbc）によるデ�
 
 - 実際にコードを見せつつ解説します
 - レスポンシブ対応を例にします
-- （スライドにコードを収めるには長すぎるので、詳しくはこちらをご覧ください）
-  - (url掲載する)
-
-<!-- TODO:2021-10-14 コードはURL掲載でデモとして表示させる -->
+- コードはこちらから見れます:
+  https://github.com/hrsano645/homeenvdash-mini/blob/main/homeenvdash-mini-dbc.py
 
 ---
 
@@ -875,8 +761,6 @@ Dashの便利なライブラリ: dash-bootstrap-componets（dbc）によるデ�
 
 存分に手間暇かけてテクノロジーを楽しみましょう！
 
-<!-- TODO:2021-10-14 （最後に思いを込めた一言を載せる） -->
-
 ---
 
 ## 最後にお知らせ
@@ -898,11 +782,13 @@ Dashの便利なライブラリ: dash-bootstrap-componets（dbc）によるデ�
 
 ---
 
-質問対策
+---
+
+質問想定
 
 ---
 
-- Dashを使うメリット,デメリットは？
+- Dashを使うメリット、デメリットは？
   - メリットはHTMLを書く必要なくWEBアプリ作成ができる
   - デメリットはDB接続や高度な動的処理（ログイン処理やセッション管理）、API連携はそれほど得意ではない
     - それを解決する有償のサービスが提供されている
@@ -913,5 +799,3 @@ Dashの便利なライブラリ: dash-bootstrap-componets（dbc）によるデ�
   - 実際にキャリブレーションする必要はあると思うし、高度なセンサーもあるので、用途によると思います。
 
 ---
-
-- 
