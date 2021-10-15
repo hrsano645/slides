@@ -17,10 +17,12 @@ PyCon JP 2021
   - 🏠:静岡県の富士市🗻
 - Job💼
   - [株式会社佐野設計事務所](https://sano-design.info)
-    - 自動車向けプレス金型の機械設計
+    - 自動車向けプレス金型の機械設計事務所
+      - 3Dデータのモデリングもやってます！
+    - ITインフラや業務で使うアプリを作る担当です
   - 米農家🌾
 - Community🙋
-  - Python駿河, PyCon mini Shizuokaスタッフ
+  - Python駿河、PyCon mini Shizuokaスタッフ
   - Code for ふじのくに
 
 <!-- _footer: こんにちは。フッターです。 -->
@@ -80,7 +82,7 @@ PyCon JP 2021
 - Dashでダッシュボードアプリを作る
 - まとめ
 
-<!-- _footer: あとZoomだけは落ちないで欲しい -->
+<!-- _footer: あとZoomだけは落ちないで。PyCharity2021.02の記憶😱 -->
 
 ---
 
@@ -92,7 +94,7 @@ PyCon JP 2021
 
 - センサーの情報をダッシュボードで見るアプリ/システム
 - 計測した時の最新の数値が見れる
-- グラフで1日分/1週間分の推移も確認
+- グラフで1日分/1週間分の推移が見れる
 
 ---
 
@@ -171,6 +173,8 @@ PyCon JP 2021
 
 ## 欲しいけどない -> 自分で作ろう！
 
+<!-- _footer: ...という話を2021キーノート1日目の谷合さんもお話しされてましたね -->
+
 ---
 
 ### 欲しいものを自分で作る
@@ -231,7 +235,9 @@ PyCon JP 2021
 
 贅沢に使って快適な日常を手に入れましょう！
 
-<!-- _footer: もちろん、新しく購入して初めてトライしてもいいと思います！ -->
+もちろん、新しく購入して初めてトライしてもいいと思います！ 
+
+<!-- _footer: 問題解決したかは、想像にお任せします🤔 -->
 
 ---
 
@@ -249,6 +255,8 @@ https://github.com/hrsano645/homeenvdash-mini
 - センサーの値はCSVファイルへ保存される
 - （デモの都合上）ダッシュボード起動時にしかセンサー値の記録はされません
 
+<!-- _footer: ask-the-speakerで暇だったら改造してるかも -->
+
 ---
 
 ## 目次
@@ -262,7 +270,7 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ## PythonとIoT
 
-より手軽にPythonとIoTを扱う方法を紹介します
+より手軽にPythonでIoTを扱う方法を紹介します
 
 - ※IoTは広義だといろんな意味がありますが
 ここではセンシングや電子機器操作をネットワーク経由で行うことを指します
@@ -296,7 +304,7 @@ https://github.com/hrsano645/homeenvdash-mini
 - もともとは教育目的のLinuxが動作するシングルボードコンピューター（SBC）
   - 工場自動化やサイネージ、センサーノードとして業務利用も
 - インターフェイスが豊富
-  - 無線LAN, Ethernet, USB, Bluetooth, HDMI出力
+  - GPIO, 無線LAN, Ethernet, USB, Bluetooth, HDMI出力
 - GUI/CUIで利用可能
   - デスクトップ端末、ヘッドレスなサーバー
 
@@ -683,12 +691,12 @@ if __name__ == "__main__":
 デモ用アプリの該当箇所:
 https://github.com/hrsano645/homeenvdash-mini/blob/main/homeenvdash-mini.py#L83
 
----
-
 ### 記録したセンサーの値をグラフ化する
 
 デモ用アプリの該当箇所:
 https://github.com/hrsano645/homeenvdash-mini/blob/main/homeenvdash-mini.py#L106
+
+<!-- _footer: 実際にデモアプリ上で確認してみます -->
 
 ---
 
@@ -704,7 +712,7 @@ https://github.com/hrsano645/homeenvdash-mini/blob/main/homeenvdash-mini.py#L106
 
 - 説明箇所コードのリンク: https://github.com/hrsano645/homeenvdash-mini/blob/main/homeenvdash-mini.py#L103
 
-<!-- _footer: 大いなる力には大いなる責任が伴う-->
+<!-- _footer: DRY原則を守っていくー -->
 
 ---
 
@@ -730,6 +738,8 @@ Dashの便利なライブラリ: dash-bootstrap-componets（dbc）によるデ�
 - レスポンシブ対応を例にします
 - コードはこちらから見れます:
   https://github.com/hrsano645/homeenvdash-mini/blob/main/homeenvdash-mini-dbc.py
+
+<!-- _footer: でもどちらもアップデートで便利になったので、また使い込みたい -->
 
 ---
 
@@ -774,18 +784,18 @@ Dashの便利なライブラリ: dash-bootstrap-componets（dbc）によるデ�
 
 ---
 
-### PyCon  mini Shizuoka 2021 やります
+### PyCon mini Shizuoka 2021 やります🎉
 
-開催します🎉是非来てください🙌
+是非来てください🙌
 
 - 2021/11/20 土曜日
 - 詳しくは公式サイトをチェック
   - https://shizuoka.pycon.jp/2021
   - Twitterアカウント: @PyconShizu
-- LTと参加者募集をします
+- LTと参加者募集をします。詳細は近日
 - 同時にイベントの詳しい内容は近日公開します！
 
-<!-- _footer: 実はこちらを宣伝したくてトーク応募したものです。ぜひこちらにも遊びに来てください！ -->
+<!-- _footer: ぜひこちらにも遊びに来てください！ -->
 
 ---
 
@@ -806,3 +816,4 @@ Dashの便利なライブラリ: dash-bootstrap-componets（dbc）によるデ�
   - 実際にキャリブレーションする必要はあると思うし、高度なセンサーもあるので、用途によると思います。
 
 ---
+
