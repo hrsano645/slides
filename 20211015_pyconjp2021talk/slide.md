@@ -17,8 +17,8 @@ PyCon JP 2021
   - 🏠:静岡県の富士市🗻
 - Job💼
   - [株式会社佐野設計事務所](https://sano-design.info)
-    - 自動車向けプレス金型の機械設計事務所
-      - 3Dデータのモデリングもやってます！
+    - 自動車向けプレス金型機械の設計事務所
+      - 最近は3Dデータの製作/モデリングもやってます！
     - ITインフラや業務で使うアプリを作る担当です
   - 米農家🌾
 - Community🙋
@@ -27,16 +27,6 @@ PyCon JP 2021
 
 <!-- _footer: こんにちは。フッターです。 -->
 
----
-
-## 目次
-
-- 環境ダッシュボードを作った話
-- PythonとIoT
-- Dashでダッシュボードアプリを作る
-- まとめ
-
-<!-- _footer: この部分でツッコミや補足等を入れていきます。 -->
 
 ---
 
@@ -54,11 +44,24 @@ PyCon JP 2021
 - 身の回りで見えない数字を可視化してみよう
   - 身近だけど見えないデータ
 
+<!-- _footer: この部分でツッコミや補足等を入れていきます。 -->
+
+---
+
+## 目次
+
+- 環境ダッシュボードを作った話
+- PythonとIoT
+- Dashでダッシュボードアプリを作る
+- まとめ
+
 ---
 
 本日のテーマ
 
-# ラズパイとDashで環境ダッシュボードを作ろう
+# `ラズパイ`と`Dash`で環境`ダッシュボード`を作ろう
+
+3つの固有名詞
 
 <!-- _footer: 久しぶりに、長めのトークをやらせてもらってます。 -->
 
@@ -67,9 +70,9 @@ PyCon JP 2021
 - ラズパイ = **Raspberry Pi**
 
 - Dash = **Plotly Dash**
-（Webアプリフレームワークのこと）
+（Webアプリを作るローコードフレームワーク）
 
-- 環境ダッシュボード => 環境センサーの情報が見れる**ダッシュボードアプリ**
+- ダッシュボード => **ダッシュボードアプリ**
 
 <!-- _footer: 御見苦しい部分もありますが、生暖かく見守ってもらえたら/やんわりマサカリ投げてください -->
 
@@ -92,8 +95,7 @@ PyCon JP 2021
 
 趣味プロジェクトです
 
-- センサーの情報をダッシュボードで見るアプリ/システム
-- 計測した時の最新の数値が見れる
+- 環境センサーの情報をダッシュボードで見るアプリ/システム
 - グラフで1日分/1週間分の推移が見れる
 
 ---
@@ -159,7 +161,7 @@ PyCon JP 2021
 
 ### 見守りに使いたい
 
-- 実家の祖母の部屋の状況確認に利用
+- 実家の祖母の部屋の状況確認に利用していた
 - 高齢者は気温の変化を感じづらい
   - 体感より数値化されていた方が
   対応しやすい
@@ -171,9 +173,11 @@ PyCon JP 2021
 
 ---
 
-## 欲しいけどない -> 自分で作ろう！
+## 欲しいものがない？
 
-<!-- _footer: ...という話を2021キーノート1日目の谷合さんもお話しされてましたね -->
+## なら自分で作ろう！
+
+<!-- _footer: なければ作る。という話をキーノート1日目の谷合さんもお話しされてましたね -->
 
 ---
 
@@ -181,16 +185,16 @@ PyCon JP 2021
 
 ![bg left:35% 70%](img/2021-10-09-11-58-08.png)
 
-- Maker（メイカー）という文化
+- Maker（メイカー）という文化に触発される
   > **メイカーとは「テクノロジー」という言葉を、できる限り開放的に解釈、自分で学び利用出来る技能全般のことを理解して、冒険と実験への招待状だと考えている人のことだ**
   > オライリージャパン「私たちはみなメイカーだ」より引用
 - 世の中に存在していなければ自分で作る精神！
 
-<!-- _footer: 趣味ってのもありますし、車輪の再開発も楽しいよ！ -->
+<!-- _footer: 趣味だからとも言えますが、車輪の再開発も楽しいよ！ -->
 
 ---
 
-### 先人の例（教え）
+### 先人を紹介
 
 ![h:420](https://docs.google.com/drawings/d/e/2PACX-1vQrMi7_CD1k7DgHPmkrSJIwCLcJfn_ZjmgHnl4dXM-tNIMMXb5oCacRyf9nZbG2Y91zXvZ5TU5O5hwQ/pub?w=1393&h=615)
 
@@ -198,8 +202,10 @@ PyCon JP 2021
 - からあげさん: https://karaage.hatenadiary.jp/entry/2019/11/06/073000
 
 <!-- note: -->
-<!-- PyCon JPのキーノートスピーカーもされたきゅうり農家小池さんです。機械学習できゅうりの仕分けを行うプロジェクトでは、位置から仕分け機を作り、仕分け用の画像は自身の農園で育てたものも利用されているので、まさにないものは自分で作ることをされている方です。 -->
-<!-- もう1人、PyCon mini Shizuokaでキーノートスピーカーをされたからあげさんです。さまざまなことに取り組まれていますが、ルンバをAI化するプロジェクトではルンバに外部インターフェイスがあることに気がつかれて、ロボット系のOSとして使われているROSと接続してハックしています。専用の自作基板まで作られる気合の入りっぷりがすごい -->
+<!-- 先人をお二人紹介します -->
+<!-- PyCon JPのキーノートスピーカーをされたきゅうり農家さんです。機械学習できゅうりの仕分けを行うプロジェクトでは、仕分け機自体も一から作り、学習用のきゅうり画像は自身の農園で育てたものも利用されております。 -->
+<!-- もう1人、からあげさんです。PyCon mini Shizuokaでキーノートスピーカーをされています。さまざまなことに取り組まれていますが、AIルンバを作られた時は、ルンバにある外部インターフェイスを使いロボット系のOSとして使われているROSを使ってハックをされています。手軽にハックするために専用の接続用基盤も作られたりと。 -->
+<!-- お二人も自身で欲しいなと思うものを自分の手で作ることをされています -->
 
 ---
 
@@ -299,14 +305,18 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ### Raspberry Piについて
 
-![bg left:45% 80%](img/2021-10-14-17-12-56.png)
+![bg left:40% 85%](img/2021-10-14-17-12-56.png)
 
-- もともとは教育目的のLinuxが動作するシングルボードコンピューター（SBC）
-  - 工場自動化やサイネージ、センサーノードとして業務利用も
+- もとは教育目的のARM系CPUの
+シングルボードコンピューター
+  - 業務利用も。工場自動化、
+  サイネージ、センサーノード ...
 - インターフェイスが豊富
-  - GPIO, 無線LAN, Ethernet, USB, Bluetooth, HDMI出力
+  - GPIO,無線LAN,Ethernet,USB,
+  Bluetooth,HDMI出力,専用カメラ
 - GUI/CUIで利用可能
-  - デスクトップ端末、ヘッドレスなサーバー
+  - デスクトップ端末
+  - ヘッドレスサーバー
 
 <!-- _footer: 界隈ではK8sを使ってクラスター構成を作ったりもしてるそうです。楽しそう。 -->
 
@@ -316,11 +326,10 @@ https://github.com/hrsano645/homeenvdash-mini
 
 - Linuxが動きCPythonを扱える
 - GPIO（デジタル入出力）でセンサーと接続可能
-- シリアル通信規格: SPI, I2C  
-- ディスプレイを繋ぐとサイネージ的なデバイスも作れる
+  - シリアル通信規格: SPI, I2C
 
-⭕️ 安価ながら高機能なIoT端末として扱える
-🔺 **ACアダプタなど給電環境が必要** 電源がない環境では扱いづらい
+⭕️ 安価（5千円~1万円）ながら高機能なIoT端末として扱える
+🔺 **ACアダプタなど安定した給電環境が必要**
 
 ---
 
@@ -351,25 +360,24 @@ https://github.com/hrsano645/homeenvdash-mini
 
 - MicroPythonの派生版
   - adafruitが開発支援: オープンソースハードウェア企業で教育向け製品を扱う
-- 当初はadafruitのマイコンボードに対応
-  - その後他社製のマイコンボードにも広がる
-- 専用ライブラリを使うとセンサーやLED
-コントローラーが少ないコードで扱える
+- 専用ライブラリが豊富
+  - センサー、LED、モーターなどの
+  モジュールが少ないコードで扱える
 
 <!-- _footer: CircuitPython https://circuitpython.org adafruitは「えいだーふるーつ」と呼ぶそうです-->
 
 ---
-![bg left:35% 130%](https://docs.google.com/drawings/d/e/2PACX-1vR6Kfmi6lFMG-UlxtRCNep0R2tOzNiIFSakbMOT3TNiCh6MZuQZrw1jUGC_f7TU99_vCmWtWZeItGnJ/pub?w=960&h=720)
+![bg left:35% 140%](https://docs.google.com/drawings/d/e/2PACX-1vR6Kfmi6lFMG-UlxtRCNep0R2tOzNiIFSakbMOT3TNiCh6MZuQZrw1jUGC_f7TU99_vCmWtWZeItGnJ/pub?w=960&h=720)
 
 
-### MicroPython/CircuitPythonの特徴
+### MicroPython/CircuitPythonの共通特徴
 
 - CPythonの3系（3.4, 3.5の一部）の文法をベースにした独自の処理系
-- マイクロコントローラー向けカスタムした
-標準ライブラリやサードパーティライブラリ
+- マイコン向けカスタムした標準ライブラリや
+サードパーティライブラリ
 - シリアルポート（UART）から直接REPLを実行
 
-この処理系は他のマイコンにも移植される
+この処理系は他社マイコンにも移植される
 
 ⭕️ Raspberry Piより安価。電源はバッテリーも
 🔺 CPythonライクだが完全互換ではない
@@ -388,14 +396,14 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ### 3. CircuitPythonのライブラリをRaspberry Piで扱う
 
-- CircuitPythonの豊富なライブラリをRaspberry Piで扱う選択肢
+- CircuitPythonの豊富なライブラリをRaspberry Pi上で扱う選択肢
 - Adafruit-Blinkaライブラリを使う
-  - Raspberry PiのGPIOをCircuitPythonのハードウェア向けに変換するレイヤー
+  - CircuitPythonのハードウェア向けIOをRaspberry PiのGPIOに変換するレイヤー
 - Raspberry PiとCircityPython間でコードの相互利用がしやすい
   > CircuitPython features unified Python core APIs and a growing list of 300+ device libraries and drivers that work with it. These libraries also work on single board computers with regular Python via the Adafruit Blinka Library.
   > https://circuitpython.readthedocs.io/en/latest/docs/index.html
 
-⭕️ CircityPythonのライブラリが使えセンサーモジュールの扱いが楽
+⭕️ CircityPythonの専用ライブラリが使える。対応するモジュールの扱いが楽
 🔺 どちらかの環境依存のコードを書く場合は扱いが難しい
 
 <!-- _footer: "Blinkライブラリの概要: [CircuitPython on Linux and Raspberry Pi](https://learn.adafruit.com/circuitpython-on-raspberrypi-linux)"  -->
@@ -484,8 +492,8 @@ Dashライブラリを使ってセンサー情報を表示する
 
 ### Dashの紹介
 
-- Plotlyが作成しているWebアプリフレームワーク
-  - Plotlyはグラフライブラリの名称でもある: `Plotly.js`、`Plotly.py`
+- Plotly製のWebアプリを作るローコードフレームワーク
+  - Plotlyはグラフライブラリの名称でもある: `Plotly.py`
 - データ分析向けのプロトタイピングがしやすい
 - サンプル（有料機能を使ったものもあるので注意）<https://dash.gallery/Portal/>
 
@@ -496,8 +504,8 @@ Dashライブラリを使ってセンサー情報を表示する
 
 ### Dashの特徴
 
-- **ほぼPythonのみでWebアプリのレイアウトが作れる**
-- **コールバック機能を使ってインタラクティブ操作**
+- **ほぼPythonのみでWebアプリが作れる**
+- **動的な操作はコールバック機能を使う**
 - データセットやDBを扱いたい場合は自前で用意
   - PlotlyはPandasのDataFrameを使うのでPandas経由がやりやすいはず
 
@@ -509,7 +517,7 @@ Dashライブラリを使ってセンサー情報を表示する
 
 ---
 
-### ほぼPythonのみでWebアプリのレイアウトが作れる
+### ほぼPythonのみでWebアプリが作れる
 
 - HTMLタグを書く必要がない
   - HTMLを扱うコンポーネント
@@ -582,17 +590,13 @@ if __name__ == "__main__":
 
 ---
 
-### コールバック機能:動的な操作
+### 動的な操作はコールバック機能を使う
 
-- 動的な操作を可能にする
 - たとえば
-  - HTMlのフォーム操作
-  - グラフの描写結果を更新する（日付別とか）
-  - 定期的な表示の更新を行う（dcc.Interval）
-- コールバック関数を用意してデコレーターで設定
-  - アプリ上の操作を入力としてトリガーさせる
-  - 入力された情報を元にデコレーター対象の関数が処理
-  - 処理した結果をアプリ上へ出力する
+  - HTMLフォームを使って情報やグラフの切り替え
+  - 定期的な更新を行う（dcc.Interval）
+
+コールバック関数を用意し専用のデコレーターを使うことで実現
 
 <!-- _footer: 高度なコールバックとして、パターンマッチングやロングコールバック（v2.0から） があります -->
 
