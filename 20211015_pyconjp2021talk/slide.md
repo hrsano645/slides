@@ -58,7 +58,7 @@ PyCon JP 2021
 
 # ラズパイとDashで環境ダッシュボードを作ろう
 
-<!-- _footer: 久しぶりに長めのトークをやらせてもらってます。 -->
+<!-- _footer: 久しぶりに、長めのトークをやらせてもらってます。 -->
 
 ---
 
@@ -69,7 +69,7 @@ PyCon JP 2021
 
 - 環境ダッシュボード => 環境センサーの情報が見れる**ダッシュボードアプリ**
 
-<!-- _footer: 御見苦しい部分もありますが生暖かく見守ってもらえたら/やんわりマサカリ投げてください -->
+<!-- _footer: 御見苦しい部分もありますが、生暖かく見守ってもらえたら/やんわりマサカリ投げてください -->
 
 ---
 
@@ -79,6 +79,8 @@ PyCon JP 2021
 - PythonとIoT
 - Dashでダッシュボードアプリを作る
 - まとめ
+
+<!-- _footer: あとZoomだけは落ちないで欲しい -->
 
 ---
 
@@ -131,13 +133,13 @@ PyCon JP 2021
 
 ---
 
-作った理由は自分の欲しい物がなかったため
+作った理由は、自分の欲しい物がなかったため
 
 ---
 
 ![bg left:35% 70%](img/2021-10-09-11-52-55.png)
 
-### 低気圧の体調不良に対応したかった
+### 気圧の状況を見たい
 
 - 低気圧に弱いので不調の前兆を調べたい
   - 予報サービスはあるけど現状を見たい
@@ -153,7 +155,7 @@ PyCon JP 2021
 
 ![bg left:35% 70%](img/2021-10-09-11-54-18.png)
 
-### 見守りに使う
+### 見守りに使いたい
 
 - 実家の祖母の部屋の状況確認に利用
 - 高齢者は気温の変化を感じづらい
@@ -167,6 +169,10 @@ PyCon JP 2021
 
 ---
 
+## 欲しいけどない -> 自分で作ろう！
+
+---
+
 ### 欲しいものを自分で作る
 
 ![bg left:35% 70%](img/2021-10-09-11-58-08.png)
@@ -176,11 +182,13 @@ PyCon JP 2021
   > オライリージャパン「私たちはみなメイカーだ」より引用
 - 世の中に存在していなければ自分で作る精神！
 
-<!-- _footer: 車輪の再開発も楽しいよ！ -->
+<!-- _footer: 趣味ってのもありますし、車輪の再開発も楽しいよ！ -->
 
 ---
 
-![h:430](https://docs.google.com/drawings/d/e/2PACX-1vQrMi7_CD1k7DgHPmkrSJIwCLcJfn_ZjmgHnl4dXM-tNIMMXb5oCacRyf9nZbG2Y91zXvZ5TU5O5hwQ/pub?w=1393&h=615)
+### 先人の例（教え）
+
+![h:420](https://docs.google.com/drawings/d/e/2PACX-1vQrMi7_CD1k7DgHPmkrSJIwCLcJfn_ZjmgHnl4dXM-tNIMMXb5oCacRyf9nZbG2Y91zXvZ5TU5O5hwQ/pub?w=1393&h=615)
 
 - 小池さん: http://workpiles.com/2016/08/ccb9-prototype2-complete/
 - からあげさん: https://karaage.hatenadiary.jp/entry/2019/11/06/073000
@@ -191,7 +199,7 @@ PyCon JP 2021
 
 ---
 
-個人的に解決したい問題
+個人的に解決したい問題もある
 
 ---
 
@@ -211,18 +219,19 @@ PyCon JP 2021
 
 > https://twitter.com/karaage0703/status/1413347181705105410?s=20
 
+積んでからが勝負とのこと
+
 <!-- _footer: やっぱり闇のエンジニアはちげーわ！ -->
 --- 
 
 <!-- note: -->
 <!-- こういったマイコンやボードは積んでからが勝負と言われています。みなさんの中にも引き出しに眠っている積みボードが気になる方も出てきたと思いますが -->
 
-積みボードがある方は贅沢に使って快適な日常を手に入れる！
+積みボードがある方は
 
-<!-- note: -->
-<!-- もちろん、新しく購入して初めてトライしてもらってもいいと思います！ -->
+贅沢に使って快適な日常を手に入れましょう！
 
-<!-- _footer: ラズパイは一応2台ぐらい有効活用してます。踏み台サーバーや3Dプリンタのコントローラーが便利 -->
+<!-- _footer: もちろん、新しく購入して初めてトライしてもいいと思います！ -->
 
 ---
 
@@ -233,9 +242,7 @@ PyCon JP 2021
 
 https://github.com/hrsano645/homeenvdash-mini
 
----
-
-### homeenvdashとの違い
+**homeenvdashとの違い**
 
 - ダッシュボードアプリとセンサー値取得を同時に行ってます
 - センサーの値を取得して現在情報とグラフ表示はほぼ同じ
@@ -251,24 +258,30 @@ https://github.com/hrsano645/homeenvdash-mini
 - Dashでダッシュボードアプリを作る
 - まとめ
 
-<!-- _footer: この部分でツッコミや補足等を入れていきます -->
-
 ---
 
 ## PythonとIoT
 
-より手軽にPythonとIoTを行う方法を紹介します
+より手軽にPythonとIoTを扱う方法を紹介します
 
 - ※IoTは広義だといろんな意味がありますが
 ここではセンシングや電子機器操作をネットワーク経由で行うことを指します
 
-<!-- _footer:  -->
+---
+
+### PythonでIoTを扱う選択肢
+
+1. Raspberry Pi + CPython
+2. MicroPython / CircuitPython
+3. Raspberry Pi + CircuitPython
+
+<!-- _footer: 今日のデモでは 3番目を利用します -->
 
 ---
 
-### PythonでIoTを行う選択肢
+### PythonでIoTを扱う選択肢
 
-1. Raspberry Pi + CPython
+1. **Raspberry Pi + CPython**
 2. MicroPython / CircuitPython
 3. Raspberry Pi + CircuitPython
 
@@ -276,15 +289,7 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ---
 
-### PythonでIoTを行う選択肢
-
-1. **Raspberry Pi + CPython**
-2. MicroPython / CircuitPython
-3. Raspberry Pi + CircuitPython
-
----
-
-### Raspberry Piとは
+### Raspberry Piについて
 
 ![bg left:45% 80%](img/2021-10-14-17-12-56.png)
 
@@ -311,7 +316,7 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ---
 
-### PythonでIoTを行う選択肢
+### PythonでIoTを扱う選択肢
 
 1. Raspberry Pi + CPython
 2. **MicroPython / CircuitPython**
@@ -351,10 +356,12 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ### MicroPython/CircuitPythonの特徴
 
-- CPythonの3系（3.4, 3.5の一部）の文法をベースにした独自の実装系
-- マイクロコントローラー向けカスタムした標準ライブラリやサードパーティライブラリがある
-- シリアルポートから直接REPLを実行
-- 他のボードにもポートされてインストール可能
+- CPythonの3系（3.4, 3.5の一部）の文法をベースにした独自の処理系
+- マイクロコントローラー向けカスタムした
+標準ライブラリやサードパーティライブラリ
+- シリアルポート（UART）から直接REPLを実行
+
+この処理系は他のマイコンにも移植される
 
 ⭕️ Raspberry Piより安価。電源はバッテリーも
 🔺 CPythonライクだが完全互換ではない
@@ -363,7 +370,7 @@ https://github.com/hrsano645/homeenvdash-mini
 
 ---
 
-### PythonでIoTを行う選択肢
+### PythonでIoTを扱う選択肢
 
 1. Raspberry Pi + CPython
 2. MicroPython / CircuitPython
@@ -375,7 +382,7 @@ https://github.com/hrsano645/homeenvdash-mini
 
 - CircuitPythonの豊富なライブラリをRaspberry Piで扱う選択肢
 - Adafruit-Blinkaライブラリを使う
-  -Raspberry PiのGPIOをCircuitPythonのハードウェア向けに変換するレイヤーとなる
+  - Raspberry PiのGPIOをCircuitPythonのハードウェア向けに変換するレイヤー
 - Raspberry PiとCircityPython間でコードの相互利用がしやすい
   > CircuitPython features unified Python core APIs and a growing list of 300+ device libraries and drivers that work with it. These libraries also work on single board computers with regular Python via the Adafruit Blinka Library.
   > https://circuitpython.readthedocs.io/en/latest/docs/index.html
@@ -431,11 +438,11 @@ Rasberry Pi + Blinkaライブラリを使って、
 - 配線は一例です。
 - 画像で利用しているBME280はAE-BME280ではないので、表を元に配線してください
 
-<!-- _footer: このピン配置を行っているとUSBが偉大に見えますね。 -->
+<!-- _footer: このピン配置の作業をやるとUSBが偉大に見えますね -->
 
 ---
 
-動作させたテストコードの例
+動作させたテストコード
 
 https://github.com/hrsano645/homeenvdash-mini/blob/main/test_bme280.py
 
