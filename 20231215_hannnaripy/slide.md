@@ -57,6 +57,10 @@ marp: true
 
 ---
 
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vQBh0RhxGqcYq-yaIYWBAGf5OvOwtf5FxMH3bNf7hDUU0JfiSFA4gm3uMVou0-zaJrQJF91f0pQL7GV/pub?w=600&amp;h=400">
+
+---
+
 ## どんなことを効率化していたか
 
 * 自動生成
