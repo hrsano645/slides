@@ -232,6 +232,9 @@ Google Chatアプリの話はまたどこかで〜
 * [メッセージキュー - Wikipedia](https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%AD%E3%83%A5%E3%83%BC)
 * [【Pythonで高速化】I / Oバウンドとか並列処理とかマルチプロセスとかってなんぞや #Python - Qiita](https://qiita.com/nyax/items/659b07cd755f2ced563f)
 
+サンプルコード
+<https://github.com/hrsano645/exam-python-rq-by-docker>
+
 ---
 
 ## Google Chatと合わせる時
