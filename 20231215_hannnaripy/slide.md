@@ -57,7 +57,7 @@ marp: true
 
 ---
 
-<img src="https://docs.google.com/drawings/d/e/2PACX-1vQBh0RhxGqcYq-yaIYWBAGf5OvOwtf5FxMH3bNf7hDUU0JfiSFA4gm3uMVou0-zaJrQJF91f0pQL7GV/pub?w=600&amp;h=400">
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vQBh0RhxGqcYq-yaIYWBAGf5OvOwtf5FxMH3bNf7hDUU0JfiSFA4gm3uMVou0-zaJrQJF91f0pQL7GV/pub?w=1200&amp;h=800">
 
 ---
 
@@ -110,33 +110,50 @@ Google Chatの場合
 
 ## Pythonでの非同期処理の選択肢
 
-* 詳しくは書籍見てね！
-* threading, multiprocessing, asyncio, sub-interpriter(3.13以降)
-* celery, rq, etc...
+* 標準ライブラリ: threading, multiprocessing, asyncio, sub-interpriter(3.13以降)
+* メッセージキュー活用:celery, rq, pyzmq(ZeroMQ)
+* etc...
 
 ---
 
 ## 今回はRQ(python-rq)を使いました
 
-* asyncioと悩んだ -> rqがシンプルにできそうだったので
-* celeryと悩んだ -> celeryを使うほどの規模ではなかったと思う
-* redisを使う: インメモリデータベース
-* redisをメッセージングキューとして使い、処理を行うワーカーと呼ぶプロセスへタスクを渡す
+python-rq: <https://python-rq.org/>
 
-※I/Oバウンズの処理はasyncio, multiprocessingで可能なので、この選択肢がベストとは限らない
-※redisを使いたかったというのもある
+以下の3つの要素で構成される
+
+* アプリ: タスク発行→キューへ入れる→キューから結果を受け取る
+* ワーカー: タスクの処理を行う
+* redis: アプリとワーカーの間に入りキューとして利用
 
 ---
 
-## ざっくりイメージ
+## 効率化を非同期タスクにするざっくりイメージ
+<!-- 
 
-* 依頼を受ける
-* 依頼内容をタスクとしてキューに入れる
-* キューからタスクを取り出し、ワーカーに渡す
-* ワーカーがタスクを実行する
-* ワーカーがタスクを完了したら、結果をキューに返す
+* [業務]依頼を受ける
+* [業務->アプリ->redis]依頼内容をタスクとしてキューに入れる
+* [redis->ワーカー]キューからタスクを取り出し、ワーカーに渡す
+* [ワーカー]ワーカーがタスクを実行する
+* [ワーカー->redis->アプリ]ワーカーがタスクを完了したら、結果をキューに返す
+* [アプリ->業務]キューの結果をアプリ側で受け取り結果を表示
 
-<!-- これらをシーケンス図にする -->
+これらをシーケンス図にする -->
+
+[![](https://mermaid.ink/img/pako:eNqFUstKw0AU_ZUw6_oDWXTlH7idzZCMGjTTmiYLKQUzoRVNwAdiEXxVrBRL05ULg9iPuZ02_oWTpJ1GWnAWwzD3nHPvOdwmMmomRTpq0COPMoNuW2TPITZmmjx14riWYdUJc7VZfyTCu_V_4C8QdCF4Xy851LQaGxjBGIIv4EN5Y1bUC_WtalXJ6dr0--HnWeKuxUUX_CvgYYFVEAnPWyyhotMW8ackAJ8Al48x-APwJfkN-AiCftbWH4p2H3ik5HKJrHNpLF0rEULgZyvFbJxb4OfiNAF_kUeZukGpRI2f0l60kbRwotAijqZJB078-cfl7PE-d7XykE5uVHdlYBXdv5xyhkX2fyzHSqDIvrBcHibtDeavCWaogmzq2MQy5RI1M3GM3H1qU4x0-TSJc4ARZi2JI55b2zlmBtJdx6MV5NVN4i4XDum75LBBW7_x1VtT?type=png)](https://mermaid.live/edit#pako:eNqFUstKw0AU_ZUw6_oDWXTlH7idzZCMGjTTmiYLKQUzoRVNwAdiEXxVrBRL05ULg9iPuZ02_oWTpJ1GWnAWwzD3nHPvOdwmMmomRTpq0COPMoNuW2TPITZmmjx14riWYdUJc7VZfyTCu_V_4C8QdCF4Xy851LQaGxjBGIIv4EN5Y1bUC_WtalXJ6dr0--HnWeKuxUUX_CvgYYFVEAnPWyyhotMW8ackAJ8Al48x-APwJfkN-AiCftbWH4p2H3ik5HKJrHNpLF0rEULgZyvFbJxb4OfiNAF_kUeZukGpRI2f0l60kbRwotAijqZJB078-cfl7PE-d7XykE5uVHdlYBXdv5xyhkX2fyzHSqDIvrBcHibtDeavCWaogmzq2MQy5RI1M3GM3H1qU4x0-TSJc4ARZi2JI55b2zlmBtJdx6MV5NVN4i4XDum75LBBW7_x1VtT)
+
+---
+
+## なぜRQを選んだのか
+
+* asyncioと悩んだ -> RQがシンプルにできそうだったので
+* celeryと悩んだ -> celeryを使うほどの規模ではなかったと思う
+
+※I/Oバウンズ処理はasyncio, multiprocessingで可能
+※なので、この選択肢がベストとは限らない（速度とか重さとか）
+**※redisを使いたかったというのもある**
+
+<!-- _footer: バウンドとは制限という意味 -->
 
 ---
 
@@ -145,26 +162,40 @@ Google Chatの場合
 * RQはWindowsは非対応
   * WSLなら動かせる
   -> <https://python-rq.org/docs/#limitations>
-* とはいえ面倒なのでdockerで動かす例です
-
-（チャットボットを動かすのでどうせならサーバーで動かしたほうがいい）
+* 今回はdockerで動かす例です
+  * チャットボットも動かすのでどうせならLinux系がお手軽
 
 ---
 
-## dockerで動かす時
+ということで、ちょっぱやでDocckerで用意する場合の例
 
-* rqはredisへタスクを渡すときはpickelを使ってる
-* ワーカー側でもpickelで渡されたオブジェクトを理解できるようにする必要がある -> ワーカー側にも同じライブラリをインストールする必要がある
-* 手っ取り早い方法として: タスク側もワーカー側も同じDockerfileを使う、ボリューム参照も同じにする（これはストレージによっては不可能な可能性もあるので注意）
-* やっぱりcomposeを使うのが楽: タスク実行側とワーカー側を同時に起動できるし、ボリューム参照も楽
+---
+
+Dockerfile
+
+```Dockerfile
+FROM python:3.11
+RUN pip install rq
+```
 
 ---
 
 compose.yml
 
 ```yml
-
 ```
+
+---
+
+## dockerで動かす時
+
+* RQはredisへタスクを渡すときはpickelを使ってる
+  * ワーカー側でもpickelで渡されたオブジェクトが理解できないといけない
+  -> ワーカー側にも同じライブラリをインストールする必要がある
+* 手っ取り早い方法として
+  * タスク側もワーカー側も同じDockerfileを使う
+  * ボリューム参照も同じにする
+* タスクとワーカーを同時に動かすならcomposeが便利
 
 ---
 
@@ -186,16 +217,6 @@ compose.yml
 
 ---
 
-## Google Chatと合わせる時
-
-* チャットボット側で操作をする -> タスクをキューに入れる
-* チャットボット側に応答をする
-* ワーカー側でタスクを実行する
-* ワーカー側でチャット側に非同期で応答を返す
-  * Google ChatならGoogle Chat REST APIで非同期応答できる
-
----
-
 ## まとめ
 
 * 自動化は重い処理をよく扱う
@@ -203,3 +224,20 @@ compose.yml
 * 退屈なこと/手作業は間違えるので自動化しよう
 
 Google Chatアプリの話はまたどこかで〜
+
+---
+
+## 参考
+
+* [メッセージキュー - Wikipedia](https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%AD%E3%83%A5%E3%83%BC)
+* [【Pythonで高速化】I / Oバウンドとか並列処理とかマルチプロセスとかってなんぞや #Python - Qiita](https://qiita.com/nyax/items/659b07cd755f2ced563f)
+
+---
+
+## Google Chatと合わせる時
+
+* チャットボット側で操作をする -> タスクをキューに入れる
+* チャットボット側に応答をする
+* ワーカー側でタスクを実行する
+* ワーカー側でチャット側に非同期で応答を返す
+  * Google ChatならGoogle Chat REST APIで非同期応答できる
