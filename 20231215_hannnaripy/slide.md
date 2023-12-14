@@ -151,7 +151,7 @@ python-rq: <https://python-rq.org/>
 
 ※I/Oバウンズ処理はasyncio, multiprocessingで可能
 ※なので、この選択肢がベストとは限らない（速度とか重さとか）
-**※redisを使いたかったというのもある**
+**※redisの扱いに慣れたくて使いたかったという意味もあり**
 
 <!-- _footer: バウンドとは制限という意味 -->
 
