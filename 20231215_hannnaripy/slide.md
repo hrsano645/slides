@@ -67,6 +67,7 @@ paginate: true
   * 依頼受注（メール）→ボイラープレートツールで作業プロジェクト
   * スケジュール管理→Googleスプレッドシート連携
   * 会計サービスと連携して見積書/請求書生成（書類作成）
+  * 依頼企業の
 * タスク操作をChatOps
   * Google Chatでチャットボット作成
 * 過去の依頼からサマリー情報のデータベース化: (現在取り組み中）
@@ -102,7 +103,8 @@ Google Chatの場合
 
 ## 非同期とは
 
-* 同期処理と非同期処理の違い: 処理のオフロードと並列処理が可能。処理の待ち時間を有効活用できる
+* 同期処理と非同期処理の違い:
+  処理のオフロードと並列処理が可能。処理の待ち時間を有効活用できる
 * チャットボットのために非同期処理を使うことになる: これが結局制約あるため
 * ノンブロッキング処理: 処理が終わるまで待たされない（チャットの場合、応答が素早く返せる）
 
@@ -110,8 +112,10 @@ Google Chatの場合
 
 ## Pythonでの非同期処理の選択肢
 
-* 標準ライブラリ: threading, multiprocessing, asyncio, sub-interpriter(3.13以降)
-* メッセージキュー活用:celery, rq, pyzmq(ZeroMQ)
+* 標準ライブラリ: （並列）threading,（並列）multiprocessing,
+ （非同期）asyncio,（並列？）sub-interpriter（3.13以降）
+* メッセージキュー活用: celery, rq, pyzmq(ZeroMQ)
+* クラウドのメッセージング: Cloud Pub/Sub（イベントベースで
 * etc...
 
 ---
@@ -128,7 +132,7 @@ python-rq: <https://python-rq.org/>
 
 ---
 
-## 効率化を非同期タスクにするざっくりイメージ
+## 非同期タスクのざっくりイメージ
 <!-- 
 
 * [業務]依頼を受ける
@@ -139,19 +143,21 @@ python-rq: <https://python-rq.org/>
 * [アプリ->業務]キューの結果をアプリ側で受け取り結果を表示
 
 これらをシーケンス図にする -->
-
-[![](https://mermaid.ink/img/pako:eNqFUstKw0AU_ZUw6_oDWXTlH7idzZCMGjTTmiYLKQUzoRVNwAdiEXxVrBRL05ULg9iPuZ02_oWTpJ1GWnAWwzD3nHPvOdwmMmomRTpq0COPMoNuW2TPITZmmjx14riWYdUJc7VZfyTCu_V_4C8QdCF4Xy851LQaGxjBGIIv4EN5Y1bUC_WtalXJ6dr0--HnWeKuxUUX_CvgYYFVEAnPWyyhotMW8ackAJ8Al48x-APwJfkN-AiCftbWH4p2H3ik5HKJrHNpLF0rEULgZyvFbJxb4OfiNAF_kUeZukGpRI2f0l60kbRwotAijqZJB078-cfl7PE-d7XykE5uVHdlYBXdv5xyhkX2fyzHSqDIvrBcHibtDeavCWaogmzq2MQy5RI1M3GM3H1qU4x0-TSJc4ARZi2JI55b2zlmBtJdx6MV5NVN4i4XDum75LBBW7_x1VtT?type=png)](https://mermaid.live/edit#pako:eNqFUstKw0AU_ZUw6_oDWXTlH7idzZCMGjTTmiYLKQUzoRVNwAdiEXxVrBRL05ULg9iPuZ02_oWTpJ1GWnAWwzD3nHPvOdwmMmomRTpq0COPMoNuW2TPITZmmjx14riWYdUJc7VZfyTCu_V_4C8QdCF4Xy851LQaGxjBGIIv4EN5Y1bUC_WtalXJ6dr0--HnWeKuxUUX_CvgYYFVEAnPWyyhotMW8ackAJ8Al48x-APwJfkN-AiCftbWH4p2H3ik5HKJrHNpLF0rEULgZyvFbJxb4OfiNAF_kUeZukGpRI2f0l60kbRwotAijqZJB078-cfl7PE-d7XykE5uVHdlYBXdv5xyhkX2fyzHSqDIvrBcHibtDeavCWaogmzq2MQy5RI1M3GM3H1qU4x0-TSJc4ARZi2JI55b2zlmBtJdx6MV5NVN4i4XDum75LBBW7_x1VtT)
+[![](https://mermaid.ink/img/pako:eNqFkstOwkAYhV-lmTW-QBesfAO3s5m0ozbaAUu7MITETgOKkHiJkZB4w4ghEsrKhQ2Rh_kZwBWv4JTCUIHELppJ5nzn_GdmisjImRTpqEBPPMoMumuRA4fYmGnyyxPHtQwrT5irjds9UWvOBhejKJoNqpsC4K8QNCD42NxyqGkVthBBH4IB8K78Y5bsr8XsZLPKV9dG348_LxK4FVcN8G-A1xJISaR8nrWUikpZhF8SAD4ELhd98DvgS_gdeA-Cdpzvd0W5Dbyu7OYWcXJqPl1LATXg1ZVjPM498EtxHoHfXEyUQrc4pdDwedqqb4UWTZRahPVRVIEzf_J5PX56mLdadZgO71S6KrA6un-Z9BmuXcKf7qFySi4h6Z6eatrqTN4izFAG2dSxiWXK91WMUzByD6lNMdLl0iTOEUaYlaSOeG5u75QZSHcdj2aQlzeJu3yLSN8nxwVa-gUEuG-Q?type=png)](https://mermaid.live/edit#pako:eNqFkstOwkAYhV-lmTW-QBesfAO3s5m0ozbaAUu7MITETgOKkHiJkZB4w4ghEsrKhQ2Rh_kZwBWv4JTCUIHELppJ5nzn_GdmisjImRTpqEBPPMoMumuRA4fYmGnyyxPHtQwrT5irjds9UWvOBhejKJoNqpsC4K8QNCD42NxyqGkVthBBH4IB8K78Y5bsr8XsZLPKV9dG348_LxK4FVcN8G-A1xJISaR8nrWUikpZhF8SAD4ELhd98DvgS_gdeA-Cdpzvd0W5Dbyu7OYWcXJqPl1LATXg1ZVjPM498EtxHoHfXEyUQrc4pdDwedqqb4UWTZRahPVRVIEzf_J5PX56mLdadZgO71S6KrA6un-Z9BmuXcKf7qFySi4h6Z6eatrqTN4izFAG2dSxiWXK91WMUzByD6lNMdLl0iTOEUaYlaSOeG5u75QZSHcdj2aQlzeJu3yLSN8nxwVa-gUEuG-Q)
 
 ---
 
 ## なぜRQを選んだのか
 
-* asyncioと悩んだ -> RQがシンプルにできそうだったので
+ドキュメント見ていたら利用しやすいシンプルさが良かった
+
+* asyncioと悩んだ -> RQがシンプルにできそうだった
 * celeryと悩んだ -> celeryを使うほどの規模ではなかったと思う
 
-※I/Oバウンズ処理はasyncio, multiprocessingで可能
-※なので、この選択肢がベストとは限らない（速度とか重さとか）
-**※redisの扱いに慣れたくて使いたかったという意味もあり**
+※I/Oバウンズ処理はasyncio, multiprocessingは制限にならないので、
+この選択肢がベストとは限らない（速度とか）  
+
+※redisの扱いに慣れたくて使いたかったという意味も😆
 
 <!-- _footer: バウンドとは制限という意味 -->
 
@@ -254,33 +260,34 @@ print([task.result for task in tasks])
 
 ---
 
+## 実行
+
+```bash
+# シングルワーカー
+$ docker-compose up
+
+# マルチワーカー: 4つのワーカーを起動
+$ docker-compose up --scale worker=4
+## ログは別途ファイルでみせます
+```
+
+---
+
 ## dockerで動かす時
 
-* [RQはredisへタスクを渡すときはpickleを使ってる](https://python-rq.org/docs/#:~:text=Lastly%2C%20it%20does%20not%20speak%20a%20portable%20protocol%2C%20since%20it%20depends%20on%20pickle%20to%20serialize%20the%20jobs%2C%20so%20it%E2%80%99s%20a%20Python%2Donly%20system.)
+* [RQはredis（キュー）へタスクを渡すときはpickleを使ってる](https://python-rq.org/docs/#:~:text=Lastly%2C%20it%20does%20not%20speak%20a%20portable%20protocol%2C%20since%20it%20depends%20on%20pickle%20to%20serialize%20the%20jobs%2C%20so%20it%E2%80%99s%20a%20Python%2Donly%20system.)
   * ワーカー側でもpickelで渡されたオブジェクトが理解できないといけない
   -> ワーカー側にも同じライブラリをインストールする必要がある
 * 手っ取り早い方法として
-  * タスク側もワーカー側も同じDockerfileを使う
-  * ボリュームも同じ部分を参照すると楽
+  * タスク側もワーカー側も同じ環境=Dockerfileを使う
+  * コード参照や利用するボリュームも同じ箇所を参照すると楽
 * タスクとワーカーを同時に動かすならcomposeが便利
-
----
-
-## 実際に使う: ローカル
-
-* ファイル操作を扱ってみる
-
----
-
-## 実際に使う: クラウド側
-
-* Googleスプレッドシート
 
 ---
 
 ## まとめ
 
-* 退屈なこと/手作業は間違えるので自動化しよう
+* 膨大な~~退屈なこと~~手作業は間違えるので自動化しよう
 * 自動化は重い処理をよく扱う->非同期前提で考える
 * 非同期を使うことで、重い処理を任せられ自動化の幅が広がる
 
@@ -291,8 +298,9 @@ Google Chatアプリの話はまたどこかで〜
 ## 参考
 
 * [メッセージキュー - Wikipedia](https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%AD%E3%83%A5%E3%83%BC)
+* [python-rq](https://python-rq.org/)
 * [【Pythonで高速化】I / Oバウンドとか並列処理とかマルチプロセスとかってなんぞや #Python - Qiita](https://qiita.com/nyax/items/659b07cd755f2ced563f)
-* dockerにするための参考: [Python で分散タスクキュー (RQ 編) #Python - Qiita](https://qiita.com/hoto17296/items/39597f6e26c0186a6e1b)
+* docker利用時の参考: [Python で分散タスクキュー (RQ 編) #Python - Qiita](https://qiita.com/hoto17296/items/39597f6e26c0186a6e1b)
 
 サンプルコード
 <https://github.com/hrsano645/exam-python-rq-by-docker>
@@ -306,3 +314,9 @@ Google Chatアプリの話はまたどこかで〜
 * ワーカー側でタスクを実行する
 * ワーカー側でチャット側に非同期で応答を返す
   * Google ChatならGoogle Chat REST APIで非同期応答できる
+
+---
+
+## 弊社のGoogle ChatとRQを使った業務タスク自動化サービスの構成
+
+ここも構成の図を書く
