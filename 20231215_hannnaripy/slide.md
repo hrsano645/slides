@@ -1,5 +1,6 @@
 ---
 marp: true
+paginate: true
 ---
 
 
@@ -31,15 +32,14 @@ marp: true
 
 <!-- 
 
-* 株式会社佐野設計事務所は自動車プレス金型という機械を設計する事務所です。3D CADを使い設計、また自動車業界に限らず、製品の3Dモデリングも扱っております。
+* 株式会社佐野設計事務所は自動車プレス金型という機械を設計する事務所です。3D CADを使い設計、また自動車業界に限らず、製品向けの3Dモデリングも扱っております。
 * こういった設計データはデジタルデータになります。データを使い関連業務の改善に、Pythonやクラウドサービスなどを組み合わせて実現しています。
-* 製造業なのですがデジタル化で取り組んでいまして、同じように取り組まれている方や、ご興味ある方がいましたら、後ほどのパーティでぜひ意見交換できたらと思います。
-* もちろん静岡のPythonコミュニティとしても参加していますので、コミュニティスタッフとしてもお気軽にお声がけください！
+* 製造業のうえにニッチな領域ですがデジタル化も取り組み、ニッチな分野のDXとしても推進しているところです。
 -->
 
 ---
 
-## 今年の本業の話
+## 2023年の本業の話
 
 ---
 
@@ -52,7 +52,7 @@ marp: true
 * 依頼ベースの案件業務
 * 今まではそれほど多くなかったが今年になって急激に増える
   * 人力でやっていては追いつかなそうでやばい
-* 人力でやるのを止める
+* 人が必要な部分以外人力でやるのを止める！
   -> **止めることに成功した！！🙌😆**
 
 ---
@@ -64,7 +64,7 @@ marp: true
 ## どんなことを効率化していたか
 
 * 自動生成
-  * 依頼受注→ボイラープレートツールで作業プロジェクト
+  * 依頼受注（メール）→ボイラープレートツールで作業プロジェクト
   * スケジュール管理→Googleスプレッドシート連携
   * 会計サービスと連携して見積書/請求書生成（書類作成）
 * タスク操作をChatOps
@@ -169,6 +169,8 @@ python-rq: <https://python-rq.org/>
 
 ということで、ちょっぱやでDocckerで用意する場合の例
 
+参考: [Python で分散タスクキュー (RQ 編) #Python - Qiita](https://qiita.com/hoto17296/items/39597f6e26c0186a6e1b) @[hoto17296](https://twitter.com/hoto17296)
+
 ---
 
 Dockerfile
@@ -183,25 +185,84 @@ RUN pip install rq
 compose.yml
 
 ```yml
+version: '3'
+services:
+  redis:
+    image: redis
+  worker:
+    build: .
+    depends_on:
+      - redis
+    environment:
+      RQ_REDIS_URL: redis://redis
+    command: rq worker
+    volumes:
+      - .:/app
+    working_dir: /app
+  app:
+    build: .
+    depends_on:
+      - redis
+      - worker
+    environment:
+      RQ_REDIS_URL: redis://redis
+    command: python app.py
+    volumes:
+      - .:/app
+    working_dir: /app
+```
+
+---
+
+## 簡単なサンプル: printしてみる
+
+tasks.py
+
+```python
+import logging
+
+logger = logging.getLogger(__name__)
+
+
+def add(a, b):
+    logger.debug("{} + {} = {}".format(a, b, a + b))
+    return a + b
+```
+
+---
+
+app.py
+  
+```python
+import os
+from time import sleep
+import redis
+from rq import Queue
+from tasks import add
+
+q = Queue(connection=redis.from_url(os.environ.get("RQ_REDIS_URL")))
+
+# 10個のタスクの実行をキューに投げる
+tasks = [q.enqueue(add, args=(i, 1)) for i in range(10)]
+
+# タスク実行が完了するまで少し待つ
+sleep(1)
+
+# 結果を出力する
+print([task.result for task in tasks])
 ```
 
 ---
 
 ## dockerで動かす時
 
-* RQはredisへタスクを渡すときはpickelを使ってる
+* [RQはredisへタスクを渡すときはpickleを使ってる](https://python-rq.org/docs/#:~:text=Lastly%2C%20it%20does%20not%20speak%20a%20portable%20protocol%2C%20since%20it%20depends%20on%20pickle%20to%20serialize%20the%20jobs%2C%20so%20it%E2%80%99s%20a%20Python%2Donly%20system.)
   * ワーカー側でもpickelで渡されたオブジェクトが理解できないといけない
   -> ワーカー側にも同じライブラリをインストールする必要がある
 * 手っ取り早い方法として
   * タスク側もワーカー側も同じDockerfileを使う
-  * ボリューム参照も同じにする
+  * ボリュームも同じ部分を参照すると楽
 * タスクとワーカーを同時に動かすならcomposeが便利
-
----
-
-## 簡単なサンプル
-
-* とりあえずprintしてみる
 
 ---
 
@@ -219,9 +280,9 @@ compose.yml
 
 ## まとめ
 
-* 自動化は重い処理をよく扱う
-* 非同期を使うことで、重い処理を任せられ自動化の幅が広がる
 * 退屈なこと/手作業は間違えるので自動化しよう
+* 自動化は重い処理をよく扱う->非同期前提で考える
+* 非同期を使うことで、重い処理を任せられ自動化の幅が広がる
 
 Google Chatアプリの話はまたどこかで〜
 
@@ -231,6 +292,7 @@ Google Chatアプリの話はまたどこかで〜
 
 * [メッセージキュー - Wikipedia](https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%AD%E3%83%A5%E3%83%BC)
 * [【Pythonで高速化】I / Oバウンドとか並列処理とかマルチプロセスとかってなんぞや #Python - Qiita](https://qiita.com/nyax/items/659b07cd755f2ced563f)
+* dockerにするための参考: [Python で分散タスクキュー (RQ 編) #Python - Qiita](https://qiita.com/hoto17296/items/39597f6e26c0186a6e1b)
 
 サンプルコード
 <https://github.com/hrsano645/exam-python-rq-by-docker>
