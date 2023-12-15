@@ -6,7 +6,8 @@ paginate: true
 
 # 非同期タスクキューを使って業務を自動化しまくった話
 
-はんなりプログラミング: １年の締めくくり！2023年にチャレンジしたことのLT祭
+はんなりプログラミング:
+１年の締めくくり！2023年にチャレンジしたことのLT祭
 2023-12-15  
 
 佐野  浩士 @hrsano645
@@ -24,7 +25,7 @@ paginate: true
   * CivicTech, Startup Weekend Organizer
 * Hobby: Camp🏕️,DIY⚒️,IoT💡
 
-![w:180px](/images/sns-logo.jpg)![w:360px](/images/shizuokaLogo.png) ![w:180px](https://lh3.googleusercontent.com/pw/AIL4fc9DDT9ootdGiDNZiGUybbHE5WRnm68hFp6XknmZc2lVttIBKJ180GVq0NE2qtcGRbx8OBVAak3E4qHa7H5iXw8gtQqkY4l6tWrFkIHUA96q1jcqE2_f) ![w:180px](https://lh3.googleusercontent.com/pw/AIL4fc_3zxLYLoa5SSL_apqpJ3WCY9BRMfXRL4jUYaYouX3MvqiMU5eSCi8be6eQIvboRzgNZ3ZvdZAIET40tJD7I4y8dSHF6UByo-u8jXhLFFGv5rAw_kZU)
+![w:180px](../images/sns-logo.jpg)![w:360px](../images/shizuokaLogo.png) ![w:180px](https://lh3.googleusercontent.com/pw/AIL4fc9DDT9ootdGiDNZiGUybbHE5WRnm68hFp6XknmZc2lVttIBKJ180GVq0NE2qtcGRbx8OBVAak3E4qHa7H5iXw8gtQqkY4l6tWrFkIHUA96q1jcqE2_f) ![w:180px](https://lh3.googleusercontent.com/pw/AIL4fc_3zxLYLoa5SSL_apqpJ3WCY9BRMfXRL4jUYaYouX3MvqiMU5eSCi8be6eQIvboRzgNZ3ZvdZAIET40tJD7I4y8dSHF6UByo-u8jXhLFFGv5rAw_kZU)
 
 ---
 
@@ -59,7 +60,13 @@ paginate: true
 
 ![bg 70%](https://docs.google.com/drawings/d/e/2PACX-1vQBh0RhxGqcYq-yaIYWBAGf5OvOwtf5FxMH3bNf7hDUU0JfiSFA4gm3uMVou0-zaJrQJF91f0pQL7GV/pub?w=1200&amp;h=800)
 
-<!-- _footer: こんな絵を想像してます -->
+<!-- _footer: こんな絵を想像して -->
+
+---
+
+## 業務タスク自動化サービスの構成
+
+![w:800px](https://docs.google.com/drawings/d/e/2PACX-1vRxi-CGrIr6lu1K4wroeMLzybS4htY3PNTZCq3mxcXidHcejks1liceIsuXuCTrsiWORufyDXyKa7ZB/pub?w=900&amp;h=560)
 
 ---
 
@@ -67,6 +74,7 @@ paginate: true
 
 * 自動生成
   * 依頼受注（メール）→ボイラープレートツールで作業プロジェクト
+    フォルダーを生成
   * スケジュール管理→Googleスプレッドシート連携
   * 会計サービスと連携して見積書/請求書生成（書類作成）
   * 依頼企業側のシステム連携: WEBスクレイピング
@@ -114,8 +122,8 @@ Google Chatの場合
 
 ## Pythonでの非同期処理の選択肢
 
-* 標準ライブラリ: （並列）threading,（並列）multiprocessing,
- （非同期）asyncio,（並列？）sub-interpriter（3.13以降）
+* 標準ライブラリ:（並列）threading,（並列）multiprocessing,
+  （非同期）asyncio,（並列？）sub-interpriter（3.13以降）
 * メッセージキュー活用: celery, rq, pyzmq(ZeroMQ)
 * クラウドのメッセージング: Cloud Pub/Sub（イベントベースで
 * etc...
@@ -128,7 +136,7 @@ python-rq: <https://python-rq.org/>
 
 以下の3つの要素で構成される
 
-* アプリ: タスク発行→キューへ入れる→キューから結果を受け取る
+* アプリ: タスク発行→キューへ入れる→ワーカーから処理結果を受け取る
 * ワーカー: タスクの処理を行う
 * redis: アプリとワーカーの間に入りキューとして利用
 
@@ -145,7 +153,7 @@ python-rq: <https://python-rq.org/>
 * [アプリ->業務]キューの結果をアプリ側で受け取り結果を表示
 
 これらをシーケンス図にする -->
-[![](https://mermaid.ink/img/pako:eNqFkstOwkAYhV-lmTW-QBesfAO3s5m0ozbaAUu7MITETgOKkHiJkZB4w4ghEsrKhQ2Rh_kZwBWv4JTCUIHELppJ5nzn_GdmisjImRTpqEBPPMoMumuRA4fYmGnyyxPHtQwrT5irjds9UWvOBhejKJoNqpsC4K8QNCD42NxyqGkVthBBH4IB8K78Y5bsr8XsZLPKV9dG348_LxK4FVcN8G-A1xJISaR8nrWUikpZhF8SAD4ELhd98DvgS_gdeA-Cdpzvd0W5Dbyu7OYWcXJqPl1LATXg1ZVjPM498EtxHoHfXEyUQrc4pdDwedqqb4UWTZRahPVRVIEzf_J5PX56mLdadZgO71S6KrA6un-Z9BmuXcKf7qFySi4h6Z6eatrqTN4izFAG2dSxiWXK91WMUzByD6lNMdLl0iTOEUaYlaSOeG5u75QZSHcdj2aQlzeJu3yLSN8nxwVa-gUEuG-Q?type=png)](https://mermaid.live/edit#pako:eNqFkstOwkAYhV-lmTW-QBesfAO3s5m0ozbaAUu7MITETgOKkHiJkZB4w4ghEsrKhQ2Rh_kZwBWv4JTCUIHELppJ5nzn_GdmisjImRTpqEBPPMoMumuRA4fYmGnyyxPHtQwrT5irjds9UWvOBhejKJoNqpsC4K8QNCD42NxyqGkVthBBH4IB8K78Y5bsr8XsZLPKV9dG348_LxK4FVcN8G-A1xJISaR8nrWUikpZhF8SAD4ELhd98DvgS_gdeA-Cdpzvd0W5Dbyu7OYWcXJqPl1LATXg1ZVjPM498EtxHoHfXEyUQrc4pdDwedqqb4UWTZRahPVRVIEzf_J5PX56mLdadZgO71S6KrA6un-Z9BmuXcKf7qFySi4h6Z6eatrqTN4izFAG2dSxiWXK91WMUzByD6lNMdLl0iTOEUaYlaSOeG5u75QZSHcdj2aQlzeJu3yLSN8nxwVa-gUEuG-Q)
+![](https://mermaid.ink/img/pako:eNqFkstOwkAYhV-lmTW-QBesfAO3s5m0ozbaAUu7MITETgOKkHiJkZB4w4ghEsrKhQ2Rh_kZwBWv4JTCUIHELppJ5nzn_GdmisjImRTpqEBPPMoMumuRA4fYmGnyyxPHtQwrT5irjds9UWvOBhejKJoNqpsC4K8QNCD42NxyqGkVthBBH4IB8K78Y5bsr8XsZLPKV9dG348_LxK4FVcN8G-A1xJISaR8nrWUikpZhF8SAD4ELhd98DvgS_gdeA-Cdpzvd0W5Dbyu7OYWcXJqPl1LATXg1ZVjPM498EtxHoHfXEyUQrc4pdDwedqqb4UWTZRahPVRVIEzf_J5PX56mLdadZgO71S6KrA6un-Z9BmuXcKf7qFySi4h6Z6eatrqTN4izFAG2dSxiWXK91WMUzByD6lNMdLl0iTOEUaYlaSOeG5u75QZSHcdj2aQlzeJu3yLSN8nxwVa-gUEuG-Q?type=png)
 
 ---
 
@@ -278,7 +286,7 @@ $ docker-compose up --scale worker=4
 ## dockerで動かす時
 
 * [RQはredis（キュー）へタスクを渡すときはpickleを使ってる](https://python-rq.org/docs/#:~:text=Lastly%2C%20it%20does%20not%20speak%20a%20portable%20protocol%2C%20since%20it%20depends%20on%20pickle%20to%20serialize%20the%20jobs%2C%20so%20it%E2%80%99s%20a%20Python%2Donly%20system.)
-  * ワーカー側でもpickelで渡されたオブジェクトが理解できないといけない
+  * ワーカー側でもpickleで渡されたオブジェクトが理解できないといけない
   -> ワーカー側にも同じライブラリをインストールする必要がある
 * 手っ取り早い方法として
   * タスク側もワーカー側も同じ環境=Dockerfileを使う
@@ -319,7 +327,3 @@ Google Chatアプリの話はまたどこかで〜
   * Google ChatならGoogle Chat REST APIで非同期応答できる
 
 ---
-
-## 弊社のGoogle ChatとRQを使った業務タスク自動化サービスの構成
-
-ここも構成の図を書く
