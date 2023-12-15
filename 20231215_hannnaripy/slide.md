@@ -123,7 +123,7 @@ Google Chatの場合
 ## Pythonでの非同期処理の選択肢
 
 * 標準ライブラリ:（並列）threading,（並列）multiprocessing,
-  （非同期）asyncio,（並列？）sub-interpriter（3.13以降）
+  （非同期）asyncio,（並列？3.12から）sub-interpreters
 * メッセージキュー活用: celery, rq, pyzmq(ZeroMQ)
 * クラウドのメッセージング: Cloud Pub/Sub（イベントベースで
 * etc...
@@ -138,7 +138,7 @@ python-rq: <https://python-rq.org/>
 
 * アプリ: タスク発行→キューへ入れる→ワーカーから処理結果を受け取る
 * ワーカー: タスクの処理を行う
-* redis: アプリとワーカーの間に入りキューとして利用
+* redis: アプリとワーカーの間に入りキューとして利用する
 
 ---
 
@@ -312,6 +312,7 @@ Google Chatアプリの話はまたどこかで〜
 * [python-rq](https://python-rq.org/)
 * [【Pythonで高速化】I / Oバウンドとか並列処理とかマルチプロセスとかってなんぞや #Python - Qiita](https://qiita.com/nyax/items/659b07cd755f2ced563f)
 * docker利用時の参考: [Python で分散タスクキュー (RQ 編) #Python - Qiita](https://qiita.com/hoto17296/items/39597f6e26c0186a6e1b)
+* [Python3.12で新たにサポートされたsub-interpretersの紹介 | gihyo.jp](https://gihyo.jp/article/2023/11/monthly-python-2311)
 
 サンプルコード
 <https://github.com/hrsano645/exam-python-rq-by-docker>
