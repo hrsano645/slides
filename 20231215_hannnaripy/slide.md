@@ -57,17 +57,19 @@ paginate: true
 
 ---
 
-<img src="https://docs.google.com/drawings/d/e/2PACX-1vQBh0RhxGqcYq-yaIYWBAGf5OvOwtf5FxMH3bNf7hDUU0JfiSFA4gm3uMVou0-zaJrQJF91f0pQL7GV/pub?w=1200&amp;h=800">
+![bg 70%](https://docs.google.com/drawings/d/e/2PACX-1vQBh0RhxGqcYq-yaIYWBAGf5OvOwtf5FxMH3bNf7hDUU0JfiSFA4gm3uMVou0-zaJrQJF91f0pQL7GV/pub?w=1200&amp;h=800)
+
+<!-- _footer: こんな絵を想像してます -->
 
 ---
 
-## どんなことを効率化していたか
+## どんなことを効率化？
 
 * 自動生成
   * 依頼受注（メール）→ボイラープレートツールで作業プロジェクト
   * スケジュール管理→Googleスプレッドシート連携
   * 会計サービスと連携して見積書/請求書生成（書類作成）
-  * 依頼企業の
+  * 依頼企業側のシステム連携: WEBスクレイピング
 * タスク操作をChatOps
   * Google Chatでチャットボット作成
 * 過去の依頼からサマリー情報のデータベース化: (現在取り組み中）
@@ -76,13 +78,13 @@ paginate: true
 
 ---
 
-## これら全部、非同期タスクキューを使って作業させています
+## 自動生成の部分を非同期タスクキューを使って作業させています
 
 ---
 
 ## なんで非同期にしたの？
 
-* これらは重い処理: ファイル操作、APIアクセス
+* これらは重い処理: ファイル操作、APIアクセス -> I/Oバウンド処理
   * 組み合わせると**数秒ではなく数十秒〜分単位**の処理
   * 結果が返ってくるタイミングはその時次第
 * 同期処理でやると、処理が終わるまで待たされる
@@ -289,7 +291,8 @@ $ docker-compose up --scale worker=4
 
 * 膨大な~~退屈なこと~~手作業は間違えるので自動化しよう
 * 自動化は重い処理をよく扱う->非同期前提で考える
-* 非同期を使うことで、重い処理を任せられ自動化の幅が広がる
+* 非同期タスクキューを使うことで、重い処理を任せられ
+  自動化の幅や連携方法が広がる（はず
 
 Google Chatアプリの話はまたどこかで〜
 
