@@ -4,25 +4,25 @@ paginate: true
 ---
 
 
-# 非同期タスクキューを使って業務を自動化しまくった話
+# 非同期タスクキューを使って業務効率化した話
 
 みんなのPython勉強会#100
 2024-01-25  
 
-佐野  浩士 @hrsano645
+@hrs_sano645
 
 ---
 
 ## お前誰よ / Self Introduction
 
-佐野 浩士（Hiroshi Sano）[@hrs_sano645](https://twitter.com/hrs_sano645)
+佐野浩士（Hiroshi Sano）[@hrs_sano645](https://twitter.com/hrs_sano645)
 
 * 🗺️: 静岡県富士市🗻
-* 🏢: 株式会社佐野設計事務所 CEO
+* 🏢: 株式会社佐野設計事務所　代表取締役
 * 👥🤝
   * 🐍: PyCon mini Shizuoka Stuff / Shizuoka.py / Unagi.py / Python駿河
   * CivicTech, Startup Weekend Organizer
-* Hobby: Camp🏕️,DIY⚒️,IoT💡
+* Hobby: Camp🏕️, DIY⚒️, IoT💡
 
 ![w:180px](../images/sns-logo.jpg)![w:360px](../images/shizuokaLogo.png) ![w:180px](https://lh3.googleusercontent.com/pw/AIL4fc9DDT9ootdGiDNZiGUybbHE5WRnm68hFp6XknmZc2lVttIBKJ180GVq0NE2qtcGRbx8OBVAak3E4qHa7H5iXw8gtQqkY4l6tWrFkIHUA96q1jcqE2_f) ![w:180px](https://lh3.googleusercontent.com/pw/AIL4fc_3zxLYLoa5SSL_apqpJ3WCY9BRMfXRL4jUYaYouX3MvqiMU5eSCi8be6eQIvboRzgNZ3ZvdZAIET40tJD7I4y8dSHF6UByo-u8jXhLFFGv5rAw_kZU)
 
@@ -32,9 +32,8 @@ paginate: true
 
 <!-- 
 
-* 株式会社佐野設計事務所は自動車プレス金型という機械を3D CADで設計する事務所です。他業種製品の3Dモデリングもやっております
-* 普段扱うデータはほぼデジタルデータです、Pythonでデータを元に業務改善やクラウドサービスを組み合わせて実現しています。
-* 製造業のニッチな分野のDXも推進してます。
+* 株式会社佐野設計事務所は自動車プレス金型という機械を3D CADで設計する事務所です。他業種製品の3Dモデリング等やっております
+* 普段扱うデータはほぼデジタルデータです、Pythonでデータを元にクラウドサービスを組み合わせて業務改善し、製造業のニッチな分野のDXも推進してます。
 -->
 
 ---
@@ -43,9 +42,9 @@ paginate: true
 
 ---
 
-## 時は2023年の半ば
+## 時は2023年
 
-## 目標: 業務の効率化を限界まで進める
+## 2023年目標: 業務効率化を限界まで進める
 
 ---
 
@@ -53,9 +52,28 @@ paginate: true
 
 * 依頼ベースの案件業務
 * 今まではそれほど多くなかったが今年になって急激に増える
-  * 人力でやっていては追いつかなそうでやばい
+  * 人力でやっていては追いつかなそう。やばい
 * 人が必要な部分以外人力でやるのを止める！
   -> **止めることに成功した！！🙌😆**
+
+---
+
+## 指一本で仕事ができるようにするのが理想
+
+![w:500px](../images/illust_1.png)
+
+---
+
+## どんなことを効率化？
+
+* **自動生成**
+  * 依頼受注（メール）→ボイラープレートツールで作業プロジェクト
+    フォルダーを生成
+  * スケジュール管理→Googleスプレッドシート連携
+  * 会計サービスと連携して見積書/請求書生成（書類作成）
+  * 依頼企業側のシステム連携: WEBスクレイピング
+* タスク操作をChatOps
+  * Google Chatでチャットボット作成
 
 ---
 
@@ -65,35 +83,25 @@ paginate: true
 
 ---
 
-## どんなことを効率化？
+自動生成の部分を **「非同期タスクキュー」** を使って作業させています
 
-* **自動生成** <= この部分を非同期タスクキューを使ってた
-  * 依頼受注（メール）→ボイラープレートツールで作業プロジェクト
-    フォルダーを生成
-  * スケジュール管理→Googleスプレッドシート連携
-  * 会計サービスと連携して見積書/請求書生成（書類作成）
-  * 依頼企業側のシステム連携: WEBスクレイピング
-* タスク操作をChatOps
-  * Google Chatでチャットボット作成
-* 過去の依頼からサマリー情報のデータベース化: (現在取り組み中）
+非同期で動かすため + 処理をまとめたタスクを + キューに入れて実行させる
 
-<!-- _footer: 始まりと終わりを自動化することで、中身の作業に集中できるような体制 -->
-
----
-
-## 自動生成の部分を非同期タスクキューを使って作業させています
+<!-- _footer: キューは待ち行列の意味です。行列に並べて実行させます -->
 
 ---
 
 ## なんで非同期にしたの？
 
-* これらは重い処理: ファイル操作、APIアクセス -> I/Oバウンド処理
+* 重い処理: ファイル操作、APIアクセス -> I/Oバウンド処理
   * 組み合わせると**数秒ではなく数十秒〜分単位**の処理
   * 結果が返ってくるタイミングはその時次第
 * 同期処理でやると、処理が終わるまで待たされる
   -> ブロッキング処理
 * **チャットボット側がロックされてしまう->応答が返せない**
   基本チャットボットは非同期前提
+
+<!-- _footer: バウンドとは制限という意味 -->
 
 ---
 
@@ -106,26 +114,7 @@ Google Chatの場合
 
 ---
 
-## 非同期とは
-
-* 同期処理と非同期処理の違い:
-  処理のオフロードと並列処理が可能。処理の待ち時間を有効活用できる
-* チャットボットのために非同期処理を使うことになる: これが結局制約あるため
-* ノンブロッキング処理: 処理が終わるまで待たされない（チャットの場合、応答が素早く返せる）
-
----
-
-## Pythonでの非同期処理の選択肢
-
-* 標準ライブラリ:（並列）threading,（並列）multiprocessing,
-  （非同期）asyncio,（並列？3.12から）sub-interpreters
-* メッセージキュー活用: celery, rq, pyzmq(ZeroMQ)
-* クラウドのメッセージング: Cloud Pub/Sub（イベントベースで
-* etc...
-
----
-
-## 今回はRQ(python-rq)を使いました
+## RQ(python-rq)を使いました
 
 python-rq: <https://python-rq.org/>
 
@@ -154,17 +143,13 @@ python-rq: <https://python-rq.org/>
 
 ## なぜRQを選んだのか
 
-**ドキュメント見ていたら利用しやすいシンプルさが良かった**
+**ドキュメント見ていたら簡単に見えて良かった**
 
-* asyncioと悩んだ -> RQがシンプルにできそうだった
-* celeryと悩んだ -> celeryを使うほどの規模ではなかったと思う
+* asyncioと悩んだ -> **RQがシンプルだった**
+* celeryと悩んだ -> celeryを使うほどの規模ではなかった
 
 ※I/Oバウンズ処理はasyncio, multiprocessingは制限にならないので、
 この選択肢がベストとは限らない（速度とか）  
-
-※redisの扱いに慣れたくて使いたかったという意味も😆
-
-<!-- _footer: バウンドとは制限という意味 -->
 
 ---
 
@@ -215,20 +200,31 @@ services:
 
 ---
 
-## 簡単なサンプル: ファイル操作をしてみる
+## ファイル操作をしてみる
 
 tasks.py
 
 ```python
-import logging
+from pathlib import Path
+import random
+import string
+import sys
 
-logger = logging.getLogger(__name__)
 
-# ファイル操作: ランダムな文字列をファイルに書き込む？
+def create_random_string(length):
+    """指定された長さのランダムな文字列を生成する関数"""
+    letters = string.ascii_letters + string.digits
+    return "".join(random.choice(letters) for i in range(length))
 
-def add(a, b):
-    logger.debug("{} + {} = {}".format(a, b, a + b))
-    return a + b
+
+def create_files(num_files, file_size, directory="test_files"):
+    """指定された数とサイズのファイルを生成する関数"""
+    Path(directory).mkdir(parents=True, exist_ok=True)
+
+    for i in range(num_files):
+        savefile = Path(f"{directory}/file_{i}.txt")
+        with savefile.open("w") as f:
+            f.write(create_random_string(file_size))
 ```
 
 ---
@@ -237,21 +233,22 @@ app.py
   
 ```python
 import os
-from time import sleep
 import redis
 from rq import Queue
-from tasks import add
+from tasks import create_files
+
+
+NUM_FILES = 100
+FILE_SIZE = 1048576
+NUM_TASKS = 3
 
 q = Queue(connection=redis.from_url(os.environ.get("RQ_REDIS_URL")))
 
-# 10個のタスクの実行をキューに投げる
-tasks = [q.enqueue(add, args=(i, 1)) for i in range(10)]
-
-# タスク実行が完了するまで少し待つ
-sleep(1)
-
-# 結果を出力する
-print([task.result for task in tasks])
+# タスクの実行をキューに投げる
+tasks = [
+    q.enqueue(create_files, args=(NUM_FILES, FILE_SIZE, f"test_files_{i}"))
+    for i in range(NUM_TASKS)
+]
 ```
 
 ---
@@ -260,10 +257,10 @@ print([task.result for task in tasks])
 
 ```bash
 # シングルワーカー
-$ docker-compose up
+$ docker compose up
 
-# マルチワーカー: 4つのワーカーを起動
-$ docker-compose up --scale worker=4
+# マルチワーカー: 3つのワーカーを起動
+$ docker compose up --scale worker=3
 ## ログは別途ファイルでみせます
 ```
 
@@ -285,6 +282,7 @@ $ docker-compose up --scale worker=4
 
 * 膨大な~~退屈なこと~~手作業は間違えるので自動化しよう
 * 自動化は重い処理をよく扱う->非同期前提で考える
+  * **外部サービス連携、チャットボット、LLMのAPIとの連携も**
 * 非同期タスクキューを使うことで、重い処理を任せられ
   自動化の幅や連携方法が広がる（はず
 
@@ -302,15 +300,3 @@ Google Chatアプリの話はまたどこかで〜
 
 サンプルコード
 <https://github.com/hrsano645/exam-python-rq-by-docker>
-
----
-
-## Google Chatと合わせる時
-
-* チャットボット側で操作をする -> タスクをキューに入れる
-* チャットボット側に応答をする
-* ワーカー側でタスクを実行する
-* ワーカー側でチャット側に非同期で応答を返す
-  * Google ChatならGoogle Chat REST APIで非同期応答できる
-
----
