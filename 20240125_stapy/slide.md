@@ -55,6 +55,8 @@ paginate: true
   * 人力でやっていては**追いつかなそう**。やばい
 * 人間が必要な部分以外、**あらゆる手作業を止める！** → **成功した🎉**
 
+![h:300px](./images/illust_2.png)
+
 ---
 
 ## どんなことを効率化？
@@ -74,7 +76,7 @@ paginate: true
 
 ## 究極には指一本で仕事をしたい
 
-![w:500px](../images/illust_1.png)
+![w:500px](./images/illust_1.png)
 
 ---
 
