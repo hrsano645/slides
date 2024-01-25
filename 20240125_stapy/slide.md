@@ -152,7 +152,7 @@ python-rq: <https://python-rq.org/>
 
 ---
 
-ということで、ちょっぱやでDocckerで用意する場合の例
+ということで、お手軽でdocker composeで試す場合のサンプルです
 
 参考: [Python で分散タスクキュー (RQ 編) #Python - Qiita](https://qiita.com/hoto17296/items/39597f6e26c0186a6e1b) @[hoto17296](https://twitter.com/hoto17296)
 
