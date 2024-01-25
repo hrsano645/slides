@@ -46,7 +46,13 @@ paginate: true
 
 ---
 
-## 効率化するための理由
+## 指一本で仕事をしたい
+
+![w:500px](../images/illust_1.png)
+
+---
+
+## 効率化する理由
 
 * とある依頼ベースの案件業務
 * 今まではそれほど多くなかったが、**年を跨いで急激に増える**
@@ -64,15 +70,9 @@ paginate: true
   * スケジュール管理→Googleスプレッドシート連携
   * 会計サービスと連携して見積書/請求書生成（書類作成）
   * 依頼企業側のシステム連携: WEBスクレイピング
-* 自動化操作をChatOps
-  * Google Chatでチャットボット作成
+* **自動処理の実行をChatOpsで**
   * 処理を動かしていいか確認した上で実行させる
-
----
-
-## 指一本で仕事ができるしたい
-
-![w:500px](../images/illust_1.png)
+  * Google Chatでチャットボット作成
 
 ---
 
@@ -92,13 +92,13 @@ paginate: true
 
 ## なんでタスクキューを使う？
 
-* 重い処理: ファイル操作、APIアクセス -> I/Oバウンド処理
+* 自動処理→重い処理だった
+  * ファイル操作、APIアクセス -> I/Oバウンド処理
   * 組み合わせると**数秒ではなく数十秒〜分単位**の処理
   * 結果が返ってくるタイミングはその時次第
-* 同期処理でやると、処理が終わるまで待たされる
-  -> ブロッキング処理
-* **チャットボット側がロックされてしまう->応答が返せない**
-  基本チャットボットは非同期前提
+* **チャットボットの仕様->素早く応答しないといけない**
+  * チャット側がすぐにボット側に応答を求める
+  * チャットボットは非同期前提
 
 <!-- _footer: バウンドとは制限という意味 -->
 
@@ -265,6 +265,60 @@ $ docker compose up --scale worker=3
 
 ---
 
+## ワーカーのログ: シングルワーカー
+
+1つのワーカーにタスクが順番に渡されて実行される
+
+```bash
+file_task-worker-1  | 03:20:35 Worker rq:worker:81027d039a944dc3b8a230519243f68e started with PID 1, version 1.15.1
+file_task-worker-1  | 03:20:35 Subscribing to channel rq:pubsub:81027d039a944dc3b8a230519243f68e
+file_task-worker-1  | 03:20:35 *** Listening on default...
+file_task-worker-1  | 03:20:35 default: tasks.create_files(50, 1048576, 'test_files_0') (f18592d2-16ba-4c82-98ef-11da85c44493)
+file_task-app-1 exited with code 0
+file_task-worker-1  | 03:20:52 default: Job OK (f18592d2-16ba-4c82-98ef-11da85c44493)
+file_task-worker-1  | 03:20:52 Result is kept for 500 seconds
+file_task-worker-1  | 03:20:52 default: tasks.create_files(50, 1048576, 'test_files_1') (9f4a596f-73af-4973-9007-af03da8f5057)
+file_task-worker-1  | 03:21:09 default: Job OK (9f4a596f-73af-4973-9007-af03da8f5057)
+file_task-worker-1  | 03:21:09 Result is kept for 500 seconds
+file_task-worker-1  | 03:21:09 default: tasks.create_files(50, 1048576, 'test_files_2') (bf5c15ad-3222-45be-ab8a-3f214a57700d)
+file_task-worker-1  | 03:21:27 default: Job OK (bf5c15ad-3222-45be-ab8a-3f214a57700d)
+file_task-worker-1  | 03:21:27 Result is kept for 500 seconds
+```
+
+---
+
+## ワーカーのログ: マルチワーカー
+
+3つそれぞれが並列に動いて実行される
+
+```bash
+file_task-worker-3  | 03:19:26 Worker rq:worker:a3fae5de17c34f658f597ce4d5543dbc started with PID 1, version 1.15.1
+file_task-worker-3  | 03:19:26 Subscribing to channel rq:pubsub:a3fae5de17c34f658f597ce4d5543dbc
+file_task-worker-3  | 03:19:26 *** Listening on default...
+file_task-worker-3  | 03:19:26 Cleaning registries for queue: default
+file_task-worker-3  | StartedJobRegistry cleanup: Moving job to FailedJobRegistry (due to AbandonedJobError)
+file_task-worker-3  | StartedJobRegistry cleanup: Moving job to FailedJobRegistry (due to AbandonedJobError)
+file_task-worker-3  | StartedJobRegistry cleanup: Moving job to FailedJobRegistry (due to AbandonedJobError)
+file_task-worker-2  | 03:19:26 Worker rq:worker:3f33ea404d2040e99961f0a2d5d46b1f started with PID 1, version 1.15.1
+file_task-worker-2  | 03:19:26 Subscribing to channel rq:pubsub:3f33ea404d2040e99961f0a2d5d46b1f
+file_task-worker-2  | 03:19:26 *** Listening on default...
+file_task-worker-1  | 03:19:26 Worker rq:worker:32c4d2c46a944ba3b05dcb295cc522c2 started with PID 1, version 1.15.1
+file_task-worker-1  | 03:19:26 Subscribing to channel rq:pubsub:32c4d2c46a944ba3b05dcb295cc522c2
+file_task-worker-1  | 03:19:26 *** Listening on default...
+file_task-worker-3  | 03:19:27 default: tasks.create_files(50, 1048576, 'test_files_0') (a2767c5e-2caa-47ed-b8f2-204881f671ac)
+file_task-worker-2  | 03:19:27 default: tasks.create_files(50, 1048576, 'test_files_1') (288a07b9-80eb-4736-9e1c-56887781babe)
+file_task-worker-1  | 03:19:27 default: tasks.create_files(50, 1048576, 'test_files_2') (49f43d8d-b0c2-4edb-a4b3-711852102a9f)
+file_task-app-1 exited with code 0
+file_task-worker-2  | 03:19:44 default: Job OK (288a07b9-80eb-4736-9e1c-56887781babe)
+file_task-worker-2  | 03:19:44 Result is kept for 500 seconds
+file_task-worker-1  | 03:19:44 default: Job OK (49f43d8d-b0c2-4edb-a4b3-711852102a9f)
+file_task-worker-1  | 03:19:44 Result is kept for 500 seconds
+file_task-worker-3  | 03:19:44 default: Job OK (a2767c5e-2caa-47ed-b8f2-204881f671ac)
+file_task-worker-3  | 03:19:44 Result is kept for 500 seconds
+```
+
+---
+
 ## dockerで動かす時
 
 * [RQはredis（キュー）へタスクを渡すときはpickleを使ってる](https://python-rq.org/docs/#:~:text=Lastly%2C%20it%20does%20not%20speak%20a%20portable%20protocol%2C%20since%20it%20depends%20on%20pickle%20to%20serialize%20the%20jobs%2C%20so%20it%E2%80%99s%20a%20Python%2Donly%20system.)
@@ -279,10 +333,10 @@ $ docker compose up --scale worker=3
 
 ## まとめ
 
-* 膨大な~~退屈なこと~~手作業は間違えるので自動化しよう
-* 自動化は重い処理をよく扱う->非同期前提で考える
+* **膨大な手作業は間違えるので自動化しよう**
+* 自動化は重い処理をよく扱う -> 非同期前提で考える
   * **外部サービス連携、チャットボット、LLMのAPIとの連携も**
-* 非同期タスクキューを使うことで、重い処理を任せられ
+* 非同期タスクキューを使うことで、重い処理を任せられ、
   自動化の幅や連携方法が広がる（はず
 
 Google Chatアプリの話はまたどこかで〜
