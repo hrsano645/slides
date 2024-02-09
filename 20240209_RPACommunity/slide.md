@@ -119,13 +119,17 @@ Gmail APIとは
 
 Gmailをプログラムから操作するAPI
 
+![w:400px](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1024px-Gmail_icon_%282020%29.svg.png)
+
 ---
 APIの使ってメールの内容を収集する流れ
 
-* メールのリストを取得して
-* メールのメッセージを取得する
+REST APIで各プログラミング言語のSDKでやります。
 
-<!-- _footer: 本日は細かいコードとかは出さないです -->
+* メールのリストを取得して: `user.message.list`メソッド
+* メールのメッセージを取得する: `user.message.get`メソッド
+
+<!-- _footer: Pythonを例にして話ますが、この辺もコードは長いので省略。なんなら今日はコードほとんどないです。 -->
 
 ---
 
@@ -149,9 +153,13 @@ mimetypeが立ちはだかる
 
 ---
 
+mimetypeとは、データの種類を表す文字列
+
+---
+
 メールは、テキスト、HTML、画像、添付ファイルなどが混在している。
 
-それぞれのデータは構造化されていて、mimetypeで表現、判断ができる
+メールのデータは構造化されていて、それぞれmimetypeで表現、判断ができる
 
 参考: <https://www.softel.co.jp/blogs/tech/archives/5726>
 
@@ -179,33 +187,71 @@ multipartでも組み合わせで入れ子構造になっている
 
 ---
 
-そして、Gmail API側の構造を見る。
+そして、Gmail API側の構造を見ると…
 
 <!-- _footer: データ構造はjsonです -->
 
 ---
 
-入れ子構造どんだけ…
+![w:600px](./images/gmail-messageresource-json.png)
+
+---
+
+入れ子構造どんだけ…😱
 
 <!-- _footer: （この辺、RPAなアプリやサービスは抽象化がされていると思うので、ここまでのデータ構造を意識することはないかも） -->
 
 ---
 
+試しに届いてるメールを100件ほど取得して、
+
 どんな入れ子構造のパターンがあるのかみてみる
 
 ---
 
-結果:
+結果
+
+---
+
+```text
+multipart/alternative
+  text/plain
+  text/html
+ : 62
+
+text/plain
+ : 22
+
+text/html
+ : 5
+
+multipart/mixed
+  multipart/alternative
+    text/plain
+    text/html
+ : 4
+
+multipart/signed
+  multipart/alternative
+    text/plain
+    text/html
+  application/x-pkcs7-signature
+ : 2
+```
 
 ---
 
 これ全部判別対応するの？メール怖いよぉ😭
+
+![w:600px](./images/mail_horror_1.png)
 
 <!-- _footer: 最初これやってた -->
 
 ---
 
 それでも頑張らないといけないので
+
+![w:600px](./images/mail_horror_2.png)
 
 ---
 
@@ -215,21 +261,62 @@ multipartでも組み合わせで入れ子構造になっている
 
 メールの中にあるだろう、テキストでの本文を取得する
 
-code
+```python
+def find_message_parts_text(message, message_parts=None):
+    """
+    メッセージから text/plain と text/html の部分を再帰的に探索する関数
+    """
+    if message_parts is None:
+        message_parts = {"text/plain": None, "text/html": None}
+
+    mimetype = message.get("mimeType")
+    data = message.get("body", {}).get("data")
+
+    if mimetype == "text/plain" and data:
+        message_parts["text/plain"] = base64.urlsafe_b64decode(data).decode("utf-8")
+    elif mimetype == "text/html" and data:
+        message_parts["text/html"] = base64.urlsafe_b64decode(data).decode("utf-8")
+    # 
+    for part in message.get("parts", []):
+        find_message_parts_text(part, message_parts)
+
+    return message_parts
+```
 
 ---
 
-添付ファイルは専用IDをAPIでbase64で取得する
+```python
+# Gmail APIのPythonクライアントでメッセージのIDをもとにメールを取得
+# `user.message.list`でメールのIDを取得し`user.message.get`を使って本文を取得
+message = (
+    service.users()
+    .messages()
+    .get(userId="me", id=[APIで手に入れたメールのID], format="full")
+    .execute()
+)
 
-code
+# messageのpaylodからmimetypeを元に、本文を取得
+msg_payload = message["payload"]
+
+# 探索的にtext/planeを探して表示する。text/htmlのみのメールもあるので注意
+message_parts = find_message_parts_text(msg_payload)
+message_text = message_parts["text/plain"] or message_parts["text/html"]
+if message_text:
+    # 20文字まで出している
+    print(f"{message_text[0:20]}\n")
+```
 
 ---
 
 詳しくはブログにまとめたのでこちらからどうぞ！
 
+<https://hr-sano.net/blog/gmail-api-intro/>
+
 ---
 
 まとめ
+
+![w:600px](./images/mail_horror_2.png)
 
 ---
 
@@ -237,4 +324,4 @@ code
 でも色々あるから怖い。辛い。
 欲しいものを探索して狙い撃ちするといいかも
 
-<!-- _footer: 怖いけど表現の幅も広がったものなので、構造化の標準かを考えた方々に感謝 -->
+<!-- _footer: 構造化されたデーターは扱いが難しいけど、メールの表現の幅も広がったものなので、構造化の標準かを考えた方々に感謝 -->
