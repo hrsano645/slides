@@ -12,8 +12,6 @@ RPACommunity YouTube登録者数1万名達成記念 特別イベント！
 
 @hrs_sano645
 
-<!-- _footer: v0.2 -->
-
 ---
 
 ## お前誰よ / Self Introduction
