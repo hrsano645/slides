@@ -39,7 +39,7 @@ ChatGPTのLT会~面倒なことはChatGPTにやらせようコミュニティ主
 
 趣味のイベント運営に携わっているものがいろいろありまして
 
-* Unagi.py、Pythonスルガ（静岡Pythonコミュニティ）
+* Unagi.py、Python駿河（静岡Pythonコミュニティ）
 * PyCon mini Shizuoka（地域のPythonカンファレンス）
 * Startup Weekend富士（起業体験コミュニティ）
 * 地元の子供向けのイベント
