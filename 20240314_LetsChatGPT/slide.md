@@ -115,14 +115,6 @@ Googleカレンダーの予定調整とか使ってみたいけど、
 
 ---
 
-今回使っているイベントページとGPTs
-
-<https://chouseisan.com/s?h=21dd2e8fc6cd4167abbac310d7df97f8>
-
-GPTs: <https://chat.openai.com/g/g-T0D8v6IGe-diao-zheng-sannonei-rong-woyuan-nigooglekarendanoyu-ding-wozuo-rugpt>
-
----
-
 実際に使ってみる
 
 ---
