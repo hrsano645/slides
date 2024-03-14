@@ -40,8 +40,11 @@ ChatGPTのLT会~面倒なことはChatGPTにやらせようコミュニティ主
 趣味のイベント運営に携わっているものがいろいろありまして
 
 * Unagi.py、Python駿河（静岡Pythonコミュニティ）
+  * 4月にUnagi.pyのイベントあります
 * PyCon mini Shizuoka（地域のPythonカンファレンス）
+  * ちなみに2024は夏頃開催計画中！
 * Startup Weekend富士（起業体験コミュニティ）
+  * 6月に開催予定
 * 地元の子供向けのイベント
 * など...
 
