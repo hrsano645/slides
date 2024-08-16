@@ -16,7 +16,7 @@ marp: true
 佐野 浩士（Hiroshi Sano）[@hrs_sano645](https://twitter.com/hrs_sano645)
 
 * 🗺️: Shizuoka, Eastern part / 静岡県富士市🗻
-* 🏢: 株式会社佐野設計事務所 CEO
+* 🏢: 株式会社佐野設計事務所 代表取締役
 * 👥🤝
   * 🐍: PyCon mini Shizuoka Stuff / Shizuoka.py / Unagi.py / Python駿河
   * CivicTech, Startup Weekend Organizer
