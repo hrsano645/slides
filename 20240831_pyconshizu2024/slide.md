@@ -13,6 +13,14 @@ PyCon mini Shizuoka 2024
 
 ---
 
+このスライドは以下に移動しました。
+
+<https://docs.google.com/presentation/d/1-1Xq8tHd2lH6sO7piS8nluXUALRADm90lAI_iICsXjQ/edit?usp=sharing>
+
+（以下旧スライド）
+
+---
+
 ## お前誰よ / Self Introduction
 
 佐野浩士（Hiroshi Sano）[@hrs_sano645](https://twitter.com/hrs_sano645)
@@ -95,24 +103,33 @@ Pythonで3Dモデルを作ってみようをテーマにデモを交えてお話
 
 ## 3Dモデリングは、設計の一つの手法
 
+設計とは、構造物の具体的な内容を人に伝えるために使われる
+
 <!-- _footer: ※3Dゲームでは成果物にもなる。データ自体に価値がある場合のことです -->
 
 ---
 
 ## 2D図面と3Dモデル
 
-ものづくりの設計は、2次元の図面から、立体物で見る3Dモデリングと技術が進化
+ものづくりの設計をした結果、2次元（2D）図面、3Dモデルを伝えられる
 
 * 2D図面：制作物に対して、上から見たり、横から見たり、断面を表現する
-* 3Dモデル（3Dデータ）：立体物を表現することで、自由に制作物を見れる
+* 3Dモデル（3Dデータ）：立体物を表現することで、さまざまな角度や断面から見ることができる
 
-<ここに 2d 3dの図形>
+![bg right:33% height:500](./images/pyconshizu2024_slideimages_2d3d.drawio.png)
 
 ---
 
-## 2Dと3Dでよく見るもの
+## 2D図面と3Dモデルでよく見る要素
 
-点、エッジ、フェース、ソリッド、サーフェス、スプラインの概要
+| 2D | 3D | 説明 |
+|---|---|---|
+| 点 | 点 | 位置を表す |
+| 線 | エッジ | 線分を表す。曲線も|
+| 面 | フェース / サーフェス | 面を表す |
+| - | ソリッド | 立体を表す |
+
+![bg right:40% height:480](./images/pyconshizu2024_slideimages_kousei.drawio.png)
 
 ---
 
